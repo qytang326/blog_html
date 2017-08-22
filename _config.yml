@@ -6,7 +6,7 @@ header-img: Source/images/background/bg-default.jpg    #默认底图,相对地�
 email: qytang326@gmail.com
 description: "博学而笃志，切问而近思| 这里是 @Quanyin 的个人博客，与你一起发现更大的世界。"
 keyword: "Quanyin, Quanyin Blog, Quanyin 博客, Quanyin Tang, Quanyin Tang的博客"
-url: "https://qytang326.github.io"                # your host, for absolute URL
+url: "https://quanyin.eu.org"                # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog' /gh-pages-theme
 repo: qytang326.github.io                      #Where is the Repo
 
