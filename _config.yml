@@ -1,0 +1,125 @@
+###### Site settings
+# Site settings
+title: Quanyin Blog
+SEOTitle: Quanyin Tang的博客 | Quanyin Blog
+header-img: Source/images/background/bg-default.jpg    #默认底图,相对地址,如果没有额外指定的话
+email: qytang326@gmail.com
+description: "博学而笃志，切问而近思| 这里是 @Quanyin 的个人博客，与你一起发现更大的世界。"
+keyword: "Quanyin, Quanyin Blog, Quanyin 博客, Quanyin Tang, Quanyin Tang的博客"
+url: "https://qytang326.github.io"                # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog' /gh-pages-theme
+repo: qytang326.github.io                      #Where is the Repo
+
+##### Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: /:year/:month/:day/:title/      #自定义永久链接,或者使用#permalink: pretty
+paginate: 10                                    #每页展示项目数
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html` 取消#显示
+categories_path: categories
+tags_path: tags
+archive_path: archives
+about_path: about
+### Gems
+# from PR#40, to support local preview for Jekyll 3.0
+timezone: CN
+gems: 
+  - jekyll-paginate
+  - jekyll-github-metadata
+  - Jekyll-mentions
+  - jekyll-sitemap
+  - jekyll-gist  
+  - jekyll-feed
+  - jemoji
+### Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+#### 插件设置与开关 
+### Sidebar settings 侧边栏
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "自由而无用，<br>离开世界之前，一切都是过程"
+sidebar-avatar: /Source/images/avatar.jpg      #绝对地址 use absolute URL, seeing it's used in both `/` and `/about/`
+catalog: true                           # 文章侧边栏目录
+keynote-catalog: false
+### Featured Tags 推荐Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 2              # A tag will be featured if the size of it is more than this condition value
+## Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+##不蒜子计数
+busuanzi: true
+##pageviews
+pageviews: true
+##页面点击小红心
+click-love: true
+##背景动画
+background-particle: true
+##鼠标特效
+canvas-nest: true
+###推送到百度、360等以增加收录
+push-for-include: true
+##百度 需要验证
+push-to-baidu: true
+##360
+push-to-360: true
+
+
+#### 以下内容需要个人信息
+# SNS settings 具体设置见_include/footer.html
+RSS: false           #RSS: feed.xml
+weibo_username:     778950326
+zhihu_username:     qytang326
+github_username:    qytang326
+#twitter_username:   
+#facebook_username:  
+linkedin_username:  quanyin-tang-56a543b1
+
+### 评论系统 具体设置与格式在_layout/post.html
+# Disqus settings 
+#disqus_username: qytang326
+# Netease setttings 
+netease_comment: false
+# Gitment settings
+Gitment: true
+repo_for_gitment: Blog-Comment                  # 存放Issue的地方
+oauth_client_id: 9cb56c7c83cee1f4ecc4           #Gihub OAuth的 client ID,与CNAME有关
+oauth_client_secret: 1707226acc63d5fcd7639d82682fe3afa3a9129e   #Gihub OAuth的 client secret
+#daovoice
+daovoice: true
+daovoice_appid: f72737da
+daovoice_userid: NO_89757
+
+
+### 统计与分析 Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+# Google Analytics
+#ga_track_id: 'UA-102057505-1'            # Format: UA-xxxxxx-xx
+#ga_domain: auto                         #  自定义的域名,默认的是 auto,
+## 站点验证 html标记
+baidu-site-verification: "0H5CdgBtg0"       #与域名有关,在_include/head.html中,下同  
+google-site-verification: "yswp-qzxOuKDuIhrTHhrkSHJS1N_TYZws1QSWLjvnyA" 
+
+# Friends
+friends: [
+    {
+         title: "Quanyin",
+         href: "https://qytang326.github.io/"
+    },
+    {
+         title: "Hux Blog",
+         href: "https://huangxuan.me/"
+    },
+    {   
+        title: "BruceZhaoR",
+        href: "http://brucezhaor.github.io"
+    }
+]
