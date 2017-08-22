@@ -5,7 +5,7 @@ subtitle:   "Slides: JavaScript Modularization Journey"
 iframe:     "/Source/js-module-7day"
 date:       2015-07-09
 author:     "Hux"
-catalog:    true
+catalog:    false
 categories: 
             - 转载
 tags:

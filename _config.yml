@@ -65,11 +65,11 @@ background-particle: true
 ##鼠标特效
 canvas-nest: true
 ###推送到百度、360等以增加收录
-push-for-include: true
+push-for-include: false
 ##百度 需要验证
-push-to-baidu: true
+push-to-baidu: false
 ##360
-push-to-360: true
+push-to-360: false
 
 
 #### 以下内容需要个人信息
