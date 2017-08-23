@@ -2,7 +2,7 @@
 # Site settings
 title: Quanyin Blog
 SEOTitle: Quanyin Tang的博客 | Quanyin Blog
-header-img: Source/images/background/bg-default.jpg    #默认底图,相对地址,如果没有额外指定的话
+header-img: /Source/images/background/bg-default.jpg    #默认底图,相对地址,如果没有额外指定的话
 email: qytang326@gmail.com
 description: "博学而笃志，切问而近思| 这里是 @Quanyin 的个人博客，与你一起发现更大的世界。"
 keyword: "Quanyin, Quanyin Blog, Quanyin 博客, Quanyin Tang, Quanyin Tang的博客"
@@ -54,6 +54,9 @@ featured-condition-size: 2              # A tag will be featured if the size of 
 ## Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
+## 网易云音乐
+netease-music:false
+netease-music_url: "//music.163.com/outchain/player?type=0&id=804530027&auto=1&height=430"
 ##不蒜子计数
 busuanzi: true
 ##pageviews
@@ -63,7 +66,7 @@ click-love: true
 ##背景动画
 background-particle: true
 ##鼠标特效
-canvas-nest: true
+canvas-nest: false
 ###推送到百度、360等以增加收录
 push-for-include: false
 ##百度 需要验证
@@ -102,8 +105,8 @@ daovoice_userid: NO_89757
 # Baidu Analytics 
 # ba_track_id: [your track id]
 # Google Analytics
-#ga_track_id: 'UA-102057505-1'            # Format: UA-xxxxxx-xx
-#ga_domain: auto                         #  自定义的域名,默认的是 auto,
+ga_track_id: 'UA-105172812-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto                         #  自定义的域名,默认的是 auto,
 ## 站点验证 html标记
 baidu-site-verification: "0H5CdgBtg0"       #与域名有关,在_include/head.html中,下同  
 google-site-verification: "yswp-qzxOuKDuIhrTHhrkSHJS1N_TYZws1QSWLjvnyA" 

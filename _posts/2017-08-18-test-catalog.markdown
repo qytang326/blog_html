@@ -5,7 +5,7 @@ subtitle:       "本文介绍了Amazon的高可用KV存储系统Dynamo，转发�
 create-date:    2016-08-11
 update-date:    2016-08-11
 author:         "Shiny"
-header-img:     "Source/images/background/post-bg-default.jpg"
+header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    ""
 catalog:        true
 categories:     

@@ -4,7 +4,7 @@ title:          "emoji cheat sheet"
 subtitle:       "可以在GitHub中使用的emoji"
 date:           2017-08-20 09:30
 author:         "WebpageFX"
-header-img:     "Source/images/background/post-bg-default.jpg"
+header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    "Github上一个很火的项目，可以在一些网页中使用的emoji"
 catalog:        true
 mathjax:        false

@@ -2,7 +2,7 @@
 layout: page
 title: "About Me"
 description: "Hey, this is Quanyin."
-header-img: "Source/images/background/bg-about.jpg"
+header-img: "/Source/images/background/bg-about.jpg"
 ---
 
 <!-- Language Selector -->
@@ -68,9 +68,11 @@ header-img: "Source/images/background/bg-about.jpg"
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=1&id=1678955&auto=1&height=430"></iframe>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=420 height=100 src="//music.163.com/outchain/player?type=2&id=27090046&auto=1&height=66"></iframe>
 -->
+{% if site.netease-music %}
 <div class="post-container text-center">
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" align="middle" width="420" height="260"  src="//music.163.com/outchain/player?type=0&id=804530027&auto=1&height=430"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" align="middle" width="420" height="260"  src="{{site.netease-music_url}}"></iframe>
 </div>
+{% endif %}
 <!-- disqus 评论框 start -->
 {% if site.disqus_username %}
 <div class="comment">
