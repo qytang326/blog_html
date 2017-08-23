@@ -59,18 +59,17 @@ netease-music: false
 netease-music_url: "//music.163.com/outchain/player?type=0&id=804530027&auto=1&height=430"
 ##不蒜子计数
 busuanzi: true
+busuanzi_fixcount: true #初始数值修正
 ##pageviews
-pageviews: true
+hit-kounter: true
 ##页面点击小红心
 click-love: true
-##背景动画
-background-particle: true
-##鼠标特效
-canvas-nest: false
+##背景动画-特效
+canvas-nest: true
 ###推送到百度、360等以增加收录
-push-for-include: false
+push-for-include: true
 ##百度 需要验证
-push-to-baidu: false
+push-to-baidu: true
 ##360
 push-to-360: false
 
@@ -96,7 +95,7 @@ repo_for_gitment: Blog-Comment                  # 存放Issue的地方
 oauth_client_id: 9cb56c7c83cee1f4ecc4           #Gihub OAuth的 client ID,与CNAME有关
 oauth_client_secret: 1707226acc63d5fcd7639d82682fe3afa3a9129e   #Gihub OAuth的 client secret
 #daovoice
-daovoice: true
+daovoice: false
 daovoice_appid: f72737da
 daovoice_userid: NO_89757
 
@@ -108,8 +107,9 @@ daovoice_userid: NO_89757
 ga_track_id: 'UA-105172812-1'            # Format: UA-xxxxxx-xx
 ga_domain: auto                         #  自定义的域名,默认的是 auto,
 ## 站点验证 html标记
-baidu-site-verification: "0H5CdgBtg0"       #与域名有关,在_include/head.html中,下同  
-google-site-verification: "yswp-qzxOuKDuIhrTHhrkSHJS1N_TYZws1QSWLjvnyA" 
+#baidu-site-verification: "0H5CdgBtg0"       #origin,与域名有关,在_include/head.html中,下同  
+baidu-site-verification: aNsquf4NVy
+google-site-verification: KIjjnGZK8x7PddQoXqhBJrOpbYg7k04AHE_gt_1PYtc 
 
 # Friends
 friends: [
