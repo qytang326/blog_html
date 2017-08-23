@@ -55,7 +55,7 @@ featured-condition-size: 2              # A tag will be featured if the size of 
 chrome-tab-theme-color: "#000000"
 service-worker: true
 ## 网易云音乐
-netease-music:false
+netease-music: false
 netease-music_url: "//music.163.com/outchain/player?type=0&id=804530027&auto=1&height=430"
 ##不蒜子计数
 busuanzi: true
