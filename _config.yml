@@ -61,11 +61,11 @@ netease-music_url: "//music.163.com/outchain/player?type=0&id=804530027&auto=1&h
 busuanzi: true
 busuanzi_fixcount: true #初始数值修正
 ##pageviews
-hit-kounter: true
+hit-kounter: false
 ##页面点击小红心
 click-love: true
 ##背景动画-特效
-canvas-nest: true
+canvas-nest: false
 ###推送到百度、360等以增加收录
 push-for-include: true
 ##百度 需要验证
