@@ -1,7 +1,11 @@
 {% if site.Gitment %}
 <div id="container"></div>
+<!--改为使用本地文件
 <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+-->
+<link rel="stylesheet" href="/css/gitment.css">
+<script src="/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
   id: '{{ page.url | replace:'index.html','' |split: "/" | last|downcase }}', // 页面ID，可选。默认为 location.href
