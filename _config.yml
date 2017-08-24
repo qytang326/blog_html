@@ -57,12 +57,12 @@ BGM: true
 ## 网易云音乐   8月24日：弃用,效果不好，改用Aplayer
 #netease-music: false
 #netease-music_url: "//music.163.com/outchain/player?type=0&id=804530027&auto=1&height=430"
-## APlayer，Doc: https://aplayer.js.org/docs/#/?id=options
+## APlayer，Doc: https://aplayer.js.org/docs/#/?id=options && https://www.tiexo.cn/aplayer/ https://api.i-meto.com/music/player.js
 APlayer: 
     data-id: 804530027      #歌曲/专辑/歌单ID
     data-server: netease    #可选参数 netease(网易云音乐)tencent(qq音乐)xiami(虾米音乐)kugou(酷狗音乐)baidu(百度音乐)
     data-type: playlist     #类型:song/album/playlist/search
-    data-mode: circulation  #播放模式:random/single/circulation/order
+    data-mode: random  #播放模式:random/single/circulation/order
     data-autoplay: true     #自动播放？
 ##不蒜子计数
 busuanzi: true
