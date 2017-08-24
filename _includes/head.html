@@ -1,10 +1,12 @@
 <head>
     <meta charset="utf-8">
+    <!-- JavaScript 跳转
     <script type="text/javascript">
     var host = "{{site.enforce_ssl}}";
     if ((host == window.location.host) && (window.location.protocol != "https:"))
         window.location.protocol = "https";
     </script>
+    -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     {% if site.google-site-verification %}
     <meta name="google-site-verification" content="{{ site.google-site-verification }}" />
