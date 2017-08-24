@@ -1,15 +1,14 @@
 ###### Site settings
-# Site settings
-title: Quanyin Blog
+title: Quanyin Blog 主题模板
 SEOTitle: Quanyin Tang的博客 | Quanyin Blog
-header-img: /Source/images/background/bg-default.jpg    #默认底图,相对地址,如果没有额外指定的话
+header-img: /Source/images/background/bg-default.jpg    #默认底图,使用相对链接
 email: qytang326@gmail.com
 description: "博学而笃志，切问而近思| 这里是 @Quanyin 的个人博客，与你一起发现更大的世界。"
 keyword: "Quanyin, Quanyin Blog, Quanyin 博客, Quanyin Tang, Quanyin Tang的博客"
-url: "https://quanyin.eu.org"                # your host, for absolute URL
-enforce_ssl: quanyin.eu.org
+url: "http://theme.Quanyin.ml"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog' /gh-pages-theme
-repo: qytang326.github.io                      #Where is the Repo
+repo: qytang326.github.io
+
 
 ##### Build settings
 highlighter: rouge
@@ -68,22 +67,22 @@ Aplayer:
 busuanzi: true
 busuanzi_fixcount: true #初始数值修正
 ##pageviews
-hit-kounter: false
+hit-kounter: true
 ##页面点击小红心
 click-love: true
 ##背景动画-特效
-canvas-nest: false
+canvas-nest: true
 ###推送到百度、360等以增加收录
 push-for-include: true
 ##百度 需要验证
 push-to-baidu: true
 ##360
-push-to-360: false
+push-to-360: true
 
 
 #### 以下内容需要个人信息
 # SNS settings 具体设置见_include/footer.html
-RSS: false           #RSS: feed.xml
+RSS: true           #RSS: feed.xml
 weibo_username:     778950326
 zhihu_username:     qytang326
 github_username:    qytang326
@@ -91,18 +90,18 @@ github_username:    qytang326
 #facebook_username:  
 linkedin_username:  quanyin-tang-56a543b1
 
-### 评论系统 具体设置与格式在_layout/post.html
+### Comment System 具体设置与格式在_layout/post.html
 # Disqus settings 
 #disqus_username: qytang326
 # Netease setttings 
 netease_comment: false
-# Gitment settings
+# Gitment settings 
 Gitment: true
-repo_for_gitment: Blog-Comment                  # 存放Issue的地方
-oauth_client_id: 9cb56c7c83cee1f4ecc4           #Gihub OAuth的 client ID,与CNAME有关
-oauth_client_secret: 1707226acc63d5fcd7639d82682fe3afa3a9129e   #Gihub OAuth的 client secret
+repo_for_gitment: Blog-Comment                  #存放Issue的地方
+oauth_client_id: 547ad10017b50756cc95           #Gihub OAuth的 client ID,与CNAME有关
+oauth_client_secret: b79e08fb1496dea7decb39b8e9960de6f934078f   #Gihub OAuth的 client secret 与CNAME有关
 #daovoice
-daovoice: false
+daovoice: true
 daovoice_appid: f72737da
 daovoice_userid: NO_89757
 
@@ -111,12 +110,11 @@ daovoice_userid: NO_89757
 # Baidu Analytics 
 # ba_track_id: [your track id]
 # Google Analytics
-ga_track_id: 'UA-105172812-1'            # Format: UA-xxxxxx-xx
+ga_track_id: 'UA-105172812-2'            # Format: UA-xxxxxx-xx
 ga_domain: auto                         #  自定义的域名,默认的是 auto,
-## 站点验证 html标记
-baidu-site-verification: "0H5CdgBtg0"       #origin,与域名有关,在_include/head.html中,下同  
-#baidu-site-verification: aNsquf4NVy
-google-site-verification: KIjjnGZK8x7PddQoXqhBJrOpbYg7k04AHE_gt_1PYtc 
+## site-verification——html method 
+baidu-site-verification: yHqjnTuMbD       #与域名有关,在_include/head.html中,下同  
+google-site-verification: WJPMznpuQTcjxU8Hv0alquVA6FGlxrrFuOI_wPNeEO4 
 
 # Friends
 friends: [
