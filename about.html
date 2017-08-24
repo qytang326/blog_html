@@ -72,16 +72,18 @@ header-img: "/Source/images/background/bg-about.jpg"
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" align="middle" width="420" height="260"  src="{{site.netease-music_url}}"></iframe>
 </div>
 {% endif %}-->
+{% if site.APlayer %}
 <script src="//cdnjs.cloudflare.com/ajax/libs/aplayer/1.6.0/APlayer.min.js"></script>	
-<script src="//api.i-meto.com/music/player.js"></script>
-<!--<script src="/js/meting.aplayer.js"></script>-->
-<div class="aplayer post-container text-center" 
-    data-id='{{site.APlayer.data-id}}' 
-    data-server='{{site.APlayer.data-server}}' 
-    data-type='{{site.APlayer.data-type}}' 
-    data-mode='{{site.APlayer.data-mode}}' 
-    data-autoplay='{{site.APlayer.autoplay}}' >
+<!--<script src="//api.i-meto.com/music/player.js"></script>-->
+<script src="/js/meting.aplayer.js"></script>
+<div class="aplayer post-container" 
+    data-id="{{site.APlayer.data-id}}" 
+    data-server="{{site.APlayer.data-server}}" 
+    data-type="{{site.APlayer.data-type}}" 
+    data-mode="{{site.APlayer.data-mode}}" 
+    data-autoplay="{{site.APlayer.autoplay}}" >
 </div>
+{% endif %}
 {% endif %}
 
 {% if site.Gitment %}
