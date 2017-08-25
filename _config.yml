@@ -16,10 +16,6 @@ permalink: /:year/:month/:day/:title/      #自定义永久链接,或者使用#p
 paginate: 10                                    #每页展示项目数
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html` 取消#显示
-categories_path: categories
-tags_path: tags
-archive_path: archives
-about_path: about
 timezone: CN
 ### Gems
 gems: 
