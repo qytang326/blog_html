@@ -104,12 +104,12 @@ daovoice_userid: NO_89757
 
 ### 统计与分析 Analytics settings
 # Baidu Analytics 
-# ba_track_id: [your track id]
+ba_track_id: 'a9b724867d3ace8e123ba004607207f2'
 # Google Analytics
 ga_track_id: 'UA-105172812-1'            # Format: UA-xxxxxx-xx
 ga_domain: auto                         #  自定义的域名,默认的是 auto,
 ## 站点验证 html标记
-baidu-site-verification: "0H5CdgBtg0"       #origin,与域名有关,在_include/head.html中,下同  
+#baidu-site-verification: "0H5CdgBtg0"       #origin,与域名有关,在_include/head.html中,下同  
 #baidu-site-verification: aNsquf4NVy
 google-site-verification: KIjjnGZK8x7PddQoXqhBJrOpbYg7k04AHE_gt_1PYtc 
 
