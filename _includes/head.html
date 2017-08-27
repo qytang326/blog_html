@@ -1,13 +1,13 @@
 <head>
     <meta charset="utf-8">
-    <script type="text/javascript">
     {% if site.enforce_ssl %}
+    <script type="text/javascript">
     var host = "{{site.enforce_ssl}}";
     if ((host == window.location.host) && (window.location.protocol != "https:"))
         window.location.protocol = "https";
     </script>
     {% endif %}
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {% if site.google-site-verification %}
     <meta name="google-site-verification" content="{{ site.google-site-verification }}" />
     {% endif %}
