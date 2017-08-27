@@ -1,10 +1,12 @@
 <head>
     <meta charset="utf-8">
     <script type="text/javascript">
+    {% if site.enforce_ssl %}
     var host = "{{site.enforce_ssl}}";
     if ((host == window.location.host) && (window.location.protocol != "https:"))
         window.location.protocol = "https";
     </script>
+    {% endif %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     {% if site.google-site-verification %}
     <meta name="google-site-verification" content="{{ site.google-site-verification }}" />
@@ -86,7 +88,7 @@
           var hm = document.createElement("script");
           hm.src = "//hm.baidu.com/hm.js?"+ _baId;
           var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
+          s.parentNode.insertBefore(hm,s);
         })();
     </script>
     {% endif %}
