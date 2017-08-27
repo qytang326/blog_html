@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <script type="text/javascript">
-    var host = "quanyin.eu.org";
+    var host = "{{site.enforce_ssl}}";
     if ((host == window.location.host) && (window.location.protocol != "https:"))
         window.location.protocol = "https";
     </script>
@@ -84,7 +84,7 @@
         var _hmt = _hmt || [];
         (function() {
           var hm = document.createElement("script");
-          hm.src = "//hm.baidu.com/hm.js?" + _baId;
+          hm.src = "//hm.baidu.com/hm.js?"+ _baId;
           var s = document.getElementsByTagName("script")[0];
           s.parentNode.insertBefore(hm, s);
         })();
