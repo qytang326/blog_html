@@ -1,0 +1,8 @@
+Linux基础教程
+ls
+ln
+tar
+find
+sed
+awk
+sshfs
