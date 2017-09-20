@@ -24,7 +24,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist  
   - jekyll-feed
-  - jemoji
+#  - jemoji
+
 ### Markdown settings
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
