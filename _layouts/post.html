@@ -145,7 +145,7 @@ layout: default
                     <div class="tags">
                         <a title="{{ page.title }}" href="//raw.githubusercontent.com/{{ site.repository }}/master/{{ page.path }}">源码</a>
         				{% for tag in site.tags %}
-                            {% if tag[1].size >= {{site.featured-condition-size}} %}
+                            {% if tag[1].size >= site.featured-condition-size %}
                 				<a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
                                     {{ tag[0] }}
                                 </a>
