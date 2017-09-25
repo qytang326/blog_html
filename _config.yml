@@ -20,7 +20,7 @@ anchorjs: true                          # if you want to customize anchor. check
 plugins: 
   - jekyll-paginate
   - jekyll-github-metadata
-  - Jekyll-mentions
+  - jekyll-mentions
   - jekyll-sitemap
   - jekyll-gist  
   - jekyll-feed
