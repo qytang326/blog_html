@@ -1,7 +1,7 @@
 ---
-layout: 	    post
-title: 		    Dynamo：Amazon高可用键值存储系统（测试catalog）
-subtitle:       "本文介绍了Amazon的高可用KV存储系统Dynamo，转发自网络上的一篇Word文档，有修正"
+layout: post
+title: Dynamo：Amazon高可用键值存储系统（测试catalog）
+subtitle: "本文介绍了Amazon的高可用KV存储系统Dynamo，转发自网络上的一篇Word文档，有修正"
 create-date:    2016-08-11
 update-date:    2016-08-11
 author:         "Shiny"
