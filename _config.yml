@@ -11,6 +11,7 @@ baseurl: ""                             # for example, '/blog' if your blog host
 repo: qytang326.github.io                      #Where is the Repo
 
 ##### Build settings
+encoding: utf-8
 highlighter: rouge
 permalink: /:year/:month/:day/:title/      #自定义永久链接,或者使用#permalink: pretty
 paginate: 10                                    #每页展示项目数
