@@ -82,7 +82,7 @@
         
 				<style>p.copyright.text-muted {color: #bfbfbf;} </style>
 				<p class="copyright text-muted text-center"><span class="text-center">
-                    Copyright &copy; 2017-{{ site.time | date: '%Y' }} <a href="{{site.url}}">Quanyin Blog</a>  
+                    Copyright &copy; 2017-{{ site.time | date: '%Y' }} <a href="{{site.homepage or site.url}}">Quanyin Blog</a>  
                     <!--
                     Powered by <a href="//github.com/mojombo/jekyll">Jekyll</a> and <a href="//getbootstrap.com/">Bootstrap</a>. 
 					<br>
@@ -94,11 +94,16 @@
                     {% endif %}
                     <br>
                     <span class="text-center">Theme by <a href="//github.com/qytang326">Quanyin Tang</a> | 
+                    <!--
                     <iframe 
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="50px" height="20px"
                         src="//ghbtns.com/github-btn.html?user={{site.github_username}}&repo={{site.repo}}&type=star&count=false" >
                     </iframe>
+                    -->
+                    <a href="//github.com/qytang326/qytang326.github.io">
+                        <img src="/Source/images/icons/github-star.jpg" width="50px" height="20px" border="0" alt=" ">
+                    </a>
                     </span>
                     <br>
 					<span class="label label-primary label-md text-center"><strong>转载请标明作者和出处并告知</strong></span>
@@ -293,7 +298,7 @@
 <!-- 动态背景-鼠标特效 --> <!--只能位于<body></body>之间-->
 {% if site.canvas-nest %}
 <!--  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script> -->
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/1.0.1/canvas-nest.js"></script> -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/1.0.1/canvas-nest.js"></script>
 {% endif %}
 
 <!-- Back To Top -->
