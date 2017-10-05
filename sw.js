@@ -12,10 +12,6 @@ const CACHE_NAMESPACE = 'main-'
 const CACHE = CACHE_NAMESPACE + 'precache-then-runtime';
 const PRECACHE_LIST = [
   "./",
-  "./Source/images/",
-  "./js/",
-  "./css/",
-  "./pages/offline.html",
   "./js/jquery.min.js",
   "./js/jquery.nav.min.js",
   "./js/jquery.tagcloud.min.js",
