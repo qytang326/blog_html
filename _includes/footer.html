@@ -295,6 +295,7 @@
 <!-- Google Analytics -->
 {% if site.ga_track_id %}
     <script>
+    window.onload=function(){
         // dynamic User by Quanyin
         var _gaId = '{{ site.ga_track_id }}';
         var _gaDomain = '{{ site.ga_domain }}';
@@ -307,6 +308,7 @@
 
         ga('create', _gaId, _gaDomain);
         ga('send', 'pageview');
+        }
     </script>
 {% endif %}
 
