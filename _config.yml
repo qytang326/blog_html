@@ -107,7 +107,7 @@ daovoice_userid: NO_89757
 
 ### 统计与分析 Analytics settings
 # Baidu Analytics 
-ba_track_id: 'a9b724867d3ace8e123ba004607207f2'
+#ba_track_id: 'a9b724867d3ace8e123ba004607207f2'
 # Google Analytics
 ga_track_id: 'UA-105172812-1'            # Format: UA-xxxxxx-xx
 ga_domain: auto                         #  自定义的域名,默认的是 auto,
@@ -133,5 +133,29 @@ friends: [
     {   
          title: "CCMG",
          href: "https://fudanccmg.github.io"
+    },
+    {   
+         title: "阮一峰的网络日志",
+         href: "http://www.ruanyifeng.com/blog/"
+    },
+    {   
+         title: "不二侬",
+         href: "http://buer.website/pc.html"
+    },
+    {   
+         title: "时间的朋友",
+         href: "http://51world.win/"
+    },
+    {   
+         title: "廖雪峰的官方网站",
+         href: "https://www.liaoxuefeng.com/"
+    },
+    {   
+         title: "小众软件",
+         href: "http://www.appinn.com/"
+    },
+    {   
+         title: "月光博客",
+         href: "http://williamlong.info/"
     },
 ]
