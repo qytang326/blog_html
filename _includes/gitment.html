@@ -1,12 +1,12 @@
 {% if site.Gitment %}
 <div id="container"></div>
 <!--改为使用本地文件
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css" />
 <script async src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<link rel="stylesheet" href="/css/gitment.min.css">
+<link rel="stylesheet" href="/css/gitment.min.css" />
 -->
-<link rel="preload" href="{{ "/css/gitment.min.css" | prepend: site.baseurl }}" as="style" onload="this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="{{ "/css/gitment.min.css" | prepend: site.baseurl }}"></noscript>
+<link rel="preload" href="{{ "/css/gitment.min.css" | prepend: site.baseurl }}" as="style" onload="this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="{{ "/css/gitment.min.css" | prepend: site.baseurl }}" /></noscript>
 <script src="/js/gitment.min.js"></script>
 <script>
 var gitment = new Gitment({
