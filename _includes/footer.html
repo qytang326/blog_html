@@ -126,8 +126,8 @@
 
 <!-- Service Worker -->
 {% if site.service-worker %}
-<script src="{{ "/js/snackbar.js" | prepend: site.baseurl }}"></script>
-<script src="{{ "/js/sw-registration.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/snackbar.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/sw-registration.min.js" | prepend: site.baseurl }}"></script>
 {% endif %}
 
 <!-- async load function -->
@@ -166,7 +166,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async('{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}',function(){
+        async('{{ "/js/jquery.tagcloud.min.js" | prepend: site.baseurl }}',function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -214,7 +214,7 @@
      * Doc: //github.com/davist11/jQuery-One-Page-Nav
      * Fork by Quanyin to support padding
      */
-    async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
+    async("{{ '/js/jquery.nav.min.js' | prepend: site.baseurl }}", function () {
         $('.catalog-body').onePageNav({
             currentClass: "active",
             changeHash: !1,
