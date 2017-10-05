@@ -5,37 +5,39 @@
  * Licensed under Apache 2.0
  * service worker scripting
  * ========================================================== */
-
 // CACHE_NAMESPACE
 // CacheStorage is shared between all sites under same domain.
 // A namespace can prevent potential name conflicts and mis-deletion.
 const CACHE_NAMESPACE = 'main-'
-
 const CACHE = CACHE_NAMESPACE + 'precache-then-runtime';
 const PRECACHE_LIST = [
   "./",
   "./Source/images/",
   "./js/",
   "./css/",
-  "./offline.html",
+  "./pages/offline.html",
   "./js/jquery.min.js",
+  "./js/jquery.nav.min.js",
+  "./js/jquery.tagcloud.min.js",
+  "./js/gitment.min.js",
   "./js/bootstrap.min.js",
   "./js/Quanyin-blog.min.js",
-  "./js/snackbar.js",
+  "./js/snackbar.min.js",
   "./js/click-love.js",
   "./css/Quanyin-blog.min.css",
-  "./css/syntax.css",
+  "./css/syntax.min.css",
   "./css/bootstrap.min.css",
+  "./css/gitment.min.css",
   "./Source/images/avatar.jpg",
-  "./Source/images/icons/icon_wechat.png",
+  "./Source/images/icons/icon_wechat.jpg",
   "./Source/images/background/bg-home.jpg",
   "./Source/images/background/bg-offline.jpg",
   "./Source/images/background/bg-404.jpg",
   "./Source/images/background/bg-about.jpg",
   "./Source/images/background/bg-tags.jpg",
-  // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css",
-  // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3",
-  // "//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
+  "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css",
+  "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3",
+  "//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"
 ]
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
