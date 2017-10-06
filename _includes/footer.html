@@ -112,20 +112,29 @@
     </div>
 </footer>
 
+<!-- For loadCSS 异步加载css -->
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+</script>
+
 <!-- jQuery -->
-<script src="{{ "/js/jquery.min.js" | prepend: site.baseurl }}"></script>
+<!-- <script src="{{ "/js/jquery.min.js" | prepend: site.baseurl }}"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
-<script type="text/javascript" src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}" async="async"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" async="async"></script>
 
 <!-- Custom Theme JavaScript -->
 <script type="text/javascript" src="{{ "/js/Quanyin-blog.min.js" | prepend: site.baseurl }}" async="async"></script>
 
 <!-- Service Worker -->
 {% if site.service-worker %}
-<script type="text/javascript" src="{{ "/js/snackbar.min.js" | prepend: site.baseurl }}"  async="async"></script>
-<script type="text/javascript" src="{{ "/js/sw-registration.min.js" | prepend: site.baseurl }}"  async="async"></script>
+    <script type="text/javascript" src="{{ "/js/snackbar.min.js" | prepend: site.baseurl }}"  async="async"></script>
+    <script type="text/javascript" src="{{ "/js/sw-registration.min.js" | prepend: site.baseurl }}"  async="async"></script>
 {% endif %}
 
 <!-- async load function -->
@@ -280,7 +289,7 @@
 
 <!-- 页面点击小红心 -->
 {% if site.click-love %}
-    <!-- <script type="text/javascript" src="/js/click-love.js"   async="async"></script> -->
+    <!-- <script type="text/javascript" src="/js/click-love.js" async="async"></script> -->
     <script type="text/javascript">
     !function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
     </script>
