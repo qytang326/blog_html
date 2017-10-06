@@ -5,6 +5,7 @@ subtitle:   "THE HTML PRESENTATION FRAMEWORK"
 iframe:     "/Source/reveal-js/"
 date:       2017-07-08
 author:     "hakimel"
+author_homepage: "http://lab.hakim.se/reveal-js"
 catalog:    false
 categories:  
             - Example
