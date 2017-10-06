@@ -22,10 +22,13 @@ compress_html:                          # 压缩html
   switch: true
   clippings:      all
   comments:       all
-  endings:        all
+#  endings:        all
+  ignore:
+    envs: []
   blanklines: false
   profile: false
-  startings:      [html, head, body]
+#  startings:      [html, head, body]
+
 ### Gems
 plugins: 
   - github-pages
