@@ -2,12 +2,12 @@
 <div id="container"></div>
 <!--改为使用本地文件
 <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css" />
-<script async src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script type="text/javascript" src="//imsun.github.io/gitment/dist/gitment.browser.js" async="async"></script>
 <link rel="stylesheet" href="/css/gitment.min.css" />
 -->
 <link rel="preload" href="{{ "/css/gitment.min.css" | prepend: site.baseurl }}" as="style" onload="this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="{{ "/css/gitment.min.css" | prepend: site.baseurl }}" /></noscript>
-<script src="/js/gitment.min.js"></script>
+<script  type="text/javascript" src="/js/gitment.min.js" async="async"></script>
 <script>
 var gitment = new Gitment({
   id: '{{ page.url | replace:'index.html',''| replace:'.html','' |split: "/" | last|downcase }}', /* 页面ID，可选。默认为 location.href */

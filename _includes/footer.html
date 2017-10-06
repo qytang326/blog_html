@@ -117,15 +117,15 @@
 
 <!-- Bootstrap Core JavaScript -->
 <!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
-<script async src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}" async="async"></script>
 
 <!-- Custom Theme JavaScript -->
-<script async src="{{ "/js/Quanyin-blog.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/js/Quanyin-blog.min.js" | prepend: site.baseurl }}" async="async"></script>
 
 <!-- Service Worker -->
 {% if site.service-worker %}
-<script async src="{{ "/js/snackbar.min.js" | prepend: site.baseurl }}"></script>
-<script async src="{{ "/js/sw-registration.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/js/snackbar.min.js" | prepend: site.baseurl }}"  async="async"></script>
+<script type="text/javascript" src="{{ "/js/sw-registration.min.js" | prepend: site.baseurl }}"  async="async"></script>
 {% endif %}
 
 <!-- async load function -->
@@ -280,7 +280,7 @@
 
 <!-- 页面点击小红心 -->
 {% if site.click-love %}
-    <!-- <script async type="text/javascript" src="/js/click-love.js" ></script> -->
+    <!-- <script type="text/javascript" src="/js/click-love.js"   async="async"></script> -->
     <script type="text/javascript">
     !function(e,t,a){function n(){c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),o(),r()}function r(){for(var e=0;e<d.length;e++)d[e].alpha<=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText="left:"+d[e].x+"px;top:"+d[e].y+"px;opacity:"+d[e].alpha+";transform:scale("+d[e].scale+","+d[e].scale+") rotate(45deg);background:"+d[e].color+";z-index:99999");requestAnimationFrame(r)}function o(){var t="function"==typeof e.onclick&&e.onclick;e.onclick=function(e){t&&t(),i(e)}}function i(e){var a=t.createElement("div");a.className="heart",d.push({el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()}),t.body.appendChild(a)}function c(e){var a=t.createElement("style");a.type="text/css";try{a.appendChild(t.createTextNode(e))}catch(t){a.styleSheet.cssText=e}t.getElementsByTagName("head")[0].appendChild(a)}function s(){return"rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"}var d=[];e.requestAnimationFrame=function(){return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e){setTimeout(e,1e3/60)}}(),n()}(window,document);
     </script>
@@ -288,8 +288,8 @@
 
 <!-- 动态背景-鼠标特效 --> <!--只能位于<body></body>之间-->
 {% if site.canvas-nest %}
-    <!--  <script async type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script> -->
-    <script async type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/1.0.1/canvas-nest.js"></script>
+    <!--  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"  async="async"></script> -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/1.0.1/canvas-nest.js"  async="async"></script>
 {% endif %}
 
 <!-- Google Analytics -->
@@ -360,14 +360,59 @@
 
 <!-- pageviews-->
 {% if site.hit-kounter %}
-    <script async src="//cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
-    <script async src="//jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.3.0.js"></script>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/av-min-1.5.0.js"  async="async"></script>
+    <script type="text/javascript" src="//jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.3.0.js"  async="async"></script>
 {% endif %}
 
 <!-- busuanzi -->
 {% if site.busuanzi %}
 <!--
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script type="text/javascript" async="async"src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 -->
-    <script async src="/js/busuanzi.pure.mini.js"></script>    
+    <script type="text/javascript" async="async" src="/js/busuanzi.pure.mini.js"></script>    
 {% endif %}
+
+<style type="text/css">
+#back-top {
+  position: fixed;
+  bottom: 30px;
+  margin-left: 1040px;
+}
+#back-top a {
+  width: 54px;
+  height: 54px;
+  display: block;
+  background: #ddd url(/Source/images/icons/Back-Top_Arrow.png) no-repeat center center;
+  background-color: #aaa;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}
+#back-top a:hover {
+  background-color: #777;
+}
+</style>
+<div id="back-top">
+  <a href="#top" title="回到顶部"></a>
+</div>
+<script>
+$("#back-top").hide();
+$(document).ready(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('#back-top').fadeIn();
+    } else {
+      $('#back-top').fadeOut();
+    }
+  });
+  $('#back-top a').click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
+  });
+});
+</script>
