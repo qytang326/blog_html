@@ -20,16 +20,22 @@ paginate: 10                                    #每页展示项目数
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html` 取消#显示
 compress_html:                          # 压缩html
-  switch: true
-  clippings:      all
-  comments:       all
-#  endings:        all
-  ignore:
-    envs: []
-  blanklines: false
-  profile: false
-#  startings:      [html, head, body]
+    switch: true
+    clippings:      [all]
+    comments:       [all]
+#    endings:        [all]
+    ignore:
+        envs: []
+    blanklines: false
+    profile: false
+#    startings:      [html,head,body]
 
+jekyll-press:
+  exclude: 'feed.xml' # Exclude files from processing - file name, glob pattern or array of file names and glob patterns
+  js_options: {}      # js minifier options
+  css_options: {}     # css minifier options
+  html_options: {}    # html minifier options
+    
 ### Gems
 plugins: 
   - github-pages
@@ -39,6 +45,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist  
   - jekyll-feed
+  - jekyll-press
 #  - jemoji
 
 ### Markdown settings
