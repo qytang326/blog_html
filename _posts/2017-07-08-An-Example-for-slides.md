@@ -9,6 +9,7 @@ author_homepage: "https://huangxuan.me"
 catalog:    false
 categories: 
             - 转载
+            - Test
 tags:
             - Example
             - Presentation

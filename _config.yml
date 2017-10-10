@@ -85,11 +85,11 @@ APlayer:
     data-autoplay: true     #自动播放true or false
 ##不蒜子计数
 busuanzi: true
-busuanzi_fixcount: true #初始数值修正
+busuanzi_fixcount: false #初始数值修正
 ##pageviews
 hit-kounter: false
 ##页面点击小红心
-click-love: false
+click-love: true
 ##背景动画-特效
 canvas-nest: false
 ###推送到百度、360等以增加收录

@@ -6,11 +6,12 @@ create-date:    2016-08-11
 update-date:    2016-08-11
 author:         "Shiny"
 author_homepage: "http://shinyzhu.com"
-header-img:     "https://raw.githubusercontent.com/qytang326/qytang326.github.io/master/Source/images/background/post-bg-default.jpg"
+header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    ""
 catalog:        true
 categories:     
                 - 转载
+                - Test
 tags:
                 - Example
 ---
