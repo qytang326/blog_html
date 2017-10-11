@@ -100,7 +100,15 @@
                         src="//ghbtns.com/github-btn.html?user={{site.github_username}}&repo={{site.repo}}&type=star&count=false" >
                     </iframe> -->
                         <a href="//github.com/qytang326/qytang326.github.io">
-                            <img src="/Source/images/icons/github-star.jpg" width="50px" height="20px" border="0" alt=" " />
+                        <!--改用base64 编码<img src="/Source/images/icons/github-star.jpg" width="50px" height="20px" border="0" alt=" " /> -->
+                         <img src='data:img/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUEBAQEAwUEBAQGBQUGCA0ICAcHCBALDAkNExAUExIQEhIUFx0ZFBYcFhISGiMaHB4fISEhFBkkJyQgJh0gISD/2wBDAQUGBggHCA8ICA8gFRIVICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD/wAARCAAUADIDASIAAhEBAxEB/8QAGwABAAICAwAAAAAAAAAAAAAAAAUGBAcCAwj/xAAyEAABAwMCBAQFAgcAAAAAAAAB
+AgMEBRESAAYHEyEiFBYxQRUyU5LRF2EjMzVCUXOx/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAIREBAAAEBgMAAAAAAAAAAAAAAAERIUECMXGBkdGh8PH/2gAMAwEAAhEDEQA/APUdbrNC2xs97cte
+S2mLHYS664WwtSybAAX9SSbAa1SeKO/RWcv0Ol/B/m5n92GOWeeGHp1t6e2WrZxe23Ud0cGlwqUjnSo5jywziVc0IIKk4j16EnH3tbXOo8U4tP4RL3q7QlvpC/CiLHfaeQXCrAdyVHsy6WIyHukaC3bc
+qm3d17bhbhorbD0GYjNBLQBBvYpI9iCCCP8AOoWFvHb8+tyoLVDliHGefjOVUx2zEQ4yLuJWoKKm7de5aUpNuhPS8bwP25U9s8JqfCrLRjzJDrktUcjEsharhJHsbWJHte2oeBs6sw+LXmOi0KZtxuS+
+78WwntOwKi1ZXLcSgHmB0qUCbpSkd/Uk3Vm8teVtNbadvbh/UdvMbgTWaRGp0h1bLb0p5pm6wT29xFlEdcT1sRcamXqptSNUmabIn0pma/hy463W0uOZ3xskm5yxVaw62OtLjaG+07Jpe3nNtTHWo1Nm
+091qNMjMqW6taVNrU9zM/Dn3QkhRKO5BTYG87F2xWKVupupVSneHbTtyBT81LbUpLzZWXW+0k9Lp6jtPsTrdNvvUOYM4qZe1h34TsmfNZmPMtSilttakpTc9ADYDTWJP/qcr/av/AKdNRUq7WJUGQuG0
+htTbJwSVg3sOg9DrG+NO428FEtnzf5Z+f1y9fX99NNB3eY530mPtV+dPMc76TH2q/OmmgeY530mPtV+dPMU4g/w2B+4SfzppoJJNFhvoS85zCtwZKOXqT1Ommmg//9k=' width="50px" height="20px" border="0" alt=" "/>
                         </a>
                     </span>
                     <br>
@@ -283,7 +291,7 @@
 
 <!-- daovoice -->
 {% if site.daovoice %}
-    <script type="text/javascript">(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//widget.daovoice.io/widget/f72737da.js","daovoice");</script>
+    <script type="text/javascript">(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//widget.daovoice.io/widget/{{ site.daovoice_appid }}.js","daovoice");</script>
     <!-- 非注册用户-->
     <script type="text/javascript">
         daovoice('init', {
@@ -320,7 +328,7 @@
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        })(window,document,'script','/js/Quanyin-global.min.js','ga');
         ga('create', _gaId, _gaDomain);
         ga('send', 'pageview');
         }

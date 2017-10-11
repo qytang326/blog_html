@@ -17,11 +17,17 @@ module.exports = function(grunt) {
                 src: 'js/snackbar-sw-registration.js',
                 dest: 'js/snackbar-sw-registration.min.js'
                     },  
-            */
+            
             main4: {
+                src: 'js/analytics.js',
+                dest: 'js/analytics.min.js'
+                    },
+             */
+            jsglobal: {
                 src: 'js/Quanyin-global.js',
                 dest: 'js/Quanyin-global.min.js'
                     }
+               
                 },                
         concat: {
  /*           options: {
@@ -33,7 +39,7 @@ module.exports = function(grunt) {
                 dest: 'js/snackbar-sw-registration.js',
                     },
             dist2: {
-                src: ['js/loadCSS.js', 'js/cssrelpreload.js','/js/nav.js'],
+                src: ['js/loadCSS.js', 'js/cssrelpreload.js','js/analytics.js'],
                 dest: 'js/plugin.js',
                     },                    
             dist3: {
@@ -89,7 +95,7 @@ module.exports = function(grunt) {
                     banner: '<%= banner %>'
                 },
                 files: {
-                    src: ['css/Quanyin-global.css', 'css/Quanyin-global.min.css', 'js/Quanyin-global.min.js']
+                    src: ['css/Quanyin-global.css', 'css/Quanyin-global.min.css', 'js/Quanyin-global.min.js','js/Quanyin-global.min.js']
                 }
             }
         },
@@ -123,7 +129,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     /* Default task(s). */
-    grunt.registerTask('default', ['concat','uglify','jshint','less', 'usebanner','imagemin']);
+    grunt.registerTask('default', ['concat','uglify','less', 'usebanner']); /* 默认不进行图片压缩,原因有点慢 */
     grunt.registerTask('img', ['imagemin']);
 
 };
