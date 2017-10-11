@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                 dest: 'js/snackbar-sw-registration.js',
                     },
             dist2: {
-                src: ['js/loadCSS.js', 'js/csspreload.js'],
+                src: ['js/loadCSS.js', 'js/cssrelpreload.js','/js/nav.js'],
                 dest: 'js/plugin.js',
                     },                    
             dist3: {

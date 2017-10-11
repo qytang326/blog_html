@@ -69,8 +69,10 @@ layout: default
 				<span class="time">
 				/
 				<time>{{ page.date | date:"%Y-%m-%d" }}</time>
+                {% if site.hit-kounter %}
 				<style>span.test {color: #0085A5;font-weight: bold;}</style>
 				</span>/&nbsp;<span data-hk-page="current" class="test"> - </span>&nbsp;views
+                {% endif %}
                 <br>
 				<span>
 					<strong><em>Published under <a href="//creativecommons.org/licenses/by-nc-sa/4.0/">(CC) BY-NC-SA 4.0</a>.

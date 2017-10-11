@@ -2,8 +2,8 @@
 layout: post
 title: Dynamo：Amazon高可用键值存储系统（测试catalog）
 subtitle: "本文介绍了Amazon的高可用KV存储系统Dynamo，转发自网络上的一篇Word文档，有修正"
-create-date:    2016-08-11
-update-date:    2016-08-11
+date:       2016-08-11
+lastmod:    2017-08-18
 author:         "Shiny"
 author_homepage: "http://shinyzhu.com"
 header-img:     "/Source/images/background/post-bg-default.jpg"
