@@ -180,8 +180,8 @@
                 /* size: {start: 1, end: 1, unit: 'em'}, */
                 color: {start: '#bbbbee', end: '#0085a1'},
             };
-            $("#tag_cloud").find("a").tagcloud();
-            /* $('#tag_cloud a').tagcloud(); */
+         /* $('#tag_cloud a').tagcloud(); */
+            $('#tag_cloud').find('a').tagcloud();
         })
     }
 </script>
@@ -194,7 +194,7 @@
     })
 </script>
 
-<!-- Side Catalog -->
+<!-- Side Catalog  -->
 {% if site.catalog or page.catalog %}
 <script type="text/javascript">
     function generateCatalog (selector) {
@@ -240,6 +240,7 @@
     });
 </script>
 {% endif %}
+
 
 <!-- 网站运行时间记录 -->
 <script type="text/javascript">

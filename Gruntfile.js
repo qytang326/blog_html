@@ -62,7 +62,23 @@ module.exports = function(grunt) {
                     "css/Quanyin-global.min.css": "less/Quanyin-global.less"
                         }
                     }
-                },
+                },  
+        imagemin:{  
+            /* 压缩图片大小 */  
+            dist:{  
+                options: {  
+                    optimizationLevel: 3 /* 定义 PNG 图片优化水平  */
+                         },  
+                files: [  
+                       {  
+                    expand: true,  
+                    cwd: 'Source',  
+                    src: ['**/*.{png,jpg,jpeg,ico}'], /* 优化 img 目录下所有 png/jpg/jpeg 图片   */
+                    dest: 'Source/' /* 优化后的图片保存位置，覆盖旧图片，并且不作提示  */ 
+                    }  
+                    ]  
+                }  
+            },    
         banner: '/*! <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
             ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
             ' */\n',
@@ -95,7 +111,7 @@ module.exports = function(grunt) {
         },
     });
 
-    // Load the plugins.
+    /* Load the plugins. */
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-banner');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -105,7 +121,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
-    // Default task(s).
-    grunt.registerTask('default', ['concat','uglify','jshint','less', 'usebanner']);
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    /* Default task(s). */
+    grunt.registerTask('default', ['concat','uglify','jshint','less', 'usebanner','imagemin']);
+    grunt.registerTask('img', ['imagemin']);
 
 };
