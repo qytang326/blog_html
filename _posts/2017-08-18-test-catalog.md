@@ -7,7 +7,7 @@ lastmod:    2017-08-18
 author:         "Shiny"
 author_homepage: "http://shinyzhu.com"
 header-img:     "/Source/images/background/post-bg-default.jpg"
-description:    ""
+description:    "超大规模系统的可靠性是我们在 Amazon 面对的最大挑战之一，即使是最轻微的系统中断都有显著的经济后果并且影响到客户的信赖。Amazon.com平台，它为全球许多网站服务，是实现在位于世界各地的许多数据中心中的成千上万的服务器和网络基础设施之上。在这一规模中，各种大大小小的部件故障持续不断发生，管理持久化状态的方法在面对这些故障时，驱使软件系统的可靠性和可扩展性。本文介绍Dynamo的设计和实现，一个高可用的key-value存储系统，一些Amazon的核心服务使用它用以提供一个“永远在线”的用户体验。为了达到这个级别的可用性，Dynamo在某些故障的场景中将牺牲一致性。它大量使用对象版本和应用程序协助的冲突协调方式以提供一个开发人员可以使用的新颖接口。"
 catalog:        true
 categories:  [Example]
 tags:       [Example]
