@@ -4,15 +4,12 @@ title:      "JavaScript 模块化七日谈"
 subtitle:   "Slides: JavaScript Modularization Journey"
 iframe:     "/Source/js-module-7day"
 date:       2015-07-09
+lastmod:    2017-10-13
 author:     "Hux"
 author_homepage: "https://huangxuan.me"
 catalog:    false
-categories: 
-            - 转载
-            - Test
-tags:
-            - Example
-            - Presentation
+categories: [Example,Presentation]
+tags:       [Example,Presentation]
 ---
 Fork 自 [Huxpro@Github](https://github.com/Huxpro),作为模板进行创作
 

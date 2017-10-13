@@ -9,11 +9,8 @@ author_homepage: "http://shinyzhu.com"
 header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    ""
 catalog:        true
-categories:     
-                - 转载
-                - Test
-tags:
-                - Example
+categories:  [Example]
+tags:       [Example]
 ---
 
 注：本文转载自[这里](http://shinyzhu.com/2016/08/11/dynamo-amazons-ha-kv-store-ZH/)，用于测试长catalog。

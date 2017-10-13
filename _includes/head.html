@@ -22,9 +22,12 @@
     {% endif %}
     
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="all">
-    <meta name="author" content="{{ site.Author }},{{ site.Email }}">
-    <meta name="copyright" content="{{ site.Author }}">
+    <!-- 国产高速渲染 -->
+    <meta name="renderer" content="webkit" />
+    
+    <meta name="robots" content="all" />
+    <meta name="author" content="{{ site.Author }},{{ site.Email }}" />
+    <meta name="copyright" content="{{ site.Author }}" />
     <meta name="description" content="{{ site.description }}" />
     <meta name="keywords"  content="{{ site.keyword }}" />
     <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}" />
@@ -37,7 +40,6 @@
       
     <!-- Web App Manifest -->
     <link rel="manifest" href="{{ site.baseurl }}/Source/pwa/manifest.json" />
-
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ site.baseurl }}/Source/images/icons/favicon.ico" />
     

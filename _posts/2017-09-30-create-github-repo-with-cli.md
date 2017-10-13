@@ -8,11 +8,8 @@ header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    "不需要在github网页上创建仓库，直接用命令行搞定!"
 catalog:        true
 mathjax:        false
-categories:     
-                - blog
-                - 转载
-tags:
-                - Github
+categories:     [Github]
+tags:           [Github]
 ---
 
 > 摘要: 不需要在github网页上创建仓库，直接用命令行搞定，此文介绍三种直接在命令行创建GitHub仓库的形式！
