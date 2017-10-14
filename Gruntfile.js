@@ -17,12 +17,12 @@ module.exports = function(grunt) {
                 src: 'js/snackbar-sw-registration.js',
                 dest: 'js/snackbar-sw-registration.min.js'
                     },  
-            
+                         
             main4: {
-                src: 'js/analytics.js',
-                dest: 'js/analytics.min.js'
+                src: 'js/lazy-load-img.js',
+                dest: 'js/lazy-load-img.min.js'
                     },
-             */
+            */
             jsglobal: {
                 src: 'js/Quanyin-global.js',
                 dest: 'js/Quanyin-global.min.js'
@@ -85,9 +85,7 @@ module.exports = function(grunt) {
                     ]  
                 }  
             },    
-        banner: '/*! <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
-            ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-            ' */\n',
+        banner: '/*! <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>) || Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %> */',
         usebanner: {
             dist: {
                 options: {

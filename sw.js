@@ -27,6 +27,8 @@ const PRECACHE_LIST = [
   "./Source/images/background/bg-404.jpg",
   "./Source/images/background/bg-about.jpg",
   "./Source/images/background/bg-tags.jpg",
+  "./Source/images/background/bg-categories.jpg",
+  "./Source/images/background/post-bg-default.jpg",
   "//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js",
   "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
   "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.6.3",
