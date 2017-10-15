@@ -21,58 +21,12 @@ permalink: /:year/:month/:day/:title/      #自定义永久链接,或者使用#p
 paginate: 10                                    #每页展示项目数
 exclude: ["less","node_modules","Gruntfile.js","package.json","*lock*","Gemfile","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html` 取消#显示
-compress_html:                          # 压缩html
-    switch: true
-    clippings:      [all]
-    comments:       ["<!--","-->"]
-    endings:        [all]
-    ignore:
-        envs: []
-    blanklines: false
-    profile: false
-    startings:      [all]
-compress_html2:                          # 压缩html
-    switch: true
-    clippings: []
-    comments:       ["/*","*/"]
-    endings:        []
-    ignore:
-        envs: []
-    blanklines: false
-    profile: false
-    startings:      []
-jekyll-press:
-  exclude: 'feed.xml' # Exclude files from processing - file name, glob pattern or array of file names and glob patterns
-  js_options: {}      # js minifier options
-  css_options: {}     # css minifier options
-  html_options: {}    # html minifier options
-jekyll-minifier:
-  preserve_php: true                # Default: false
-  remove_spaces_inside_tags: true   # Default: true
-  remove_multi_spaces: true         # Default: true
-  remove_comments: true             # Default: true
-  remove_intertag_spaces: true      # Default: false
-  remove_quotes: true              # Default: false
-  compress_css: true                # Default: true
-  compress_javascript: true         # Default: true
-  simple_doctype: true             # Default: false
-  remove_script_attributes: true   # Default: false
-  remove_style_attributes: true    # Default: false
-  remove_link_attributes: true     # Default: false
-  remove_form_attributes: true     # Default: false
-  remove_input_attributes: true    # Default: false
-  remove_javascript_protocol: true # Default: false
-  remove_http_protocol: true       # Default: false
-  remove_https_protocol: true      # Default: false
-  preserve_line_breaks: true       # Default: false
-  simple_boolean_attributes: true  # Default: false
-  compress_js_templates: true      # Default: false  
+
 ### Gems
 plugins: 
   - github-pages
   - jekyll-paginate
   - jekyll-github-metadata
-  - jekyll-mentions
   - jekyll-gist  
   - jekyll-feed
   - jekyll-press
@@ -80,6 +34,55 @@ plugins:
   - jekyll-seo-tag
 #  - jemoji
 #  - jekyll-sitemap
+#  - jekyll-mentions 10.15禁用！会导致页面中文#锚点乱码
+
+compress_html:                          # 压缩html
+    switch: true
+    clippings:      [all]
+    comments:       ["<!--","-->"]
+    comments_inline:       ["/*","*/"]
+    endings:        [all]
+    ignore:
+        envs: [local]
+    blanklines: false
+    profile: false
+    startings:      [all]
+compress_html2:                          # 压缩html
+    switch: true
+    clippings:      [all]
+    comments:       ["/*","*/"]
+    endings:        [all]
+    ignore:
+        envs: [local]
+    blanklines: false
+    profile: false
+    startings:      [all]    
+jekyll-press:
+    exclude: 'feed.xml' # Exclude files from processing - file name, glob pattern or array of file names and glob patterns
+    js_options: {}      # js minifier options
+    css_options: {}     # css minifier options
+    html_options: {}    # html minifier options
+jekyll-minifier:
+    preserve_php: true                # Default: false
+    remove_spaces_inside_tags: true   # Default: true
+    remove_multi_spaces: true         # Default: true
+    remove_comments: true             # Default: true
+    remove_intertag_spaces: true      # Default: false
+    remove_quotes: true              # Default: false
+    compress_css: true                # Default: true
+    compress_javascript: true         # Default: true
+    simple_doctype: true             # Default: false
+    remove_script_attributes: true   # Default: false
+    remove_style_attributes: true    # Default: false
+    remove_link_attributes: true     # Default: false
+    remove_form_attributes: true     # Default: false
+    remove_input_attributes: true    # Default: false
+    remove_javascript_protocol: true # Default: false
+    remove_http_protocol: true       # Default: false
+    remove_https_protocol: true      # Default: false
+    preserve_line_breaks: true       # Default: false
+    simple_boolean_attributes: true  # Default: false
+    compress_js_templates: true      # Default: false
 
 ### Markdown settings
 # document: http://jekyllrb.com/docs/configuration/#kramdown
