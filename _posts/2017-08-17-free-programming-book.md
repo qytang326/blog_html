@@ -3,6 +3,7 @@ layout:         post
 title:          "免费的编程书籍列表-中文版"
 subtitle:       "转自Github"
 date:           2017-08-17 22:30
+lastmod:        2017-10-15 16:40
 author:         "Quanyin Tang"
 header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    free-programming-books-zh
@@ -16,69 +17,9 @@ tags:           [Study]
 
 ## 目录
 
-* [语言无关](#语言无关)
-  * [IDE](#ide)
-  * [MySQL](#mysql)
-  * [NoSQL](#nosql)
-  * [PostgreSQL](#postgresql)
-  * [Web](#web)
-  * [WEB服务器](#web服务器)
-  * [其它](#其它)
-  * [函数式概念](#函数式概念)
-  * [分布式系统](#分布式系统)
-  * [在线教育](#在线教育)
-  * [大数据](#大数据)
-  * [操作系统](#操作系统)
-  * [数据库](#数据库)
-  * [智能系统](#智能系统)
-  * [正则表达式](#正则表达式)
-  * [版本控制](#版本控制)
-  * [程序员杂谈](#程序员杂谈)
-  * [管理和监控](#管理和监控)
-  * [编程艺术](#编程艺术)
-  * [编译原理](#编译原理)
-  * [编辑器](#编辑器)
-  * [计算机图形学](#计算机图形学)
-  * [设计模式](#设计模式)
-  * [软件开发方法](#软件开发方法)
-  * [项目相关](#项目相关)
-* [语言相关](#语言相关)
-  * [Android](#android)
-  * [AWK](#awk)
-  * [C](#c)
-  * [C#](#c-sharp)
-  * [C++](#c-1)
-  * [CoffeeScript](#coffeescript)
-  * [Dart](#dart)
-  * [Elasticsearch](#elasticsearch)
-  * [Elixir](#elixir)
-  * [Erlang](#erlang)
-  * [Fortran](#fortran)
-  * [Golang](#golang)
-  * [Haskell](#haskell)
-  * [HTML / CSS](#html--css)
-  * [HTTP](#http)
-  * [iOS](#ios)
-  * [Java](#java)
-  * [JavaScript](#javascript)
-  * [LaTeX](#latex)
-  * [LISP](#lisp)
-  * [Lua](#lua)
-  * [Markdown](#markdown)
-  * [Node.js](#nodejs)
-  * [Perl](#perl)
-  * [PHP](#php)
-  * [Python](#python)
-  * [R](#r)
-  * [reStructuredText](#restructuredtext)
-  * [Ruby](#ruby)
-  * [Rust](#rust)
-  * [Scala](#scala)
-  * [Scheme](#scheme)
-  * [Shell](#shell)
-  * [Swift](#swift)
-  * [Vim](#vim)
-  * [Visual Prolog](#visual-prolog)
+* [一、语言无关](#一语言无关)
+* [二、语言相关](#二语言相关)
+
 
 
 ## 一、语言无关
