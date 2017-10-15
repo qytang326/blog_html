@@ -32,8 +32,9 @@ plugins:
   - jekyll-press
   - jekyll-minifier
   - jekyll-seo-tag
+  - jekyll-admin
 #  - jemoji
-#  - jekyll-sitemap
+  - jekyll-sitemap
 #  - jekyll-mentions 10.15禁用！会导致页面中文#锚点乱码
 
 compress_html:                          # 压缩html
@@ -180,6 +181,14 @@ friends: [
     {
          title: "Quanyin",
          href: "https://qytang326.github.io/"
+    },
+    {
+         title: "复旦大学",
+         href: "http://www.fudan.edu.cn/"
+    },
+    {
+         title: "物理系",
+         href: "http://phys.fudan.edu.cn/"
     },
     {
          title: "Hux Blog",
