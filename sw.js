@@ -21,7 +21,6 @@ const PRECACHE_LIST = [
   "./css/Quanyin-global.min.css",
   "./css/gitment.min.css",
   "./Source/images/avatar.jpg",
-  "./Source/images/icons/github-star.jpg",
   "./Source/images/background/bg-home.jpg",
   "./Source/images/background/bg-offline.jpg",
   "./Source/images/background/bg-404.jpg",

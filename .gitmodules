@@ -1,0 +1,4 @@
+[submodule "Source/impress-js"]
+	path = Source/impress-js
+	url = git@github.com:impress/impress.js.git
+	branch = gh-pages

@@ -1,9 +1,10 @@
 ---
 layout:     keynote
-title:      "Reveal.js"
-subtitle:   "THE HTML PRESENTATION FRAMEWORK"
+title:      "用网页做Presentation——Reveal.js"
+subtitle:   "The Html Presentation Framework"
 iframe:     "/Source/reveal-js/"
 date:       2017-07-08
+lastmod:    2017-10-16
 author:     "hakimel"
 author_homepage: "http://lab.hakim.se/reveal-js"
 catalog:    false

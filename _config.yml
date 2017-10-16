@@ -19,7 +19,7 @@ timezone: Asia/Shanghai
 highlighter: rouge
 permalink: /:year/:month/:day/:title/      #自定义永久链接,或者使用#permalink: pretty
 paginate: 10                                    #每页展示项目数
-exclude: ["less","node_modules","Gruntfile.js","package.json","*lock*","Gemfile","README.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","*lock*","Gemfile","README.md","/Source/*CHANGELOG*","*DOCUMENTATION*"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html` 取消#显示
 
 ### Gems
