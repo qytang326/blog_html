@@ -20,13 +20,6 @@ Fork 自 [hakimel@Github](https://github.com/hakimel/reveal-js)
 
 ### [Watch Fullscreen →](/Source/reveal-js/)
 
-<div class="visible-md visible-lg">
-<!--
-<img src="/**qrcode.png" width="350"/>
-<small class="img-hint">你也可以通过扫描二维码在手机上观看</small>
--->
-</div>
-
 
 ### Thanks
 

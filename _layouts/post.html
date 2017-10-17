@@ -59,21 +59,21 @@ layout: default
 				<a href="{{page.author_homepage |default: site.homepage}}">{{ page.author |default: site.Author }}</a>
 				<span class="time">
 				/
-				<time>{{ page.date | date:"%Y-%m-%d" }}</time>
+				<time>{{ page.date | date:"%Y-%m-%d" }}</time></span>
                 {% if site.hit-kounter %}
 				<style>span.test {color: #0085A5;font-weight: bold;}</style>
-				</span>/&nbsp;<span data-hk-page="current" class="test"> - </span>&nbsp;views
+				/&nbsp;<span data-hk-page="current" class="test"> - </span>&nbsp;views
                 {% endif %}
                 <br>
 				<span><strong><em>Published under <a href="//creativecommons.org/licenses/by-nc-sa/4.0/">(CC) BY-NC-SA 4.0</a></em></strong>
 				</span>
 				</p>
-                <hr style="visibility: hidden;">
+                <hr style="visibility: hidden;" />
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
                         <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                        Previous<br>
+                        Previous<br/>
                         <span>{{page.previous.title}}</span>
                         </a>
                     </li>
@@ -81,7 +81,7 @@ layout: default
                     {% if page.next.url %}
                     <li class="next">
                         <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                        Next<br>
+                        Next<br/>
                         <span>{{page.next.title}}</span>
                         </a>
                     </li>
@@ -112,7 +112,7 @@ layout: default
                 sidebar-container
                 catalog-container">
                 <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
+                    <hr class="hidden-sm hidden-xs" />
                     <h5>
                         <a class="catalog-toggle" href="#">CATALOG</a>
                     </h5>
@@ -130,7 +130,7 @@ layout: default
                 <!-- Featured Tags -->
                 {% if site.featured-tags %}
                 <section>
-                    <hr class="hidden-sm hidden-xs">
+                    <hr class="hidden-sm hidden-xs" />
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                         <a title="{{ page.title }}" href="//raw.githubusercontent.com/{{ site.repository }}/master/{{ page.path }}">源码</a>
@@ -147,7 +147,7 @@ layout: default
                 
                 <!-- Friends Blog -->
                 {% if site.friends %}
-                <hr>
+                <hr/>
                 <h5>FRIENDS</h5>
                 <ul class="list-inline">
                     {% for friend in site.friends %}
