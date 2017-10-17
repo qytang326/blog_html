@@ -234,5 +234,10 @@ layout: default
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
-<script type="text/javascript" async="async" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" async="async" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossOrigin="anonymous"></script>
+{% endif %}
+
+<!-- lazyload img https://github.com/aFarkas/lazysizes -->
+{% if page.lazyload %}
+<script type="text/javascript" async="async" src="//cdnjs.cloudflare.com/ajax/libs/lazysizes/4.0.0/lazysizes.min.js" crossOrigin="anonymous" ></script>
 {% endif %}

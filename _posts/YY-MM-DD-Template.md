@@ -1,6 +1,6 @@
 ---
 layout:         post
-title:          "An Template for a blog"
+title:          " "
 subtitle:       " "
 date:           2017-07-06 21:30
 lastmod:
@@ -10,6 +10,7 @@ header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    ""
 catalog:        true
 mathjax:        false
+lazyload:       false
 categories:     [Blog]
 tags:           [Markdown,Example]
 ---
