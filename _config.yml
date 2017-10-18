@@ -14,6 +14,7 @@ repo: qytang326.github.io                      #Where is the Repo
 
 ##### Build settings
 publish: true   
+async_css_all: true
 encoding: utf-8
 timezone: Asia/Shanghai
 highlighter: rouge

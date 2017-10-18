@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        expand: true,
         uglify: {
             main1: {
                 src: 'js/jquery.nav.js',
@@ -97,12 +98,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        htmllint: {
-            options: {},
-            src: [
-                    '_site/*.html'
-                 ],
-        },
         watch: {
             scripts: {
                 files: ['js/Quanyin-global.js'],
@@ -132,10 +127,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-htmllint');
     /* Default task(s). */
     grunt.registerTask('default', ['concat','uglify','less', 'usebanner']); /* 默认不进行图片压缩,原因有点慢 */
     grunt.registerTask('img', ['imagemin']);
-    grunt.registerTask('html', ['htmllint']);
 
 };
