@@ -33,7 +33,6 @@ plugins:
   - jekyll-press
   - jekyll-minifier
   - jekyll-seo-tag
-  - jekyll-admin
 #  - jemoji
   - jekyll-sitemap
 #  - jekyll-mentions 10.15禁用！会导致页面中文#锚点乱码
@@ -176,6 +175,7 @@ ga_domain: auto                         #  自定义的域名,默认的是 auto,
 #baidu-site-verification: "0H5CdgBtg0"       #origin,与域名有关,在_include/head.html中,下同  
 #baidu-site-verification: aNsquf4NVy
 google-site-verification: KIjjnGZK8x7PddQoXqhBJrOpbYg7k04AHE_gt_1PYtc 
+alexa: tIQVp1d3Zk20cU
 
 # Friends
 friends: [
