@@ -1,6 +1,7 @@
-修改README
+修改README,CHANGELOG
+
 Linux基础教程
-    ls
+    cd,ls
     ln
     tar
     find
@@ -12,4 +13,6 @@ Jekyll建站
 网站优化与测试
 
 git相关
+
+category重新写
 

@@ -8,11 +8,8 @@ header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    "Github上一个很火的项目，可以在一些网页中使用的emoji"
 catalog:        true
 mathjax:        false
-categories:     
-                - 转载
-tags:
-                - Markdown
-                - Cheat Sheet
+categories:     [Github]
+tags:           [emoji,Github]
 ---
 # emoji cheat sheet 项目地址[emoji-cheat-sheet.com](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
 
