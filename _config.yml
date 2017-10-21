@@ -33,7 +33,7 @@ plugins:
   - jekyll-press
   - jekyll-minifier
   - jekyll-seo-tag
-#  - jemoji
+  - jemoji
   - jekyll-sitemap
 #  - jekyll-mentions 10.15禁用！会导致页面中文#锚点乱码
 
