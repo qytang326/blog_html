@@ -20,7 +20,7 @@ tags:           [git]
 ```bash
 $ git clone https://github.com/user/repo.git [DirName]
 或者
-$ git clone $ git@github.com:user/repo.git [DirName]
+$ git clone git@github.com:user/repo.git [DirName]
 ```
 其中,user为用户名,repo为需要克隆的库名,DirName为可选,默认值为库的名称`repo`
 - 新建本地库
@@ -73,7 +73,6 @@ $ git blame <file>
 ```
 
 ### 分支与标签(Branch & Tag)
-
 - 列出所以存在的分支
 ```bash
 $ git branch -av
@@ -198,7 +197,6 @@ $ git reset --keep <commit>
 ```
  
 ### 最基础
-
 ```
 git init [<Project-Name>]                       #默认当前目录,否则新建<Project-Name>这个目录
 git add .                                       #把本地修改加入到暂存区
@@ -208,7 +206,6 @@ git push origin <local-branch>:<remote-branch>  #push到远程
 ```
 
 ### 最后！
-
 神器:Help命令~
 ```bash
 $ git help <command>

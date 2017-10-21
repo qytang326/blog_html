@@ -4,8 +4,8 @@ SEOTitle: Quanyin Tang的博客 | Quanyin Blog
 header-img: /Source/images/background/bg-default.jpg    #默认底图,相对地址,如果没有额外指定的话,1900*870,渐进式jpg
 Author: Quanyin Tang
 Email: qytang326@gmail.com
-description: "博学而笃志，切问而近思 | 这里是 @Quanyin 的个人博客，与你一起发现更大的世界。"
-keyword: "Quanyin, Quanyin Blog, Quanyin 博客, Quanyin Tang, Quanyin Tang的博客"
+description: "博学而笃志，切问而近思 | 这里是 @Quanyin Tang 的个人博客，与你一起发现更大的世界。"
+keyword: "Quanyin, Quanyin Blog, Quanyin 博客, Quanyin Tang, Quanyin Tang的博客, @Quanyin, @qytang326"
 url: "https://quanyin.eu.org"                # your host, for absolute URL
 #enforce_ssl: "quanyin.eu.org"
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog' /gh-pages-theme
@@ -175,7 +175,7 @@ ga_domain: auto                         #  自定义的域名,默认的是 auto,
 #baidu-site-verification: "0H5CdgBtg0"       #origin,与域名有关,在_include/head.html中,下同  
 #baidu-site-verification: aNsquf4NVy
 google-site-verification: KIjjnGZK8x7PddQoXqhBJrOpbYg7k04AHE_gt_1PYtc 
-alexa: tIQVp1d3Zk20cU
+# alexa: tIQVp1d3Zk20cU
 
 # Friends
 friends: [
