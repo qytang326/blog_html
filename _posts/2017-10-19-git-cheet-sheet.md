@@ -11,8 +11,8 @@ description:    ""
 catalog:        true
 mathjax:        false
 lazyload:       false
-categories:     [git]
-tags:           [git]
+categories:     [Git]
+tags:           [Git]
 ---
 
 ### 创建库

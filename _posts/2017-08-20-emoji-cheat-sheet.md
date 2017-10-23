@@ -3,15 +3,16 @@ layout:         post
 title:          "emoji cheat sheet"
 subtitle:       "可以在GitHub中使用的emoji"
 date:           2017-08-20 09:30
+lastmod:        2017-10-21
 author:         "WebpageFX"
 header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    "Github上一个很火的项目，可以在一些网页中使用的emoji"
 catalog:        true
 mathjax:        false
 categories:     [Github]
-tags:           [emoji,Github]
+tags:           [Emoji,Github]
 ---
-# emoji cheat sheet 项目地址[emoji-cheat-sheet.com](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
+> emoji cheat sheet 项目地址[emoji-cheat-sheet.com](https://www.webpagefx.com/tools/emoji-cheat-sheet/)
 
 ## People
 
