@@ -97,7 +97,7 @@ kramdown:
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "自由而无用的灵魂，<br>离开世界之前，一切都是过程"
 sidebar-avatar: /Source/images/avatar.jpg  # use absolute URL, seeing it's used in both `/` and `/about/`
-catalog: true                           # 文章侧边栏目录
+catalog: false                           # 文章侧边栏目录,每篇POST中分别定义
 keynote-catalog: false
 ### Featured Tags 推荐Tags
 featured-tags: true                     # whether or not using Feature-Tags
@@ -174,8 +174,8 @@ ga_domain: auto                         #  自定义的域名,默认的是 auto,
 ## 站点验证 html标记
 #baidu-site-verification: "0H5CdgBtg0"       #origin,与域名有关,在_include/head.html中,下同  
 #baidu-site-verification: aNsquf4NVy
-google-site-verification: KIjjnGZK8x7PddQoXqhBJrOpbYg7k04AHE_gt_1PYtc 
-# alexa: tIQVp1d3Zk20cU
+#google-site-verification: KIjjnGZK8x7PddQoXqhBJrOpbYg7k04AHE_gt_1PYtc #使用CNAME验证
+#alexa: tIQVp1d3Zk20cU
 
 # Friends
 friends: [

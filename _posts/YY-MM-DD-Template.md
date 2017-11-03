@@ -14,3 +14,6 @@ lazyload:       false
 categories:     [Blog]
 tags:           [Markdown,Example]
 ---
+<!--
+<a href="/Source/images/post-content/post-content/post-example.png"><img data-src="/Source/images/post-content/post-example.png" class="lazyload" alt=" " /></a>
+-->

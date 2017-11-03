@@ -7,6 +7,7 @@ lastmod:        2017-10-13
 author:         Quanyin Tang
 author_homepage: "https://quanyin.eu.org"
 description:    Markdown语法，转自Wow!Ubuntu
+catalog:        true
 categories:     [Markdown,Example] 
 tags:           [Markdown,Example]
 ---
