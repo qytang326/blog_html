@@ -20,7 +20,7 @@ timezone: Asia/Shanghai
 highlighter: rouge
 permalink: /:year/:month/:day/:title/      #自定义永久链接,或者使用#permalink: pretty
 paginate: 10                                    #每页展示项目数
-exclude: ["less","node_modules","Gruntfile.js","package.json","*lock*","Gemfile","README.md","/Source/*CHANGELOG*","*DOCUMENTATION*"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","*lock*","Gemfile","README.md","/Source/*CHANGELOG*","*DOCUMENTATION*","*baiduyun.uploading.cfg"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html` 取消#显示
 
 ### Gems
@@ -191,6 +191,14 @@ friends: [
          title: "物理系",
          href: "http://phys.fudan.edu.cn/"
     },
+    {   
+         title: "CCMG",
+         href: "https://fudanccmg.github.io"
+    },
+    {
+         title: "Dongsheng Luo",
+         href: "http://www.luods.org/"
+    },
     {
          title: "Hux Blog",
          href: "https://huangxuan.me/"
@@ -198,10 +206,6 @@ friends: [
     {   
          title: "BruceZhaoR",
          href: "https://brucezhaor.github.io"
-    },
-    {   
-         title: "CCMG",
-         href: "https://fudanccmg.github.io"
     },
     {   
          title: "阮一峰的网络日志",

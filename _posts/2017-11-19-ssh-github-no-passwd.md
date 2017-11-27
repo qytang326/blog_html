@@ -107,12 +107,12 @@ Hi qytang326! You've successfully authenticated, but GitHub does not provide she
 Connection to github.com closed. #成功
 ```
 3. Repo的地址改为ssh方式
-`
+```bash
 $ git remote add origin git@github.com:[username]/[your repo].git
-`
+```
 或者修改`.git/config`文件
 最后的状态应该是:
-```
+```bash
 $ git remote -v
 origin  git@github.com:qytang326/qytang326.github.io.git (fetch)
 origin  git@github.com:qytang326/qytang326.github.io.git (push)
@@ -125,25 +125,24 @@ origin  git@github.com:qytang326/qytang326.github.io.git (push)
 ## Https免密码登陆
 
 1. 新建文件并保存密码
-`
+```bash
 touch ~/.git-credentials
 vim ~/.git-credentials
-`
+```
 2. 添加内容
-`
+```
 https://{username}:{passwd}@github.com
-`
+```
 3. 添加git配置
-执行下面命令添加配置
-`
+执行下面命令添加配置:
+```bash
 git config --global credential.helper store
-`
-4. 查看~/.gitconfig文件变化
-~/.gitconfig文件多出下面配置项
-`
+```
+4. 查看`~/.gitconfig`文件变化,`~/.gitconfig`文件多出下面配置项:
+```bash
 [credential]
     helper = store
-`
+```
 
 ## 免密码`git push`
 经过以上两种免密码处理(SSH和https)中的任一种之后,再进行`git push`就不需要输入密码啦
