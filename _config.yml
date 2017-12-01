@@ -14,7 +14,7 @@ repo: qytang326.github.io                      #Where is the Repo
 
 ##### Build settings
 publish: true   
-async_css_all: true
+async_css_all: false
 encoding: utf-8
 timezone: Asia/Shanghai
 highlighter: rouge
@@ -25,14 +25,14 @@ anchorjs: true                          # if you want to customize anchor. check
 
 ### Gems
 plugins: 
-  - github-pages
+#  - github-pages
   - jekyll-paginate
 #  - jekyll-github-metadata
 #  - jekyll-gist  
   - jekyll-feed
 #  - jekyll-press
 #  - jekyll-minifier
-  - jekyll-seo-tag
+#  - jekyll-seo-tag
   - jemoji
   - jekyll-sitemap
 #  - jekyll-mentions 10.15禁用！会导致页面中文#锚点乱码
