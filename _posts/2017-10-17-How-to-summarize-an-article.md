@@ -7,7 +7,7 @@ lastmod:
 author:         "Quanyin Tang"
 author_homepage: https://quanyin.eu.org
 header-img:     "/Source/images/background/post-bg-default.jpg"
-description:    ""
+description:    "这篇文章告诉我们,如何用自己的语言精炼地去概述一篇文章。"
 catalog:        true
 mathjax:        false
 lazyload:       false

@@ -7,7 +7,7 @@ lastmod:        2017-10-14
 author:         "Quanyin Tang"
 author_homepage: https://quanyin.eu.org
 header-img:     "/Source/images/background/post-bg-default.jpg"
-description:    "本博客的CHANGELOG"
+description:    "本博客的CHANGELOG,记录博客的发展历程。"
 catalog:        true
 mathjax:        false
 categories:     [Github-pages]

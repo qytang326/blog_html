@@ -7,7 +7,7 @@ lastmod:        2017-10-13
 author:         "Bruce Zhao"
 author_homepage: "https://brucezhaor.github.io"
 header-img:     "/Source/images/background/post-bg-mathjax-logo.svg"
-description:    "看到许多博客里面的公式都是图片截图，在小赵眼里觉得很low。于是乎，小赵就开始寻找在jekyll中生成漂亮公式的方法- MathJax"
+description:    "看到许多博客里面的公式都是图片截图,在小赵眼里觉得很low。于是乎,小赵就开始寻找在jekyll中生成漂亮公式的方法- MathJax"
 catalog:        true
 mathjax:        true
 categories:     [Github]
@@ -17,13 +17,13 @@ tags:           [Example,Github-pages]
 
 ## 写在前面的话
 
-我最开始接触在html中写$$LaTeX$$公式是在使用Rmarkdown的时候，因为Rmarkdown只需要knit一下就能将markdown生成html。特别是公式只需要在公式两端加上`$公式$`(inline) `$$ 公式 $$`(equation)就能生成公式，特别对学统计学的小赵来说，特别的方便(在熟练的LaTeX公式的情况下)，再也不用word公式编辑器里面去拖拉拽了。
+我最开始接触在html中写$$LaTeX$$公式是在使用Rmarkdown的时候,因为Rmarkdown只需要knit一下就能将markdown生成html。特别是公式只需要在公式两端加上`$公式$`(inline) `$$ 公式 $$`(equation)就能生成公式,特别对学统计学的小赵来说,特别的方便(在熟练的LaTeX公式的情况下),再也不用word公式编辑器里面去拖拉拽了。
 
-自从接触了jekyll以后，就疯狂的爱上了这个工具，渐渐的Rmarkdown用的少了。现在使用Rmarkdown主要就是生成PDF和beamer报告用，以及帮帮研究僧同学调一调PDF格式用于提交作业。
+自从接触了jekyll以后,就疯狂的爱上了这个工具,渐渐的Rmarkdown用的少了。现在使用Rmarkdown主要就是生成PDF和beamer报告用,以及帮帮研究僧同学调一调PDF格式用于提交作业。
 
-之所以弃用Rmarkdown生成html的原因是不会调里面的CSS布局，以及增加手机阅读的适配性(现在几乎都是手机阅读，所以手机端的阅读体验是第一位)。而jekyll结合了bootstrap后，简直炫酷到不行，关键是有很多大牛的写好的现成的模板，Chorme -> <kbd>F12</kbd> 就能扒到css和版式。或者直接找到对应的github repository fork下来或者干脆download Zip，你就拥有了别人的博客了。多扒几个，研究研究就能融会贯通了，然后做成你想要的博客模板。
+之所以弃用Rmarkdown生成html的原因是不会调里面的CSS布局,以及增加手机阅读的适配性(现在几乎都是手机阅读,所以手机端的阅读体验是第一位)。而jekyll结合了bootstrap后,简直炫酷到不行,关键是有很多大牛的写好的现成的模板,Chorme -> <kbd>F12</kbd> 就能扒到css和版式。或者直接找到对应的github repository fork下来或者干脆download Zip,你就拥有了别人的博客了。多扒几个,研究研究就能融会贯通了,然后做成你想要的博客模板。
 
-感觉说了很多废话啊，还没有进入主题，可能是太久没有写一点东西了(还欠着2015年的总结啊，多少人盼望着...)，最近一直忙着改版博客，现在已经是第五次改版了重要满意了。
+感觉说了很多废话啊,还没有进入主题,可能是太久没有写一点东西了(还欠着2015年的总结啊,多少人盼望着...),最近一直忙着改版博客,现在已经是第五次改版了重要满意了。
 
 ## 在jekyll中调用MathJax JavaScript
 
@@ -54,7 +54,7 @@ tags:           [Example,Github-pages]
 
 ### 其次
 
-需要说明的是这里引发渲染的与Rmarkdown里面的略有区别：`$公式$`在这个里面是不能用的; `$$ 公式 $$` 在Rmarkdown里面是居中的公式，而在这里是Inline公式；这里的居中另起一行的是 `\\[ 公式 \\]`；也可以用 `\\( 公式 \\)`来实现Inline公式。
+需要说明的是这里引发渲染的与Rmarkdown里面的略有区别：`$公式$`在这个里面是不能用的; `$$ 公式 $$` 在Rmarkdown里面是居中的公式,而在这里是Inline公式；这里的居中另起一行的是 `\\[ 公式 \\]`；也可以用 `\\( 公式 \\)`来实现Inline公式。
 
 ### 示例
 

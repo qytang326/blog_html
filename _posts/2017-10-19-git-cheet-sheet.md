@@ -7,7 +7,7 @@ lastmod:
 author:         "Quanyin Tang"
 author_homepage: https://quanyin.eu.org
 header-img:     "/Source/images/background/post-bg-default.jpg"
-description:    ""
+description:    "git是现在最流行的版本控制工具。与CVS、Subversion一类的集中式版本控制工具不同,它采用了分布式版本库的作法,不需要服务器端软件,就可以运作版本控制,使得源代码的发布和交流极其方便。git的速度很快,git最为出色的是它的合并追踪(merge tracing)能力。"
 catalog:        true
 mathjax:        false
 lazyload:       false

@@ -6,7 +6,7 @@ date:           2017-08-20 09:30
 lastmod:        2017-10-21
 author:         "WebpageFX"
 header-img:     "/Source/images/background/post-bg-default.jpg"
-description:    "Github上一个很火的项目，可以在一些网页中使用的emoji"
+description:    "Github上一个很火的项目,可以在一些网页中使用的emoji"
 catalog:        true
 mathjax:        false
 categories:     [Github]

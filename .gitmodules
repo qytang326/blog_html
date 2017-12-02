@@ -1,4 +1,8 @@
 [submodule "Source/impress-js"]
 	path = Source/impress-js
 	url = https://github.com/impress/impress.js.git
+	branch = gh-pages  
+[submodule "Source/reveal-js"]
+	path = Source/reveal-js
+	url = https://github.com/hakimel/reveal.js.git
 	branch = gh-pages

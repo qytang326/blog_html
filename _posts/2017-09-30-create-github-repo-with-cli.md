@@ -5,35 +5,35 @@ subtitle:       " "
 date:           2017-09-30 20:30
 author:         "Quanyin Tang"
 header-img:     "/Source/images/background/post-bg-default.jpg"
-description:    "不需要在github网页上创建仓库，直接用命令行搞定!"
+description:    "不需要在github网页上创建仓库,直接用命令行搞定!"
 catalog:        true
 mathjax:        false
 categories:     [Github]
 tags:           [Github]
 ---
 
-> 摘要: 不需要在github网页上创建仓库，直接用命令行搞定，此文介绍三种直接在命令行创建GitHub仓库的形式！
+> 摘要: 不需要在github网页上创建仓库,直接用命令行搞定,此文介绍三种直接在命令行创建GitHub仓库的形式！
 
 ## 准备工作
-1. 进入一个本地仓库，并初始化
+1. 进入一个本地仓库,并初始化
     ```bash
     git init && git add . && git commit -m "Init"
     ```
 2. 新建一个API Token
-进入```github - settings - Personal access tokens```，[generate new token](https://github.com/settings/applications)，写入description，选择scopes(权限范围)。记住```personal access token```(那串数字，只显示一遍！),请记住它，下次就看不到了！
+进入```github - settings - Personal access tokens```,[generate new token](https://github.com/settings/applications),写入description,选择scopes(权限范围)。记住```personal access token```(那串数字,只显示一遍！),请记住它,下次就看不到了！
 
 ## 一、命令行格式
-这是最直接的一种形式，直接把参数写到命令行搞定：
+这是最直接的一种形式,直接把参数写到命令行搞定：
 
 ```bash
     curl -u "$username:$token" https://api.github.com/user/repos -d '{"name":"'$repo_name'"}'
 ```
 
-> Note: 这里需要把```$username```和```$token```分别换成实际的用户名和刚刚得到的```personal access token```，把```$repo_name```换成任何想要的```repo name```.
+> Note: 这里需要把```$username```和```$token```分别换成实际的用户名和刚刚得到的```personal access token```,把```$repo_name```换成任何想要的```repo name```.
 
 ## 二、bash形式
-可以把命令行写成bash脚本，下次只要执行里面的简单命令就可以执行以上整条命令。
-1. 把```username```和```token```写入```~/.gitconfig```，形式如下：
+可以把命令行写成bash脚本,下次只要执行里面的简单命令就可以执行以上整条命令。
+1. 把```username```和```token```写入```~/.gitconfig```,形式如下：
     ```bash
     [github]
         user = your user name
@@ -88,7 +88,7 @@ tags:           [Github]
 ```bash
 github-create [repo_name]
 ```
-> 其中，默认的repo名是当前目录名。
+> 其中,默认的repo名是当前目录名。
 
 ## 三、Bash形式简化版
 1. 把如下code写入```~/.bashrc```:
@@ -111,4 +111,4 @@ github-create [repo_name]
     ```simple-create [repo_name]```
 
 ## 四、备注
-本文转自[这里](https://my.oschina.net/eduOSS/blog/287824)，有修改。
+本文转自[这里](https://my.oschina.net/eduOSS/blog/287824),有修改。

@@ -6,7 +6,7 @@ date:           2017-08-17 22:30
 lastmod:        2017-10-15 16:40
 author:         "Quanyin Tang"
 header-img:     "/Source/images/background/post-bg-default.jpg"
-description:    free-programming-books-zh
+description:    "free-programming-books-zh"
 catalog:        true
 categories:     [Study]
 tags:           [Study]
@@ -74,8 +74,8 @@ tags:           [Study]
 * [关于浏览器和网络的 20 项须知](http://www.20thingsilearned.com/zh-CN/home)
 * [前端代码规范 及 最佳实践](http://coderlmn.github.io/code-standards/)
 * [前端开发体系建设日记](https://github.com/fouber/blog/issues/2)
-* [前端资源分享（一）](https://github.com/hacke2/hacke2.github.io/issues/1)
-* [前端资源分享（二）](https://github.com/hacke2/hacke2.github.io/issues/3)
+* [前端资源分享(一）](https://github.com/hacke2/hacke2.github.io/issues/1)
+* [前端资源分享(二）](https://github.com/hacke2/hacke2.github.io/issues/3)
 * [正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
 * [浏览器开发工具的秘密](http://jinlong.github.io/2013/08/29/devtoolsecrets/)
 * [移动Web前端知识库](https://github.com/AlloyTeam/Mars)
@@ -86,7 +86,7 @@ tags:           [Study]
 
 * [Apache 中文手册](http://works.jinbuguo.com/apache/menu22/index.html)
 * [Nginx开发从入门到精通](http://tengine.taobao.org/book/index.html) (淘宝团队出品)
-* [Nginx教程从入门到精通](http://www.ttlsa.com/nginx/nginx-stu-pdf/) (PDF版本，运维生存时间出品)
+* [Nginx教程从入门到精通](http://www.ttlsa.com/nginx/nginx-stu-pdf/) (PDF版本,运维生存时间出品)
 
 
 ### 7、其它
@@ -179,7 +179,7 @@ tags:           [Study]
 ### 16、版本控制
 
 * [Git - 简易指南](http://rogerdudler.github.io/git-guide/index.zh.html)
-* [Git-Cheat-Sheet](https://github.com/flyhigher139/Git-Cheat-Sheet) （感谢 @flyhigher139 翻译了中文版）
+* [Git-Cheat-Sheet](https://github.com/flyhigher139/Git-Cheat-Sheet) (感谢 @flyhigher139 翻译了中文版）
 * [Git Community Book 中文版](http://gitbook.liuhui998.com)
 * [git-flow 备忘清单](http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html)
 * [Git magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/)
@@ -187,7 +187,7 @@ tags:           [Study]
 * [Git 参考手册](http://gitref.justjavac.com)
 * [Github帮助文档](https://github.com/waylau/github-help)
 * [GitHub秘籍](https://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/)
-* [Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000) （本文由 [@廖雪峰](http://weibo.com/liaoxuefeng) 创作，如果觉得本教程对您有帮助，可以去 [iTunes](https://itunes.apple.com/cn/app/git-jiao-cheng/id876420437) 购买）
+* [Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000) (本文由 [@廖雪峰](http://weibo.com/liaoxuefeng) 创作,如果觉得本教程对您有帮助,可以去 [iTunes](https://itunes.apple.com/cn/app/git-jiao-cheng/id876420437) 购买）
 * [Got GitHub](https://github.com/gotgit/gotgithub)
 * [GotGitHub](http://www.worldhello.net/gotgithub/index.html)
 * [HgInit (中文版)](https://zh-hginit.readthedocs.io/en/latest/)
@@ -208,7 +208,7 @@ tags:           [Study]
 ### 18、管理和监控
 
 * [ElasticSearch 权威指南](https://www.gitbook.com/book/fuxiaopang/learnelasticsearch/details)
-* [Elasticsearch 权威指南（中文版）](http://es.xiaoleilu.com)
+* [Elasticsearch 权威指南(中文版）](http://es.xiaoleilu.com)
 * [ELKstack 中文指南](http://kibana.logstash.es)
 * [Logstash 最佳实践](https://github.com/chenryn/logstash-best-practice-cn)
 * [Mastering Elasticsearch(中文版)](http://udn.yyuap.com/doc/mastering-elasticsearch/)
@@ -217,7 +217,7 @@ tags:           [Study]
 
 ### 19、编程艺术
 
-* [取悦的工序：如何理解游戏](http://read.douban.com/ebook/4972883/) (豆瓣阅读，免费书籍)
+* [取悦的工序：如何理解游戏](http://read.douban.com/ebook/4972883/) (豆瓣阅读,免费书籍)
 * [每个程序员都应该了解的内存知识(译)](http://www.oschina.net/translate/what-every-programmer-should-know-about-memory-part1?print)【第一部分】
 * [程序员编程艺术](https://github.com/julycoding/The-Art-Of-Programming-by-July)
 * [编程入门指南](http://www.kancloud.cn/kancloud/intro-to-prog/52592)
@@ -262,7 +262,7 @@ tags:           [Study]
 * [Joel谈软件](http://local.joelonsoftware.com/wiki/Chinese_(Simplified))
 * [selenium 中文文档](https://github.com/fool2fish/selenium-doc)
 * [开源软件架构](http://www.ituring.com.cn/book/1143)
-* [持续集成（第二版）](http://article.yeeyan.org/view/2251/94882) (译言网)
+* [持续集成(第二版）](http://article.yeeyan.org/view/2251/94882) (译言网)
 * [約耳談軟體(Joel on Software)](http://local.joelonsoftware.com/wiki/%E9%A6%96%E9%A0%81)
 * [编码规范](https://github.com/ecomfe/spec)
 * [让开发自动化系列专栏](http://www.ibm.com/developerworks/cn/java/j-ap/)
@@ -321,7 +321,7 @@ tags:           [Study]
 * [Google C++ 风格指南](http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/contents/)
 * [QT 教程](http://www.kuqin.com/qtdocument/tutorial.html)
 * [ZMQ 指南](https://github.com/anjuke/zguide-cn)
-* [像计算机科学家一样思考（C++版)](http://www.ituring.com.cn/book/1203) (《How To Think Like a Computer Scientist: C++ Version》中文版)
+* [像计算机科学家一样思考(C++版)](http://www.ituring.com.cn/book/1203) (《How To Think Like a Computer Scientist: C++ Version》中文版)
 * [简单易懂的C魔法](http://www.nowamagic.net/librarys/books/contents/c)
 * [跟我一起写Makefile(PDF)](http://scc.qibebt.cas.cn/docs/linux/base/%B8%FA%CE%D2%D2%BB%C6%F0%D0%B4Makefile-%B3%C2%F0%A9.pdf) (PDF)
 
@@ -339,7 +339,7 @@ tags:           [Study]
 
 ### 8、Elasticsearch
 
-* [Elasticsearch 权威指南](https://github.com/looly/elasticsearch-definitive-guide-cn) （《Elasticsearch the definitive guide》中文版）
+* [Elasticsearch 权威指南](https://github.com/looly/elasticsearch-definitive-guide-cn) (《Elasticsearch the definitive guide》中文版）
 * [ELKstack 中文指南](http://kibana.logstash.es)
 * [Mastering Elasticsearch(中文版)](http://udn.yyuap.com/doc/mastering-elasticsearch/)
 
@@ -465,11 +465,11 @@ tags:           [Study]
   * [impress.js的中文教程](https://github.com/kokdemo/impress.js-tutorial-in-Chinese)
 * [JavaScript Promise迷你书](http://liubin.github.io/promises-book/)
 * [Javascript 原理](http://typeof.net/s/jsmech/)
-* [JavaScript 标准参考教程（alpha）](http://javascript.ruanyifeng.com)
+* [JavaScript 标准参考教程(alpha）](http://javascript.ruanyifeng.com)
 * [《JavaScript 模式》](https://github.com/jayli/javascript-patterns) “JavaScript patterns”中译本
 * [javascript 的 12 个怪癖](https://github.com/justjavac/12-javascript-quirks)
 * [JavaScript 秘密花园](http://bonsaiden.github.io/JavaScript-Garden/zh/)
-* [JavaScript核心概念及实践](http://icodeit.org/jsccp/) (PDF) (此书已由人民邮电出版社出版发行，但作者依然免费提供PDF版本，希望开发者们去购买，支持作者)
+* [JavaScript核心概念及实践](http://icodeit.org/jsccp/) (PDF) (此书已由人民邮电出版社出版发行,但作者依然免费提供PDF版本,希望开发者们去购买,支持作者)
 * [Javascript编程指南](http://pij.robinqu.me) ([源码](https://github.com/RobinQu/Programing-In-Javascript))
 * jQuery
   * [How to write jQuery plugin](http://i5ting.github.io/How-to-write-jQuery-plugin/build/jquery.plugin.html)
@@ -503,7 +503,7 @@ tags:           [Study]
 * [You-Dont-Know-JS](https://github.com/getify/You-Dont-Know-JS) (深入JavaScript语言核心机制的系列图书)
 * Zepto.js
   * [Zepto.js 中文文档](http://css88.com/doc/zeptojs_api)
-* [命名函数表达式探秘](http://justjavac.com/named-function-expressions-demystified.html)  (注:原文由[为之漫笔](http://www.cn-cuckoo.com) 翻译，原始地址无法打开，所以此处地址为我博客上的备份)
+* [命名函数表达式探秘](http://justjavac.com/named-function-expressions-demystified.html)  (注:原文由[为之漫笔](http://www.cn-cuckoo.com) 翻译,原始地址无法打开,所以此处地址为我博客上的备份)
 * [学用 JavaScript 设计模式](http://www.oschina.net/translate/learning-javascript-design-patterns) (开源中国)
 * [深入理解JavaScript系列](http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html)
 
@@ -537,8 +537,8 @@ tags:           [Study]
 ### 23、Node.js
 
 * [Node 入门](http://www.nodebeginner.org/index-zh-cn.html)
-* [The NodeJS 中文文档](https://www.gitbook.com/book/0532/nodejs/details) （社区翻译）
-* [七天学会NodeJS](http://nqdeng.github.io/7-days-nodejs/) 阿里出品，很好的入门资料
+* [The NodeJS 中文文档](https://www.gitbook.com/book/0532/nodejs/details) (社区翻译）
+* [七天学会NodeJS](http://nqdeng.github.io/7-days-nodejs/) 阿里出品,很好的入门资料
 
 
 ### 24、Perl

@@ -13,7 +13,7 @@ homepage: "https://quanyin.eu.org"
 repo: qytang326.github.io                      #Where is the Repo
 
 ##### Build settings
-publish: true   
+publish: false   
 async_css_all: false
 encoding: utf-8
 timezone: Asia/Shanghai
@@ -210,6 +210,10 @@ friends: [
     {   
          title: "阮一峰的网络日志",
          href: "http://www.ruanyifeng.com/blog/"
+    },
+    {
+        title: "莫烦Python",
+        href: "https://morvanzhou.github.io/"
     },
     {   
          title: "不二侬",
