@@ -3,7 +3,7 @@
 - [ ] Linux基础教程
     - [x] cd,ls
     - [ ] ln
-    - [ ] tar
+    - [x] tar
     - [ ] find
     - [ ] sed
     - [ ] awk
@@ -16,5 +16,12 @@
 
 - [ ] category重新写
 
-- [ ] 加密与身份验证ssh,openssl,gpg
+- [ ] 加密与身份验证
+    - [x]ssh
+    - [ ]openssl
+    - [ ]gpg
+- [ ] Python
+    - [ ]科学计算
+    - [ ]数据分析
+    - [ ]机器学习
 

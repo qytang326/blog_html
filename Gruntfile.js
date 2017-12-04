@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-    // Project configuration.
+    /* Project configuration. */
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         expand: true,
@@ -86,7 +86,34 @@ module.exports = function(grunt) {
                     }  
                     ]  
                 }  
-            },    
+            },
+        image: {
+          static: {
+            options: {
+              optipng: true,
+              pngquant: true,
+              zopflipng: true,
+              pngout:true,
+              jpegRecompress: true,
+              mozjpeg: true,
+              jpegoptim:true,
+              guetzli: true,
+              gifsicle: true,
+              svgo: true
+            },
+            files: {
+              '/favicon.ico': 'favicon.ico'
+            } 
+          },
+          dynamic: {
+            files: [{
+              expand: true,
+              cwd: 'Source/',
+              src: ['**/*.{png,jpg,gif,svg.ico}'],
+              dest: 'Source/'
+            }]
+          }
+        },            
         banner: '/*! <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>) || Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %> */',
         usebanner: {
             dist: {
@@ -128,8 +155,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-image');
     /* Default task(s). */
     grunt.registerTask('default', ['concat','uglify','less', 'usebanner']); /* 默认不进行图片压缩,原因有点慢 */
-    grunt.registerTask('img', ['imagemin']);
+    grunt.registerTask('img', ['imagemin','image']);
 
 };
