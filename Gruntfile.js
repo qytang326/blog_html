@@ -80,9 +80,9 @@ module.exports = function(grunt) {
                 files: [  
                        {  
                     expand: true,  
-                    cwd: 'Source',  
+                    cwd: 'Source/images/',  
                     src: ['**/*.{png,jpg,jpeg,ico}'], /* 优化 img 目录下所有 png/jpg/jpeg 图片   */
-                    dest: 'Source/' /* 优化后的图片保存位置，覆盖旧图片，并且不作提示  */ 
+                    dest: 'Source/images/' /* 优化后的图片保存位置，覆盖旧图片，并且不作提示  */ 
                     }  
                     ]  
                 }  
@@ -108,9 +108,9 @@ module.exports = function(grunt) {
           dynamic: {
             files: [{
               expand: true,
-              cwd: 'Source/',
+              cwd: 'Source/images/',
               src: ['**/*.{png,jpg,gif,svg.ico}'],
-              dest: 'Source/'
+              dest: 'Source/images/'
             }]
           }
         },            
