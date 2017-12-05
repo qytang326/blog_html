@@ -8,7 +8,7 @@ lastmod:    2017-10-16
 author:     "Bartek Szopka"
 author_homepage: "http://impress.github.io/impress.js"
 catalog:    false
-categories: [Example,Presentation]
+categories: [笔记]
 tags:       [Example,Presentation]          
 ---
 

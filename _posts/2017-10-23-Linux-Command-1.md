@@ -11,7 +11,7 @@ description:    "Linux系统下一些常用命令介绍"
 catalog:        true
 mathjax:        false
 lazyload:       false
-categories:     [Linux]
+categories:     [编程]
 tags:           [Linux]
 ---
 ## ls

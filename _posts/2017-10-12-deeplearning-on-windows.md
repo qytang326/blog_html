@@ -10,8 +10,8 @@ header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    "本文从最基本的依赖项开始,依次配置了 VS 2015、Anaconda 4.4.0、CUDA 8.0.61 和 cuDNN v5.1 等基本环境,然后再从 Keras 出发安装 Theano、TensorFlow 和 CNTK 以作为其后端.在完成配置深度学习框架后,本文分别利用这三个框架作为 Keras 后端在 CPU 和 GPU 上训练了一个标准的卷积神经网络,完成该简单的卷积网络也就意味着我们完成了深度学习环境的配置."
 catalog:        true
 mathjax:        false
-categories:     [Deep-Learning]
-tags:           [Deep-Learning]
+categories:     [编程,笔记]
+tags:           [Deep-Learning,Python]
 ---
 
 > 本文经机器之心(微信公众号:almosthuman2014)授权转载,禁止二次转载.本文由机器之心编译,蒋思源、刘晓坤参与.

@@ -8,7 +8,7 @@ lastmod:    2017-10-13
 author:     "Hux"
 author_homepage: "https://huangxuan.me"
 catalog:    false
-categories: [Example,Presentation]
+categories: [笔记]
 tags:       [Example,Presentation]
 ---
 Fork 自 [Huxpro@Github](https://github.com/Huxpro),作为模板进行创作

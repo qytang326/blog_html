@@ -8,7 +8,7 @@ author:         Quanyin Tang
 author_homepage: "https://quanyin.eu.org"
 description:    "Markdown语法,转自Wow!Ubuntu"
 catalog:        true
-categories:     [Markdown,Example] 
+categories:     [编程,笔记] 
 tags:           [Markdown,Example]
 ---
 

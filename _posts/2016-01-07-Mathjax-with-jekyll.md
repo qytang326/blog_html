@@ -10,7 +10,7 @@ header-img:     "/Source/images/background/post-bg-mathjax-logo.svg"
 description:    "看到许多博客里面的公式都是图片截图,在小赵眼里觉得很low。于是乎,小赵就开始寻找在jekyll中生成漂亮公式的方法- MathJax"
 catalog:        true
 mathjax:        true
-categories:     [Github]
+categories:     [笔记]
 tags:           [Example,Github-pages]
 ---
 

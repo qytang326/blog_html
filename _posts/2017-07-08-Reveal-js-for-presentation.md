@@ -8,7 +8,7 @@ lastmod:    2017-10-16
 author:     "hakimel"
 author_homepage: "http://lab.hakim.se/reveal-js"
 catalog:    false
-categories: [Example,Presentation]
+categories: [笔记]
 tags:       [Example,Presentation]          
 ---
 

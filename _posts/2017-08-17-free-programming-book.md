@@ -8,7 +8,7 @@ author:         "Quanyin Tang"
 header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    "free-programming-books-zh"
 catalog:        true
-categories:     [Study]
+categories:     [编程,学习]
 tags:           [Study]
 ---
 

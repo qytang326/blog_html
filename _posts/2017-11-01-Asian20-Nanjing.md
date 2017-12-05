@@ -11,7 +11,7 @@ description:    ""
 catalog:        false
 mathjax:        false
 lazyload:       true
-categories:     []
+categories:     [科研]
 tags:           []
 ---
 <!--

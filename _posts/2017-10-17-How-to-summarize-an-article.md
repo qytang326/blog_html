@@ -11,7 +11,7 @@ description:    "这篇文章告诉我们,如何用自己的语言精炼地去�
 catalog:        true
 mathjax:        false
 lazyload:       false
-categories:     [English]
+categories:     [学习]
 tags:           [English]
 ---
 

@@ -11,7 +11,7 @@ description:    "利用ssh可以实现免密码登陆Github,Linux服务器等"
 catalog:        true
 mathjax:        false
 lazyload:       false
-categories:     [Github]
+categories:     [笔记]
 tags:           [Github,SSH]
 ---
 <!--

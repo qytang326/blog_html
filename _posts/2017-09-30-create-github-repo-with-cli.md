@@ -8,7 +8,7 @@ header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    "不需要在github网页上创建仓库,直接用命令行搞定!"
 catalog:        true
 mathjax:        false
-categories:     [Github]
+categories:     [笔记]
 tags:           [Github]
 ---
 

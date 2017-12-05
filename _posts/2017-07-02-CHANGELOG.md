@@ -10,6 +10,6 @@ header-img:     "/Source/images/background/post-bg-default.jpg"
 description:    "本博客的CHANGELOG,记录博客的发展历程。"
 catalog:        true
 mathjax:        false
-categories:     [Github-pages]
+categories:     [笔记]
 tags:           [Github-pages]
 ---

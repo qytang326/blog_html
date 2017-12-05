@@ -11,8 +11,8 @@ description:    "Python 是 Google主要的脚本语言。这本风格指南主�
 catalog:        true
 mathjax:        false
 lazyload:       false
-categories:     [Python]
-tags:           [Python]
+categories:     [笔记,编程]
+tags:           [Python,Style]
 ---
 ----
 ----

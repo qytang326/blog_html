@@ -11,7 +11,7 @@ description:    "git是现在最流行的版本控制工具。与CVS、Subversio
 catalog:        true
 mathjax:        false
 lazyload:       false
-categories:     [Git]
+categories:     [编程,笔记]
 tags:           [Git]
 ---
 

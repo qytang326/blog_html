@@ -12,7 +12,7 @@ catalog:        true
 mathjax:        false
 lazyload:       false
 keyword:        tar,linux,
-categories:     [Linux]
+categories:     [编程]
 tags:           [Linux]
 ---
 <!--

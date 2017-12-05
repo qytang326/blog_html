@@ -20,7 +20,7 @@ timezone: Asia/Shanghai
 highlighter: rouge
 permalink: /:year/:month/:day/:title/      #自定义永久链接,或者使用#permalink: pretty
 paginate: 10                                    #每页展示项目数
-exclude: ["less","node_modules","Gruntfile.js","package.json","*lock*","Gemfile","README.md","/Source/*CHANGELOG*","*DOCUMENTATION*","*baiduyun.uploading.cfg"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","*lock*","Gemfile","README.md","CHANGELOG.md","CONTRIBUTING.md","DOCUMENTATION.md","/Source/*example*","*baiduyun.uploading.cfg"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html` 取消#显示
 
 ### Gems
@@ -101,7 +101,7 @@ catalog: false                           # 文章侧边栏目录,每篇POST中�
 keynote-catalog: false
 ### Featured Tags 推荐Tags
 featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 2              # A tag will be featured if the size of it is more than this condition value
+featured-condition-size: 3              # A tag will be featured if the size of it is more than this condition value
 ## Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
