@@ -218,12 +218,15 @@ sudo yum install epel-release
     sudo yum install git                    # 版本控制
     sudo yum install openssl openssl-devel  # ssl模块
     sudo yum install blas blas-devel        # 矩阵运算库
-    sudo yum atlas atlas-devel 
-    sudo yum openblas openblas-devel
-    sudo yum lapack lapack-devel 
-    sudo yum zlib zlib-devel
-    sudo yum glibc glibc-devel glib2 glib2-devel # glibc支持与升级
-    sudo yum sqlite sqlite-devel                # sqlit 
+    sudo yum install atlas atlas-devel 
+    sudo yum install openblas openblas-devel
+    sudo yum install lapack lapack-devel 
+    sudo yum install bzip2 bzip2-devel
+    sudo yum install readline readline-devel
+    sudo yum install zlib zlib-devel
+    sudo yum install glibc glibc-devel glib2 glib2-devel # glibc支持与升级
+    sudo yum install sqlite sqlite-devel                # sqlit 
+    sudo yum install boost boost-devel                  # 编译安装torque需要
 ```
 ### 其他工具
 ```bash

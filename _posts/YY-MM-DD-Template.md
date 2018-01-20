@@ -1,17 +1,17 @@
 ---
 layout:         post
-title:          ""
-subtitle:       ""
-description:    ""
-date:           2017-07-06 21:30
-lastmod:
+title:          "标题"
+subtitle:       "子标题"
+description:    "简述"
+date:           2018-01-01 00:00
+lastmod:        
 author:         "Quanyin Tang"
 author_homepage: https://quanyin.eu.org
 header-img:     "/Source/images/background/post-bg-default.jpg"
 catalog:        true
 mathjax:        false
 lazyload:       false
-keyword:        
+keyword:        关键词,keyword,
 categories:     []
 tags:           []
 ---
