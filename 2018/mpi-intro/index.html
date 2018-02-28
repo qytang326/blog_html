@@ -1,0 +1,125 @@
+<!doctype html><html lang=zh-cn itemscope itemtype=http://schema.org/WebPage><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>并行计算MPI简介 - 已停更的小博客</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content=width><meta name=HandheldFriendly content=true><meta name=applicable-device content=pc,mobile><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=mobile-web-app-capable content=yes><meta name=author content=Quanyin><meta name=description content="消息传递界面/接口（英语：Message Passing Interface，缩写MPI）是一个并行计算的应用程序接口（API），常在超级计算机、计算簇等非共享内存环境程序设计。"><meta name=keywords content=mpi><meta name=generator content="Hugo 0.55.6"><link rel=canonical href=/2018/mpi-intro/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media=screen crossorigin=anonymous><meta property=og:title content=并行计算MPI简介><meta property=og:description content="消息传递界面/接口（英语：Message Passing Interface，缩写MPI）是一个并行计算的应用程序接口（API），常在超级计算机、计算簇等非共享内存环境程序设计。"><meta property=og:type content=article><meta property=og:url content=/2018/mpi-intro/><meta property=article:published_time content=2018-09-19T14:26:42&#43;08:00><meta property=article:modified_time content=2020-05-07T17:24:00&#43;08:00><meta itemprop=name content=并行计算MPI简介><meta itemprop=description content="消息传递界面/接口（英语：Message Passing Interface，缩写MPI）是一个并行计算的应用程序接口（API），常在超级计算机、计算簇等非共享内存环境程序设计。"><meta itemprop=datePublished content=2018-09-19T14:26:42&#43;08:00><meta itemprop=dateModified content=2020-05-07T17:24:00&#43;08:00><meta itemprop=wordCount content=1124><meta itemprop=keywords content=mpi,><meta name=twitter:card content=summary><meta name=twitter:title content=并行计算MPI简介><meta name=twitter:description content="消息传递界面/接口（英语：Message Passing Interface，缩写MPI）是一个并行计算的应用程序接口（API），常在超级计算机、计算簇等非共享内存环境程序设计。"><script>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-126038371-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4469282388984999",enable_page_level_ads:true});</script><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=/>主页</a><li class=mobile-menu-item><a class=menu-item-link href=/notice/>通知</a><li class=mobile-menu-item><a class=menu-item-link href=/post/>时光机</a><li class=mobile-menu-item><div class=mobile-menu-parent><span class=mobile-submenu-open></span><a href=/categories/>分类</a></div><ul class=mobile-submenu-list><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=mobile-menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav><link rel=stylesheet href=/lib/photoswipe/photoswipe.min.css><link rel=stylesheet href=/lib/photoswipe/default-skin/default-skin.min.css><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>主页</a><li class=menu-item><a class=menu-item-link href=/notice/>通知</a><li class=menu-item><a class=menu-item-link href=/post/>时光机</a><li class=menu-item><a class="menu-item-link menu-parent" href=/categories/>分类</a><ul class=submenu><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>并行计算MPI简介</h1><div class=post-meta><time datetime=2018-09-19 class=post-time>2018-09-19</time><div class=post-category><a href=/categories/%E7%A7%91%E7%A0%94/>科研</a>
+<a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/>错误处理</a></div><span class=more-meta>约 1124 字</span>
+<span class=more-meta>预计阅读 3 分钟</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#单节点-本地>单节点/本地</a><li><a href=#多节点-集群使用>多节点/集群使用</a><li><a href=#参考>参考</a></ul></ul></nav></div></div><div class=post-content><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=4019390506 data-ad-format=link data-full-width-responsive=true></ins><p>消息传递界面/接口（英语：Message Passing Interface，缩写MPI）是一个并行计算的应用程序接口（API），常在超级计算机、计算簇等非共享内存环境程序设计。<p><link rel=stylesheet href=/css/hugo-easy-gallery.css><div class=box><figure class="center lazyload" itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/img/background/post-bg-mpi.jpg></div><a href=/img/background/post-bg-mpi.jpg itemprop=contentUrl></a></figure></div><p>MPI 是一种接口，常用的实现方式是开源的 OPENMPI 和 Intel 商业化的 IMPI。<h2 id=单节点-本地>单节点/本地</h2><p>正常的单机使用 mpi，一般不会出现什么问题，直接使用 <code>mpirun -np 并行数 命令</code>即可，以下是完整的一个 C 语言例子。<p>首先编写源码，如 <a href=//github.com/wesleykendall/mpitutorial/blob/gh-pages/tutorials/mpi-hello-world/code/mpi_hello_world.c target=_blank>mpi-hello.c</a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-C data-lang=C><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-C data-lang=C><span class=cp>#include</span> <span class=cpf>&lt;mpi.h&gt;</span><span class=cp>
+</span><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span><span class=cp></span>
+<span class=kt>int</span> <span class=nf>main</span><span class=p>(</span><span class=kt>int</span> <span class=n>argc</span><span class=p>,</span> <span class=kt>char</span><span class=o>**</span> <span class=n>argv</span><span class=p>)</span> <span class=p>{</span>
+    <span class=c1>// 初始化 MPI 环境
+</span><span class=c1></span>    <span class=n>MPI_Init</span><span class=p>(</span><span class=nb>NULL</span><span class=p>,</span> <span class=nb>NULL</span><span class=p>);</span>
+
+    <span class=c1>// 通过调用以下方法来得到所有可以工作的进程数量
+</span><span class=c1></span>    <span class=kt>int</span> <span class=n>world_size</span><span class=p>;</span>
+    <span class=n>MPI_Comm_size</span><span class=p>(</span><span class=n>MPI_COMM_WORLD</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>world_size</span><span class=p>);</span>
+
+    <span class=c1>// 得到当前进程的秩
+</span><span class=c1></span>    <span class=kt>int</span> <span class=n>world_rank</span><span class=p>;</span>
+    <span class=n>MPI_Comm_rank</span><span class=p>(</span><span class=n>MPI_COMM_WORLD</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>world_rank</span><span class=p>);</span>
+
+    <span class=c1>// 得到当前进程的名字
+</span><span class=c1></span>    <span class=kt>char</span> <span class=n>processor_name</span><span class=p>[</span><span class=n>MPI_MAX_PROCESSOR_NAME</span><span class=p>];</span>
+    <span class=kt>int</span> <span class=n>name_len</span><span class=p>;</span>
+    <span class=n>MPI_Get_processor_name</span><span class=p>(</span><span class=n>processor_name</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>name_len</span><span class=p>);</span>
+
+    <span class=c1>// 打印一条带有当前进程名字，秩以及
+</span><span class=c1></span>    <span class=c1>// 整个 communicator 的大小的 hello world 消息。
+</span><span class=c1></span>    <span class=n>printf</span><span class=p>(</span><span class=s>&#34;Hello world from processor %s, rank %d out of %d processors</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span>
+           <span class=n>processor_name</span><span class=p>,</span> <span class=n>world_rank</span><span class=p>,</span> <span class=n>world_size</span><span class=p>);</span>
+
+    <span class=c1>// 释放 MPI 的一些资源
+</span><span class=c1></span>    <span class=n>MPI_Finalize</span><span class=p>();</span>
+<span class=p>}</span></code></pre></table></div></div><p>然后使用<code>mpicc</code>进行编译，如果是Fortran，使用对应的<code>mpif90</code>或者<code>mpifort</code>。<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>mpicc mpi-hello.cpp -o mpi-hello.x</code></pre></table></div></div><p>最后使用对应版本的mpirun执行，<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ mpirun -np <span class=m>5</span> ./mpi-hello.x
+Hello world from processor login1, rank <span class=m>1</span> out of <span class=m>5</span> processors
+Hello world from processor login1, rank <span class=m>2</span> out of <span class=m>5</span> processors
+Hello world from processor login1, rank <span class=m>3</span> out of <span class=m>5</span> processors
+Hello world from processor login1, rank <span class=m>4</span> out of <span class=m>5</span> processors
+Hello world from processor login1, rank <span class=m>0</span> out of <span class=m>5</span> processors</code></pre></table></div></div><h2 id=多节点-集群使用>多节点/集群使用</h2><p>对于单节点/本地使用，一般不会出错，但很多时候都是在集群上进行的，可能会使用诸如 Torque PBS等任务管理系统，由
+系统进行管理和分配计算，这时应当注意，源码撰写和编译和单机使用没有什么不同，但用 mpirun 执行任务时会略有不同。
+原因在于，这时候，你的计算任务不是在本地执行的，可能需要使用集群上的几十甚至更多个核，会使用多个节点，就需要
+告诉它，应该在哪些节点上进行计算。<p>那如何告诉 mpi 在哪些节点上执行任务呢？实现的方式很简单，通过加参数来实现。<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>mpirun  -hostfile NODEFILE -np <span class=m>40</span> ./mpi-hello.x</code></pre></table></div></div><p>其中，<code>NODEFILE</code>是一个文本文件，其中每一行代表一个节点名称。<p>对于使用PBS系统的来说，NODEFILE该如何设定呢？这里，PBS系统会告诉我们，我们这个任务得到了哪些节点，并把这个节点文件的路径保存为
+变量<code>PBS_NODEFILE</code>，所以只需要把上面的<code>NODEFILE</code>替换为 <code>$PBS_NODEFILE</code> 即可。<p>一个PBS脚本的例子：<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/bin/bash -x
+</span><span class=cp></span><span class=c1>#PBS -l nodes=2:ppn=20        ##使用两个节点，每个节点有20个核</span>
+<span class=c1>#PBS -j oe</span>
+<span class=c1>#PBS -q test                  ## 任务提交在test队列上</span>
+<span class=c1>#PBS -N try                   ## 任务名称</span>
+<span class=c1>#PBS -r y</span>
+<span class=nv>CMD</span><span class=o>=</span><span class=s1>&#39;/home/test/cluster-test&#39;</span>
+<span class=c1>#define MPI PATH</span>
+<span class=nv>MPIRUN</span><span class=o>=</span>/usr/mpi/openmpi/bin/mpirun
+<span class=c1>#Setup the OpenMPI topology</span>
+<span class=nv>n_proc</span><span class=o>=</span><span class=k>$(</span>cat <span class=nv>$PBS_NODEFILE</span> <span class=p>|</span> wc -l<span class=k>)</span>
+<span class=nb>cd</span> <span class=nv>$PBS_O_WORKDIR</span>
+<span class=nv>$MPIRUN</span> --mca btl openib,self,sm -hostfile <span class=nv>$PBS_NODEFILE</span> -np <span class=nv>$n_proc</span> <span class=nv>$CMD</span> &gt;log.out <span class=m>2</span>&gt;<span class=p>&amp;</span><span class=m>1</span>
+<span class=nb>exit</span> <span class=m>0</span></code></pre></table></div></div><p>或许有人会问，如果不加这个hostfile参数会发生什么情况呢？一个可能的情况是，在只有20个核的节点上执行40个mpi进程。一般情况下，
+这些任务计算密集型的，同时还会伴随着大量的网络通讯，一个后果就是计算进行的很慢，更严重的后果是导致进程间的通讯网络长时间超负载，
+进而导致宕机，很不幸，我就遇到了这种情况，只是不清楚集群的宕机是否跟这个有直接联系。<h2 id=参考>参考</h2><ul><li><a href=http://mpitutorial.com/tutorials/mpi-hello-world/zh_cn/ target=_blank>MPI Hello World</a></ul><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-4469282388984999 data-ad-slot=5357438236></ins><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=5625031544 data-ad-format=auto data-full-width-responsive=true></ins></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Quanyin</span><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2020-05-07</span><p class=copyright-item><span class=item-title>许可协议</span>
+<span class=item-content>本博客所有文章除特别声明外，均采用 <a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>(CC) BY-NC-SA 4.0 </a>许可协议。转载请注明作者和出处并告知</span></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<label class=reward-button for=reward>赞赏支持</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=/img/reward/WechatPay.png>
+<span>微信打赏</span></label>
+<label class=qr-code-image for=reward><img class=image src=/img/reward/AliPay.png>
+<span>支付宝打赏</span></label></div></div><footer class=post-footer><div class=post-tags><a href=/tags/mpi/>mpi</a></div><nav class=post-nav><a class=prev href=/2018/typecho-rewrite/><i class="iconfont icon-left"></i><span class="prev-text nav-default">不同环境下Typecho的伪静态设置</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/2018/how-to-read-paper/><span class="next-text nav-default">作为研究生，如何读Paper？</span>
+<span class="prev-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><div class="post bg-white"><script src=https://cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=https://unpkg.com/valine/dist/Valine.min.js></script><div id=vcomments></div><script>new Valine({el:'#vcomments',appId:'aTnk2nRIOVuFeXVYCRqOhEQ1-MdYXbMMI',appKey:'fPBawjKkMiA8biHbwoDim1mJ',avatar:'mm',placeholder:'说点什么吧',})</script></div></div></div></main><footer id=footer class=footer><div class=icon-links><a href=/index.xml rel="noopener alternate" type=application/rss&#43;xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 0 1 140.501333 140.586667A140.928 140.928.0 0 1 140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme - <a class=theme-link href=https://github.com/xianmin/hugo-theme-jane>Jane</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020
+<span class=heart><i class=iconfont><svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"><path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7.0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1.0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2.0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3.1-42.5-8-83.6-24-122.2z" fill="#8a8a8a"/></svg></i></span><span class=author>Quanyin</span></span></div></footer><div class=back-to-top id=back-to-top><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35"><path d="M510.866688 227.694839 95.449397 629.218702h235.761562L329.15309 958.01517h362.40389L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777h894.052392v131.813095H63.840492V63.962777v0zm0 0"/></svg></i></div></div><script src=/lib/jquery/jquery-3.2.1.min.js></script><script src=/lib/slideout/slideout-1.0.1.min.js></script><script src="/dist/jane.min.js?v=2.7.0"></script><script src=/js/load-photoswipe.js></script><script src=/lib/photoswipe/photoswipe.min.js></script><script src=/lib/photoswipe/photoswipe-ui-default.min.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>

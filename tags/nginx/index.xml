@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nginx on 已停更的小博客</title><link>/tags/nginx/</link><description>Recent content in nginx on 已停更的小博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>i@imtqy.com (Quanyin)</managingEditor><webMaster>i@imtqy.com (Quanyin)</webMaster><copyright> Quanyin</copyright><lastBuildDate>Mon, 12 Nov 2018 01:55:54 +0800</lastBuildDate><atom:link href="/tags/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>常见的建站程序 Nginx 伪静态规则大全</title><link>/2018/nginx-rewrite/</link><pubDate>Mon, 12 Nov 2018 01:55:54 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/nginx-rewrite/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文转载自 &lt;a href=&#34;https://laod.cn/design/page/nginx-rewrite.html&#34; target=&#34;_blank&#34;&gt;老 D 博客&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;目前网站最常用的生产环境是LNMP，CentOS/RHEL/Fedora/Aliyun/Amazon、Debian/Ubuntu/Raspbian/Deepin/Mint Linux VPS或独立主机安装LNMP。&lt;/p&gt;
+&lt;p&gt;LNMP是指：Linux/Nginx、Mysql、PHP&lt;/p&gt;
+&lt;p&gt;作为 Web 服务器：相比 Apache，Nginx 使用更少的资源，支持更多的并发连接，体现更高的效率。
+&lt;img src=&#34;/img/nginx-rewrite/lnmp.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;</description></item></channel></rss>

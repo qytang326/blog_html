@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on 已停更的小博客</title><link>/tags/blog/</link><description>Recent content in Blog on 已停更的小博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>i@imtqy.com (Quanyin)</managingEditor><webMaster>i@imtqy.com (Quanyin)</webMaster><copyright> Quanyin</copyright><lastBuildDate>Sat, 29 Sep 2018 18:08:58 +0800</lastBuildDate><atom:link href="/tags/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>不同环境下Typecho的伪静态设置</title><link>/2018/typecho-rewrite/</link><pubDate>Sat, 29 Sep 2018 18:08:58 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/typecho-rewrite/</guid><description>&lt;p&gt;Typecho是一个基于PHP的简洁的开源博客程序。它使用多种数据库储存数据，在GNU GPLv2许可证下发行。相对于WordPress而言，更加
+简洁，原生支持Markdown，非常易于写文章。&lt;/p&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure class=&#34;center lazyload&#34; itemprop=&#34;associatedMedia&#34;
+itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+&lt;div class=&#34;img&#34;&gt;
+&lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/post-content/typecho/typecho-logo.png&#34; /&gt;
+&lt;/div&gt;
+&lt;a href=&#34;/img/post-content/typecho/typecho-logo.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;</description></item><item><title>作为研究生，如何读Paper？</title><link>/2018/how-to-read-paper/</link><pubDate>Wed, 05 Sep 2018 22:04:05 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/how-to-read-paper/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;来源：李中梁 机器学习算法工程师&lt;/p&gt;
+&lt;p&gt;链接：&lt;a href=&#34;https://mp.weixin.qq.com/s/sdRPBx2Cp9ng3fE79ugKQg&#34; target=&#34;_blank&#34;&gt;https://mp.weixin.qq.com/s/sdRPBx2Cp9ng3fE79ugKQg&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;论文阅读一直是科研过程中至关重要的一环，如何收集论文，快速选取和课题匹配的论文，高效地把握论文核心思想是每个科研人员的必备素养，也是每个科研萌新(硕士研究生)苦恼的问题。&lt;/p&gt;
+&lt;p&gt;台湾国立清华大学的彭明辉教授曾出版过一份《研究生手册》，其中关于论文阅读的内容详实精彩，将其整理如下，希望对大家有所帮助。&lt;/p&gt;</description></item><item><title>借助 Travis CI 实现自动部署</title><link>/2018/deploy-by-travis-ci/</link><pubDate>Thu, 07 Jun 2018 00:38:51 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/deploy-by-travis-ci/</guid><description>&lt;p&gt;Travis CI 提供的是持续集成服务（Continuous Integration，简称 CI）。它绑定 Github
+上面的项目，只要有新的代码，就会自动抓取。然后，提供一个运行环境，执行测试，完成
+构建，还能部署到服务器。&lt;/p&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure class=&#34;center lazyload&#34; itemprop=&#34;associatedMedia&#34;
+itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+&lt;div class=&#34;img&#34;&gt;
+&lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/background/post-bg-travis-ci.jpg&#34; /&gt;
+&lt;/div&gt;
+&lt;a href=&#34;/img/background/post-bg-travis-ci.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;</description></item><item><title>总有一些坑要去填</title><link>/2018/fill-pit/</link><pubDate>Sun, 20 May 2018 00:44:44 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/fill-pit/</guid><description/></item></channel></rss>

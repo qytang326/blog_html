@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>错误处理 on 已停更的小博客</title><link>/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link><description>Recent content in 错误处理 on 已停更的小博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>i@imtqy.com (Quanyin)</managingEditor><webMaster>i@imtqy.com (Quanyin)</webMaster><copyright> Quanyin</copyright><lastBuildDate>Wed, 19 Sep 2018 14:26:42 +0800</lastBuildDate><atom:link href="/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml"/><item><title>并行计算MPI简介</title><link>/2018/mpi-intro/</link><pubDate>Wed, 19 Sep 2018 14:26:42 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/mpi-intro/</guid><description>&lt;p&gt;消息传递界面/接口（英语：Message Passing Interface，缩写MPI）是一个并行计算的应用程序接口（API），常在超级计算机、计算簇等非共享内存环境程序设计。&lt;/p&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure class=&#34;center lazyload&#34; itemprop=&#34;associatedMedia&#34;
+itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+&lt;div class=&#34;img&#34;&gt;
+&lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/background/post-bg-mpi.jpg&#34; /&gt;
+&lt;/div&gt;
+&lt;a href=&#34;/img/background/post-bg-mpi.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;</description></item><item><title>KMS 客户端出现 0xC004F074 错误的解决方法</title><link>/2018/kms-0xc004f074/</link><pubDate>Mon, 16 Jul 2018 19:37:20 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/kms-0xc004f074/</guid><description>&lt;p&gt;最近，组里的小师弟买了台电脑，使用校园网 KMS 激活系统时，出现了 0xC004F074 错误。&lt;/p&gt;</description></item><item><title>C 程序编译错误处理</title><link>/2018/c-compile-error-lm/</link><pubDate>Sat, 02 Jun 2018 20:17:26 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/c-compile-error-lm/</guid><description>&lt;p&gt;最近在写程序编译时，遇到了一个在 Windows 下的 IDE 里可以编译通过，放到 Linux 上
+就编译不过去的问题，简单记录下。&lt;/p&gt;</description></item><item><title>Windows 安装软件出现的 msi 错误处理</title><link>/2018/msi-error/</link><pubDate>Sun, 20 May 2018 00:35:30 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/msi-error/</guid><description>&lt;p&gt;当遇到安装软件提示找不到 msi 时，一种可能的原因是之前安装过这个软件但是没有正确卸载，
+导致软件被删了，但是注册表里仍然存在，一种处理方法是使用 msiexec 强制删除该 msi。&lt;/p&gt;</description></item></channel></rss>

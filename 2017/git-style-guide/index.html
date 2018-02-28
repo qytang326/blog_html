@@ -1,0 +1,114 @@
+<!doctype html><html lang=zh-cn itemscope itemtype=http://schema.org/WebPage><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Git 风格指南 - 已停更的小博客</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content=width><meta name=HandheldFriendly content=true><meta name=applicable-device content=pc,mobile><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=mobile-web-app-capable content=yes><meta name=author content=Quanyin><meta name=description content="这份风格指南受到 How to Get Your Change Into the Linux Kernel，git man pages 和大量社区通用实践的启发。"><meta name=keywords content=git,风格,style><meta name=generator content="Hugo 0.55.6"><link rel=canonical href=/2017/git-style-guide/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media=screen crossorigin=anonymous><meta property=og:title content="Git 风格指南"><meta property=og:description content="这份风格指南受到 How to Get Your Change Into the Linux Kernel，git man pages 和大量社区通用实践的启发。"><meta property=og:type content=article><meta property=og:url content=/2017/git-style-guide/><meta property=article:published_time content=2017-12-05T00:00:00&#43;00:00><meta property=article:modified_time content=2020-05-07T17:24:00&#43;08:00><meta itemprop=name content="Git 风格指南"><meta itemprop=description content="这份风格指南受到 How to Get Your Change Into the Linux Kernel，git man pages 和大量社区通用实践的启发。"><meta itemprop=datePublished content=2017-12-05T00:00:00&#43;00:00><meta itemprop=dateModified content=2020-05-07T17:24:00&#43;08:00><meta itemprop=wordCount content=1664><meta itemprop=keywords content=Git,Style,><meta name=twitter:card content=summary><meta name=twitter:title content="Git 风格指南"><meta name=twitter:description content="这份风格指南受到 How to Get Your Change Into the Linux Kernel，git man pages 和大量社区通用实践的启发。"><script>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-126038371-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4469282388984999",enable_page_level_ads:true});</script><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=/>主页</a><li class=mobile-menu-item><a class=menu-item-link href=/notice/>通知</a><li class=mobile-menu-item><a class=menu-item-link href=/post/>时光机</a><li class=mobile-menu-item><div class=mobile-menu-parent><span class=mobile-submenu-open></span><a href=/categories/>分类</a></div><ul class=mobile-submenu-list><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=mobile-menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav><link rel=stylesheet href=/lib/photoswipe/photoswipe.min.css><link rel=stylesheet href=/lib/photoswipe/default-skin/default-skin.min.css><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>主页</a><li class=menu-item><a class=menu-item-link href=/notice/>通知</a><li class=menu-item><a class=menu-item-link href=/post/>时光机</a><li class=menu-item><a class="menu-item-link menu-parent" href=/categories/>分类</a><ul class=submenu><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>Git 风格指南</h1><div class=post-meta><time datetime=2017-12-05 class=post-time>2017-12-05</time><div class=post-category><a href=/categories/%E7%AC%94%E8%AE%B0/>笔记</a></div><span class=more-meta>约 1664 字</span>
+<span class=more-meta>预计阅读 4 分钟</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#目录>目录</a><ul><li><a href=#branches>Branches</a><li><a href=#commits>Commits</a><ul><li><a href=#messages>Messages</a></ul><li><a href=#merging>Merging</a></ul><li><a href=#好-注意添加合并信息>好；注意添加合并信息</a><li><a href=#不好>不好</a><ul><li><a href=#misc>Misc.</a></ul><li><a href=#license>License</a><li><a href=#credits>Credits</a><li><a href=#translators>Translators</a></ul></nav></div></div><div class=post-content><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=4019390506 data-ad-format=link data-full-width-responsive=true></ins><p>这份风格指南受到 <a href=https://www.kernel.org/doc/Documentation/SubmittingPatches target=_blank><em>How to Get Your Change Into the Linux Kernel</em></a>，<a href=http://git-scm.com/doc target=_blank>git man pages</a> 和大量社区通用实践的启发。<h1 id=目录>目录</h1><ol><li><a href=#branches>分支</a><li><a href=#commits>提交</a><ul><li><a href=#messages>消息</a></ul><li><a href=#merging>合并</a><li><a href=#misc>杂项</a></ol><h2 id=branches>Branches</h2><ul><li><p>选择*简短*和*具有描述性*的名字来命名分支：<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=c1># 好</span>
+$ git checkout -b oauth-migration
+
+<span class=c1># 不好，过于模糊</span>
+$ git checkout -b login_fix</code></pre></table></div></div><ul><li>来自外部的标识符也适合用作分支的名字，例如来自 Github 的 Issue 序号。</ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=c1># GitHub issue #15</span>
+$ git checkout -b issue-15</code></pre></table></div></div><li><p>用破折号分割单词。<li><p>当不同的人围绕同一个特性开发时，维护整个团队的特性分支与每个人的独立分支是比较方便的做法。使用如下的命名方式：<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ git checkout -b feature-a/master <span class=c1># team-wide branch</span>
+$ git checkout -b feature-a/maria <span class=c1># Maria&#39;s branch</span>
+$ git checkout -b feature-a/nick <span class=c1># Nick&#39;s branch</span></code></pre></table></div></div><p>合并时，由每个人的独立分支向全队的功能分支合并，最后合并到主分支。见<a href=#merging>合并</a> 。<ul><li>合并之后，除非有特殊原因，从上游仓库中删除你的分支。使用如下命令查看已合并的分支：</ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ git branch --merged <span class=p>|</span> grep -v <span class=s2>&#34;\*&#34;</span></code></pre></table></div></div></ul><h2 id=commits>Commits</h2><ul><li>每个提交应当只包含一个简单的逻辑改动，不要在一个提交里包含多个逻辑改动。比如，如果一个补丁修复了一个 Bug，又优化了一个特性的性能，就将其拆分。<li>不要将一个逻辑改动拆分提交。例如一个功能的实现及其对应的测试应当一并提交。<li>尽早、尽快提交。出问题时，短小、完整的提交更容易发现并修正。<li>提交应当依*逻辑*排序。例如，如果 X 提交依赖于 Y，那么 Y 提交应该在 X 前面。</ul><h3 id=messages>Messages</h3><ul><li><p>使用编辑器编写提交信息，而非命令行。<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=c1># 好</span>
+$ git commit
+
+<span class=c1># 不好</span>
+$ git commit -m <span class=s2>&#34;Quick fix&#34;</span></code></pre></table></div></div><p>使用命令行会鼓励试图用一行概括提交內容的风气，而这会令提交信息难以理解。<ul><li>概要行（即第一行）应当简明扼要。它最好不超过 50 个字符，首字母大写，使用现在时祈使语气。不要以句号结尾, 因为它相当于*标题*。</ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=c1># 好</span>
+Mark huge records as obsolete when clearing hinting faults
+
+<span class=c1># 不好</span>
+fixed ActiveModel::Errors deprecation messages failing when AR was used outside of Rails.</code></pre></table></div></div><li><p>在那之后空一行，然后填写详细描述。每行不超过 <strong>72 字符</strong>，解释<strong>为什么</strong>需要改动, <strong>如何</strong>解决了这个 issue 以及它有什么<strong>副作用</strong>。<p>最好提供相关资源的链接，例如 bug tracker 的 issue 编号：<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>    Short <span class=o>(</span><span class=m>50</span> chars or fewer<span class=o>)</span> summary of changes
+
+    More detailed explanatory text, <span class=k>if</span> necessary. Wrap it to
+    <span class=m>72</span> characters. In some contexts, the first
+    line is treated as the subject of an email and the rest of
+    the text as the body.  The blank line separating the
+    summary from the body is critical <span class=o>(</span>unless you omit the body
+    entirely<span class=o>)</span><span class=p>;</span> tools like rebase can get confused <span class=k>if</span> you run
+    the two together.
+
+    Further paragraphs come after blank lines.
+
+    - Bullet points are okay, too
+
+    - Use a hyphen or an asterisk <span class=k>for</span> the bullet,
+    followed by a single space, with blank lines in
+    between
+
+    Source http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+        </code></pre></table></div></div><p>最后，编写提交信息时，设想一下你一年以后再看这段提交信息时，希望获取什么信息。<ul><li>如果 <em>提交 A</em> 依赖于另一个 <em>提交 B</em> ，在前者的 commit message 中应当指明。援引对应提交的 Hash。</ul><p>同理，如果 <em>提交 A</em> 解决了 <em>提交 B</em> 引入的 bug，这应当也被在 <em>提交 A</em> 提及。
+* 如果将一个提交 squash 到另一个提交，分别使用 <code>--squash</code> 和 <code>--fixup</code> 来强调目的。<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell>$ git commit --squash f387cab2</code></pre></table></div></div></ul><p><em>（Rebase 时使用 <code>--autosquash</code> 参数，标记的提交就会自动 squash。）</em><h2 id=merging>Merging</h2><ul><li><strong>不要篡改提交历史。</strong>仓库的历史本身就很宝贵，重要的是它能够还原*实际发生了什么*。对任何参与项目的人来说，修改历史是万恶之源。<li>尽管如此，有些时候还是可以重写历史，例如：<ul><li>你一个人孤军奋战，而且你的代码不会被人看到。<li>你希望整理分支（例如使用 squash），以便日后合并。
+最重要的，<em>不要重写你的 master 分支历史</em> 或者任何有特殊意义的分支（例如发布分支或 CI 分支）。</ul><li><p>保持你的提交历史*干净*、*简单*。<em>在你 merge</em> 你的分支之前：<ol><li>确保它符合风格指南，如果不符合就执行相应操作，比如 squash 或重写提交信息。<li><p>将其 rebase 到目标分支：<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-shell data-lang=shell><span class=o>[</span>my-branch<span class=o>]</span> $ git fetch
+<span class=o>[</span>my-branch<span class=o>]</span> $ git rebase origin/master
+<span class=c1># then merge</span></code></pre></table></div></div><p>这样会在 master 后直接添加一个新版本，令提交历史更简洁。<p><em>（这个策略更适合较短生命周期的分支，否则还是最好经常合并而不是 rebase。）</em><ul><li><p>如果你的分支包含多个 commmit , 不要使用快进模式。
+```shell<h1 id=好-注意添加合并信息>好；注意添加合并信息</h1><p>$ git merge &ndash;no-ff my-branch</ul><h1 id=不好>不好</h1><p>$ git merge my-branch
+```</ol></ul><h2 id=misc>Misc.</h2><ul><li>有许多工作流，每一个都有好有坏。一个工作流是否符合你的情况，取决于你的团队，项目，和你的开发规律。</ul><p>也就是说，重要的是认真 <em>选择</em> 合适的工作流并且坚持。
+* *保持统一*， 这涉及到从工作流到你的提交信息，分支名还有标签。 在整个 Repository 中保持统一的命名风格有助于辨认工作进度。
+* *push 前测试*， 不要提交未完成的工作。
+* 使用 <a href=http://git-scm.com/book/en/v2/Git-Basics-Tagging#Annotated-Tags target=_blank>annotated tags</a> 标记发布版本或者其他重要的时间点。<p>个人开发可以使用 <a href=http://git-scm.com/book/en/v2/Git-Basics-Tagging#Lightweight-Tags target=_blank>lightweight tags</a>，例如为以后参考做标记。
+* 定期维护，保证你的仓库状态良好，包括本地还有远程的仓库。<ul><li><a href=http://git-scm.com/docs/git-gc target=_blank><code>git-gc(1)</code></a><li><a href=http://git-scm.com/docs/git-prune target=_blank><code>git-prune(1)</code></a><li><a href=http://git-scm.com/docs/git-fsck target=_blank><code>git-fsck(1)</code></a></ul><h1 id=license>License</h1><p><img src=http://i.creativecommons.org/l/by-nc/3.0/88x31.png alt="cc license"><p>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0
+International license.<h1 id=credits>Credits</h1><p>Agis Anastasopoulos / <a href=https://twitter.com/agisanast target=_blank>@agisanast</a> / <a href=http://agis.io target=_blank>http://agis.io</a><h1 id=translators>Translators</h1><ul><li>Qi Chen / <a href=mailto:aseaday@gmail.com target=_blank>aseaday@gmail.com</a><li>chadluo / <a href=mailto:i@yuki.rocks target=_blank>i@yuki.rocks</a></ul><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-4469282388984999 data-ad-slot=5357438236></ins><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=5625031544 data-ad-format=auto data-full-width-responsive=true></ins></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Quanyin</span><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2020-05-07</span><p class=copyright-item><span class=item-title>许可协议</span>
+<span class=item-content>本博客所有文章除特别声明外，均采用 <a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>(CC) BY-NC-SA 4.0 </a>许可协议。转载请注明作者和出处并告知</span></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<label class=reward-button for=reward>赞赏支持</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=/img/reward/WechatPay.png>
+<span>微信打赏</span></label>
+<label class=qr-code-image for=reward><img class=image src=/img/reward/AliPay.png>
+<span>支付宝打赏</span></label></div></div><footer class=post-footer><div class=post-tags><a href=/tags/git/>Git</a>
+<a href=/tags/style/>Style</a></div><nav class=post-nav><a class=prev href=/2017/linux-environment-under-centos/><i class="iconfont icon-left"></i><span class="prev-text nav-default">在CentOS 7 上打造Linux开发环境</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/2017/chinese-copywriting-guidelines/><span class="next-text nav-default">中文文案排版指北</span>
+<span class="prev-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><div class="post bg-white"><script src=https://cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=https://unpkg.com/valine/dist/Valine.min.js></script><div id=vcomments></div><script>new Valine({el:'#vcomments',appId:'aTnk2nRIOVuFeXVYCRqOhEQ1-MdYXbMMI',appKey:'fPBawjKkMiA8biHbwoDim1mJ',avatar:'mm',placeholder:'说点什么吧',})</script></div></div></div></main><footer id=footer class=footer><div class=icon-links><a href=/index.xml rel="noopener alternate" type=application/rss&#43;xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 0 1 140.501333 140.586667A140.928 140.928.0 0 1 140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme - <a class=theme-link href=https://github.com/xianmin/hugo-theme-jane>Jane</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020
+<span class=heart><i class=iconfont><svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"><path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7.0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1.0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2.0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3.1-42.5-8-83.6-24-122.2z" fill="#8a8a8a"/></svg></i></span><span class=author>Quanyin</span></span></div></footer><div class=back-to-top id=back-to-top><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35"><path d="M510.866688 227.694839 95.449397 629.218702h235.761562L329.15309 958.01517h362.40389L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777h894.052392v131.813095H63.840492V63.962777v0zm0 0"/></svg></i></div></div><script src=/lib/jquery/jquery-3.2.1.min.js></script><script src=/lib/slideout/slideout-1.0.1.min.js></script><script src="/dist/jane.min.js?v=2.7.0"></script><script src=/js/load-photoswipe.js></script><script src=/lib/photoswipe/photoswipe.min.js></script><script src=/lib/photoswipe/photoswipe-ui-default.min.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>

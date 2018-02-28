@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github-pages on 已停更的小博客</title><link>/tags/github-pages/</link><description>Recent content in Github-pages on 已停更的小博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>i@imtqy.com (Quanyin)</managingEditor><webMaster>i@imtqy.com (Quanyin)</webMaster><copyright> Quanyin</copyright><lastBuildDate>Sun, 11 Mar 2018 12:36:38 +0800</lastBuildDate><atom:link href="/tags/github-pages/index.xml" rel="self" type="application/rss+xml"/><item><title>Theme Preview | 主题预览</title><link>/2018/theme-preview/</link><pubDate>Sun, 11 Mar 2018 12:36:38 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/theme-preview/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;前两天动手把之前博客从Jekyll移植到Hugo上，原因是Hugo又快又方便&lt;/p&gt;
+&lt;p&gt;Copy from &lt;a href=&#34;https://laozhu.me/post/hugo-nuo-post-preview/&#34; target=&#34;_blank&#34;&gt;《Hugo 主题 Nuo 文章样式预览》&lt;/a&gt; ， 有部分修改。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这篇文章集中说明主题所支持的 Markdown 语法和 Hugo Shortcodes 插件，你也可以在这里预览到他们的样子。如果你不喜欢某些样式，可以去修改 less/ 文件夹进行调整。&lt;/p&gt;</description></item><item><title>Quanyin Blog 更新日志</title><link>/2017/changelog/</link><pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/changelog/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文为流水账，只为记录，TL;DR;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;/p&gt; &lt;p&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;说明：有一些记录或者太乱了或者被删了。。&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Quanyin Blog原主题模板(Jekyll)的使用说明</title><link>/2017/readme/</link><pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/readme/</guid><description>本博客主题 Fork 自@Huxpro,感谢！ 我的博客在这里 &amp;rarr; 如果要 Fork, 模板在这里 gh-pages-theme &amp;rarr;, Fork到你自己的用户名.github.io下,修改_config</description></item><item><title>MathJax with Jekyll</title><link>/2016/mathjax-with-jekyll/</link><pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2016/mathjax-with-jekyll/</guid><description>写在前面的话 我最开始接触在html中写$$LaTeX$$公式是在使用Rmarkdown的时候，因为Rmarkdown只需要knit一下就能将</description></item></channel></rss>

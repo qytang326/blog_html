@@ -1,0 +1,142 @@
+<!doctype html><html lang=zh-cn itemscope itemtype=http://schema.org/WebPage><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>免密码登陆Github - 已停更的小博客</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content=width><meta name=HandheldFriendly content=true><meta name=applicable-device content=pc,mobile><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=mobile-web-app-capable content=yes><meta name=author content=Quanyin><meta name=description content=利用ssh可以实现免密码登陆Github,Linux服务器等><meta name=keywords content=技术博客><meta name=generator content="Hugo 0.55.6"><link rel=canonical href=/2017/ssh-github-no-passwd/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media=screen crossorigin=anonymous><meta property=og:title content=免密码登陆Github><meta property=og:description content=利用ssh可以实现免密码登陆Github,Linux服务器等><meta property=og:type content=article><meta property=og:url content=/2017/ssh-github-no-passwd/><meta property=article:published_time content=2017-11-19T00:00:00&#43;00:00><meta property=article:modified_time content=2020-05-07T17:24:00&#43;08:00><meta itemprop=name content=免密码登陆Github><meta itemprop=description content=利用ssh可以实现免密码登陆Github,Linux服务器等><meta itemprop=datePublished content=2017-11-19T00:00:00&#43;00:00><meta itemprop=dateModified content=2020-05-07T17:24:00&#43;08:00><meta itemprop=wordCount content=1809><meta itemprop=keywords content=Github,SSH,><meta name=twitter:card content=summary><meta name=twitter:title content=免密码登陆Github><meta name=twitter:description content=利用ssh可以实现免密码登陆Github,Linux服务器等><script>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-126038371-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4469282388984999",enable_page_level_ads:true});</script><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=/>主页</a><li class=mobile-menu-item><a class=menu-item-link href=/notice/>通知</a><li class=mobile-menu-item><a class=menu-item-link href=/post/>时光机</a><li class=mobile-menu-item><div class=mobile-menu-parent><span class=mobile-submenu-open></span><a href=/categories/>分类</a></div><ul class=mobile-submenu-list><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=mobile-menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav><link rel=stylesheet href=/lib/photoswipe/photoswipe.min.css><link rel=stylesheet href=/lib/photoswipe/default-skin/default-skin.min.css><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>主页</a><li class=menu-item><a class=menu-item-link href=/notice/>通知</a><li class=menu-item><a class=menu-item-link href=/post/>时光机</a><li class=menu-item><a class="menu-item-link menu-parent" href=/categories/>分类</a><ul class=submenu><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>免密码登陆Github</h1><div class=post-meta><time datetime=2017-11-19 class=post-time>2017-11-19</time><div class=post-category><a href=/categories/%E7%AC%94%E8%AE%B0/>笔记</a></div><span class=more-meta>约 1809 字</span>
+<span class=more-meta>预计阅读 4 分钟</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#什么是ssh>什么是ssh</a><ul><li><a href=#ssh简介>SSH简介</a><li><a href=#工作原理>工作原理</a></ul><li><a href=#配置免密码登陆>配置免密码登陆</a><ul><li><a href=#生成密钥对>生成密钥对</a><li><a href=#上传公钥>上传公钥</a><ul><li><a href=#github>Github</a><li><a href=#git服务器-linux服务器>Git服务器 &amp; Linux服务器</a></ul></ul><li><a href=#https免密码登陆>Https免密码登陆</a><li><a href=#免密码-git-push>免密码<code>git push</code></a></ul></ul></nav></div></div><div class=post-content><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=4019390506 data-ad-format=link data-full-width-responsive=true></ins><h2 id=什么是ssh>什么是ssh</h2><h3 id=ssh简介>SSH简介</h3><p>Secure Shell(缩写为SSH),由IETF的网络工作小组(Network Working Group)所制定;SSH为一项创建在应用层和传输层基础上的安全协议,为计算机上的Shell(壳层)提供安全的传输和使用环境。<p>SSH是目前较可靠,专为远程登录会话和其他网络服务提供安全性的协议。利用SSH协议可以有效防止远程管理过程中的信息泄露问题。通过SSH可以对所有传输的数据进行加密,也能够防止DNS欺骗和IP欺骗。<p>最初的SSH协议是由芬兰的一家公司的研究员Tatu Ylönen于1995年设计开发的,但是因为受版权和加密算法等等的限制,现在很多人都转而使用OpenSSH。OpenSSH是SSH的替代软件包,而且是开放源代码且自由的。<h3 id=工作原理>工作原理</h3><p>&ldquo;SSH公钥认证免密码登录认证机制&rdquo;,原理如下:<ol><li>SSH客户端提前将SSH公钥储存在远程SSH服务器上,然后SSH客户端携带公钥向远程SSH服务器(known_hosts)发起请求。<li>远程SSH服务器收到该请求之后,先在该服务器上的authorized_keys寻找授权过的公钥,然后把它和发送请求的公钥进行匹配。<li>如果两个公钥一致(Key Exchange Success),远程SSH服务器会向用户发送一段使用SSH公钥加密过的随机字符串进行身份质询(Challenge)。<li>SSH客户端用自己的私钥解密后再发回给远程SSH服务器,远程SSH服务器对比回包中解密出来的随机字符串是否一致。如果一致,则证明用户(公钥或身份)是可信的,直接允许登录shell,不再要求密码。</ol><h2 id=配置免密码登陆>配置免密码登陆</h2><p>要进行SSH免密码登录,首先要有由公钥和私钥组成的密钥对,然后把公钥上传到远程服务器上,本地保留私钥并进行登录。<h3 id=生成密钥对>生成密钥对</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></pre><td class=lntd><pre class=chroma>$ ssh-keygen 
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/qytang/.ssh/id_rsa):     # 直接回车即选择默认路径
+Enter passphrase (empty for no passphrase):                         # 输入密钥文件授权密码,用于加密本地ssh-key,一般直接留空不加密
+Enter same passphrase again:                                        # 确认密钥文件授权密码
+Your identification has been saved in /home/qytang/.ssh/id_rsa.     # 生成的ssh私钥路径
+Your public key has been saved in /home/qytang/.ssh/id_rsa.pub.     # 生成的ssh公钥路径
+The key fingerprint is:
+SHA256:OdP+fuUUHvuprpW3h3A/Susm6bsBptCjpyDmjfz8gjc qytang@mstation
+The key&#39;s randomart image is:
++---[RSA 2048]----+
+|                 |
+|                 |
+|                 |
+|      .  o     o |
+|     . oSo.   . +|
+|      o ++. . ooo|
+| o.. . o  ...* Bo|
+|+.=E. o    ++.=o*|
+| +o++o    .*@Bo.o|
++----[SHA256]-----+</pre></table></div></div><p>默认的<code>ssh-keygen</code>生成的是采用<code>rsa</code>算法的2048位密钥,也可以自己指定算法和密钥位数:<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></pre><td class=lntd><pre class=chroma>$ ssh-keygen -t rsa -b 4096   # &#34;-t rsa&#34;表示使用密钥的加密类型,默认为rsa,还可以为其他;&#34;-b 4096&#34;表示生成4096位密钥;-C设置注释文字,比如邮箱,姓名等
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/qytang/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/qytang/.ssh/id_rsa.
+Your public key has been saved in /home/qytang/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:tLyLwRQxQ2DH1yfdOArKm/AOUW6aE7Fqops+bvc5VGI qytang@mstation
+The key&#39;s randomart image is:
++---[RSA 4096]----+
+|    o+*  . . o   |
+|   ...o+o o = .  |
+|     *.o.. + .   |
+|    =E== ..      |
+|   ..O+oS        |
+|. o =++  .       |
+|.o  .+o .        |
+|.+ . .oo .       |
+|*+o .oo .        |
++----[SHA256]-----+</pre></table></div></div><p>可选的算法有<code>[ dsa | ecdsa | ed25519 | rsa | rsa1]</code>等,也可以在最后加上<code>-C Comment</code>对密钥进行标记。<p>生成密钥对在<code>~/.ssh/</code>下,<code>id_rsa</code>为私钥,要妥善保管;<code>id_rsa.pub</code>为公钥。<h3 id=上传公钥>上传公钥</h3><h4 id=github>Github</h4><ol><li>把<code>id_ras.pub</code>的文件内容复制并加到Github的<code>setting -&gt; SSH and GPG Keys -&gt; New SSH Key</code>中,并选择<code>Add SSH Key</code>保存。<li><p>测试连接<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ ssh git@github.com
+The authenticity of host <span class=s1>&#39;github.com (192.30.253.113)&#39;</span> can<span class=s1>&#39;t be established.
+</span><span class=s1>RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+</span><span class=s1>Are you sure you want to continue connecting (yes/no)? yes # yes 确认密钥文件授权密码
+</span><span class=s1>Warning: Permanently added &#39;</span>github.com,192.30.253.113<span class=s1>&#39; (RSA) to the list of known hosts.
+</span><span class=s1>PTY allocation request failed on channel 0
+</span><span class=s1>Hi qytang326! You&#39;</span>ve successfully authenticated, but GitHub does not provide shell access.
+Connection to github.com closed. <span class=c1>#成功</span></code></pre></table></div></div><ol><li>Repo的地址改为ssh方式</ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ git remote add origin git@github.com:<span class=o>[</span>username<span class=o>]</span>/<span class=o>[</span>your repo<span class=o>]</span>.git</code></pre></table></div></div></ol><p>或者修改<code>.git/config</code>文件
+最后的状态应该是:<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></pre><td class=lntd><pre class=chroma>```bash
+$ git remote -v
+origin  git@github.com:qytang326/qytang326.github.io.git (fetch)
+origin  git@github.com:qytang326/qytang326.github.io.git (push)
+```</pre></table></div></div><h4 id=git服务器-linux服务器>Git服务器 &amp; Linux服务器</h4><p>对于自建的Git服务器,以及期望实现远程ssh免密码登录Linux服务器,只需把公钥中的内容复制到服务器中的<code>/home/git/.ssh/authorized_keys</code>(对git服务器)或<code>~/.ssh/authorized_keys</code>(普通的linux服务器)即可,
+若不存在<code>authorized_keys</code>文件,新建即可。<h2 id=https免密码登陆>Https免密码登陆</h2><ol><li><p>新建文件并保存密码<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>touch ~/.git-credentials
+vim ~/.git-credentials</code></pre></table></div></div><ol><li><p>添加内容<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span></pre><td class=lntd><pre class=chroma>https://{username}:{passwd}@github.com</pre></table></div></div><li><p>添加git配置
+执行下面命令添加配置:</ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git config --global credential.helper store</code></pre></table></div></div><li><p>查看<code>~/.gitconfig</code>文件变化,<code>~/.gitconfig</code>文件多出下面配置项:<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=o>[</span>credential<span class=o>]</span>
+    <span class=nv>helper</span> <span class=o>=</span> store</code></pre></table></div></div><h2 id=免密码-git-push>免密码<code>git push</code></h2><p>经过以上两种免密码处理(SSH和https)中的任一种之后,再进行<code>git push</code>就不需要输入密码啦</ol><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-4469282388984999 data-ad-slot=5357438236></ins><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=5625031544 data-ad-format=auto data-full-width-responsive=true></ins></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Quanyin</span><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2020-05-07</span><p class=copyright-item><span class=item-title>许可协议</span>
+<span class=item-content>本博客所有文章除特别声明外，均采用 <a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>(CC) BY-NC-SA 4.0 </a>许可协议。转载请注明作者和出处并告知</span></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<label class=reward-button for=reward>赞赏支持</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=/img/reward/WechatPay.png>
+<span>微信打赏</span></label>
+<label class=qr-code-image for=reward><img class=image src=/img/reward/AliPay.png>
+<span>支付宝打赏</span></label></div></div><footer class=post-footer><div class=post-tags><a href=/tags/github/>Github</a>
+<a href=/tags/ssh/>SSH</a></div><nav class=post-nav><a class=prev href=/2017/gcp-ssr/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Google Cloud Pltform申请与SSR搭建</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/2017/asian20-nanjing/><span class="next-text nav-default">Mark第一次参加学术会议</span>
+<span class="prev-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><div class="post bg-white"><script src=https://cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=https://unpkg.com/valine/dist/Valine.min.js></script><div id=vcomments></div><script>new Valine({el:'#vcomments',appId:'aTnk2nRIOVuFeXVYCRqOhEQ1-MdYXbMMI',appKey:'fPBawjKkMiA8biHbwoDim1mJ',avatar:'mm',placeholder:'说点什么吧',})</script></div></div></div></main><footer id=footer class=footer><div class=icon-links><a href=/index.xml rel="noopener alternate" type=application/rss&#43;xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 0 1 140.501333 140.586667A140.928 140.928.0 0 1 140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme - <a class=theme-link href=https://github.com/xianmin/hugo-theme-jane>Jane</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020
+<span class=heart><i class=iconfont><svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"><path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7.0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1.0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2.0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3.1-42.5-8-83.6-24-122.2z" fill="#8a8a8a"/></svg></i></span><span class=author>Quanyin</span></span></div></footer><div class=back-to-top id=back-to-top><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35"><path d="M510.866688 227.694839 95.449397 629.218702h235.761562L329.15309 958.01517h362.40389L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777h894.052392v131.813095H63.840492V63.962777v0zm0 0"/></svg></i></div></div><script src=/lib/jquery/jquery-3.2.1.min.js></script><script src=/lib/slideout/slideout-1.0.1.min.js></script><script src="/dist/jane.min.js?v=2.7.0"></script><script src=/js/load-photoswipe.js></script><script src=/lib/photoswipe/photoswipe.min.js></script><script src=/lib/photoswipe/photoswipe-ui-default.min.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>

@@ -1,0 +1,133 @@
+<!doctype html><html lang=zh-cn itemscope itemtype=http://schema.org/WebPage><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>三种直接在命令行创建Github仓库的方法 - 已停更的小博客</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content=width><meta name=HandheldFriendly content=true><meta name=applicable-device content=pc,mobile><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=mobile-web-app-capable content=yes><meta name=author content=Quanyin><meta name=description content=不需要在github网页上创建仓库,直接用命令行搞定!><meta name=keywords content=技术博客><meta name=generator content="Hugo 0.55.6"><link rel=canonical href=/2017/create-github-repo-with-cli/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media=screen crossorigin=anonymous><meta property=og:title content=三种直接在命令行创建Github仓库的方法><meta property=og:description content=不需要在github网页上创建仓库,直接用命令行搞定!><meta property=og:type content=article><meta property=og:url content=/2017/create-github-repo-with-cli/><meta property=article:published_time content=2017-09-30T00:00:00&#43;00:00><meta property=article:modified_time content=2019-02-21T00:49:52&#43;08:00><meta itemprop=name content=三种直接在命令行创建Github仓库的方法><meta itemprop=description content=不需要在github网页上创建仓库,直接用命令行搞定!><meta itemprop=datePublished content=2017-09-30T00:00:00&#43;00:00><meta itemprop=dateModified content=2019-02-21T00:49:52&#43;08:00><meta itemprop=wordCount content=799><meta itemprop=keywords content=Github,><meta name=twitter:card content=summary><meta name=twitter:title content=三种直接在命令行创建Github仓库的方法><meta name=twitter:description content=不需要在github网页上创建仓库,直接用命令行搞定!><script>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-126038371-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4469282388984999",enable_page_level_ads:true});</script><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=/>主页</a><li class=mobile-menu-item><a class=menu-item-link href=/notice/>通知</a><li class=mobile-menu-item><a class=menu-item-link href=/post/>时光机</a><li class=mobile-menu-item><div class=mobile-menu-parent><span class=mobile-submenu-open></span><a href=/categories/>分类</a></div><ul class=mobile-submenu-list><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=mobile-menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav><link rel=stylesheet href=/lib/photoswipe/photoswipe.min.css><link rel=stylesheet href=/lib/photoswipe/default-skin/default-skin.min.css><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>主页</a><li class=menu-item><a class=menu-item-link href=/notice/>通知</a><li class=menu-item><a class=menu-item-link href=/post/>时光机</a><li class=menu-item><a class="menu-item-link menu-parent" href=/categories/>分类</a><ul class=submenu><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>三种直接在命令行创建Github仓库的方法</h1><div class=post-meta><time datetime=2017-09-30 class=post-time>2017-09-30</time><div class=post-category><a href=/categories/%E7%AC%94%E8%AE%B0/>笔记</a></div><span class=more-meta>约 799 字</span>
+<span class=more-meta>预计阅读 2 分钟</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#准备工作>准备工作</a><li><a href=#一-命令行格式>一、命令行格式</a><li><a href=#二-bash形式>二、bash形式</a><li><a href=#三-bash形式简化版>三、Bash形式简化版</a><li><a href=#四-备注>四、备注</a></ul></ul></nav></div></div><div class=post-content><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=4019390506 data-ad-format=link data-full-width-responsive=true></ins><blockquote><p>摘要: 不需要在github网页上创建仓库,直接用命令行搞定,此文介绍三种直接在命令行创建GitHub仓库的形式！</blockquote><h2 id=准备工作>准备工作</h2><ol><li><p>进入一个本地仓库,并初始化<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>git init <span class=o>&amp;&amp;</span> git add . <span class=o>&amp;&amp;</span> git commit -m <span class=s2>&#34;Init&#34;</span></code></pre></table></div></div><ol><li>新建一个API Token
+进入<code>github - settings - Personal access tokens</code>,<a href=https://github.com/settings/applications target=_blank>generate new token</a>,写入description,选择scopes(权限范围)。记住<code>personal access token</code>(那串数字,只显示一遍！),请记住它,下次就看不到了！</ol><h2 id=一-命令行格式>一、命令行格式</h2><p>这是最直接的一种形式,直接把参数写到命令行搞定：<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>curl -u <span class=s2>&#34;</span><span class=nv>$username</span><span class=s2>:</span><span class=nv>$token</span><span class=s2>&#34;</span> https://api.github.com/user/repos -d <span class=s1>&#39;{&#34;name&#34;:&#34;&#39;</span><span class=nv>$repo_name</span><span class=s1>&#39;&#34;}&#39;</span></code></pre></table></div></div></ol><blockquote><p>Note: 这里需要把<code>$username</code>和<code>$token</code>分别换成实际的用户名和刚刚得到的<code>personal access token</code>,把<code>$repo_name</code>换成任何想要的<code>repo name</code>.</blockquote><h2 id=二-bash形式>二、bash形式</h2><p>可以把命令行写成bash脚本,下次只要执行里面的简单命令就可以执行以上整条命令。<ol><li><p>把<code>username</code>和<code>token</code>写入<code>~/.gitconfig</code>,形式如下：<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=o>[</span>github<span class=o>]</span>
+    <span class=nv>user</span> <span class=o>=</span> your user name
+    <span class=nv>token</span> <span class=o>=</span> the token you get</code></pre></table></div></div><ol><li>把如下的bash code写入<code>~/.bashrc</code>或者<code>~/.bash_profile</code>文件:</ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>github-create<span class=o>()</span> <span class=o>{</span>
+  <span class=nv>repo_name</span><span class=o>=</span><span class=nv>$1</span>
+     
+  <span class=nv>dir_name</span><span class=o>=</span><span class=sb>`</span>basename <span class=k>$(</span><span class=nb>pwd</span><span class=k>)</span><span class=sb>`</span>
+     
+  <span class=k>if</span> <span class=o>[</span> <span class=s2>&#34;</span><span class=nv>$repo_name</span><span class=s2>&#34;</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+    <span class=nb>echo</span> <span class=s2>&#34;Repo name (hit enter to use &#39;</span><span class=nv>$dir_name</span><span class=s2>&#39;)?&#34;</span>
+    <span class=nb>read</span> repo_name
+  <span class=k>fi</span>
+     
+  <span class=k>if</span> <span class=o>[</span> <span class=s2>&#34;</span><span class=nv>$repo_name</span><span class=s2>&#34;</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+    <span class=nv>repo_name</span><span class=o>=</span><span class=nv>$dir_name</span>
+  <span class=k>fi</span>
+     
+  <span class=nv>username</span><span class=o>=</span><span class=sb>`</span>git config github.user<span class=sb>`</span>
+  <span class=k>if</span> <span class=o>[</span> <span class=s2>&#34;</span><span class=nv>$username</span><span class=s2>&#34;</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+    <span class=nb>echo</span> <span class=s2>&#34;Could not find username, run &#39;git config --global github.user &lt;username&gt;&#39;&#34;</span>
+    <span class=nv>invalid_credentials</span><span class=o>=</span><span class=m>1</span>
+  <span class=k>fi</span>
+     
+  <span class=nv>token</span><span class=o>=</span><span class=sb>`</span>git config github.token<span class=sb>`</span>
+  <span class=k>if</span> <span class=o>[</span> <span class=s2>&#34;</span><span class=nv>$token</span><span class=s2>&#34;</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+    <span class=nb>echo</span> <span class=s2>&#34;Could not find token, run &#39;git config --global github.token &lt;token&gt;&#39;&#34;</span>
+    <span class=nv>invalid_credentials</span><span class=o>=</span><span class=m>1</span>
+  <span class=k>fi</span>
+     
+  <span class=k>if</span> <span class=o>[</span> <span class=s2>&#34;</span><span class=nv>$invalid_credentials</span><span class=s2>&#34;</span> <span class=o>==</span> <span class=s2>&#34;1&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+    <span class=k>return</span> <span class=m>1</span>
+  <span class=k>fi</span>
+     
+  <span class=nb>echo</span> -n <span class=s2>&#34;Creating Github repository &#39;</span><span class=nv>$repo_name</span><span class=s2>&#39; ...&#34;</span>
+  curl -u <span class=s2>&#34;</span><span class=nv>$username</span><span class=s2>:</span><span class=nv>$token</span><span class=s2>&#34;</span> https://api.github.com/user/repos -d <span class=s1>&#39;{&#34;name&#34;:&#34;&#39;</span><span class=nv>$repo_name</span><span class=s1>&#39;&#34;}&#39;</span> &gt; /dev/null <span class=m>2</span>&gt;<span class=p>&amp;</span><span class=m>1</span>
+  <span class=nb>echo</span> <span class=s2>&#34; done.&#34;</span>
+     
+  <span class=nb>echo</span> -n <span class=s2>&#34;Pushing local code to remote ...&#34;</span>
+  git remote add origin git@github.com:<span class=nv>$username</span>/<span class=nv>$repo_name</span>.git &gt; /dev/null <span class=m>2</span>&gt;<span class=p>&amp;</span><span class=m>1</span>
+  git push -u origin master &gt; /dev/null <span class=m>2</span>&gt;<span class=p>&amp;</span><span class=m>1</span>
+  <span class=nb>echo</span> <span class=s2>&#34; done.&#34;</span>
+<span class=o>}</span></code></pre></table></div></div><li><p>使上述命令生效:重新打开或新启动一个Terminal,或者运行<code>source ~/.bashrc</code><li><p>以后便可以使用如下命令创建远程仓库了：<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>github-create <span class=o>[</span>repo_name<span class=o>]</span></code></pre></table></div></div><blockquote><p>其中,默认的repo名是当前目录名。</blockquote><h2 id=三-bash形式简化版>三、Bash形式简化版</h2><ol><li>把如下code写入<code>~/.bashrc</code>:</ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>github-create<span class=o>()</span> 
+<span class=o>{</span><span class=k>if</span> <span class=o>[</span> <span class=nv>$1</span> <span class=o>]</span>
+<span class=k>then</span>
+<span class=nv>repo_name</span><span class=o>=</span><span class=nv>$1</span>
+<span class=k>else</span>
+<span class=nb>echo</span> <span class=s2>&#34;Repo name?&#34;</span>
+<span class=nb>read</span> repo_name
+<span class=k>fi</span> 
+curl -u <span class=s1>&#39;$username:$token&#39;</span> https://api.github.com/user/repos -d <span class=s1>&#39;{&#34;name&#34;:&#34;&#39;</span><span class=nv>$repo_name</span><span class=s1>&#39;&#34;}&#39;</span>
+git remote add origin git@github.com:efatsi/<span class=nv>$repo_name</span>.git
+git push -u origin master
+<span class=o>}</span></code></pre></table></div></div><li><p>同Bash方式的步骤3<li><p>执行命令<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>simple-create <span class=o>[</span>repo_name<span class=o>]</span></code></pre></table></div></div><h2 id=四-备注>四、备注</h2><p>本文转自<a href=https://my.oschina.net/eduOSS/blog/287824 target=_blank>这里</a>,有修改。</ol><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-4469282388984999 data-ad-slot=5357438236></ins><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=5625031544 data-ad-format=auto data-full-width-responsive=true></ins></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Quanyin</span><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2019-02-21</span><p class=copyright-item><span class=item-title>许可协议</span>
+<span class=item-content>本博客所有文章除特别声明外，均采用 <a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>(CC) BY-NC-SA 4.0 </a>许可协议。转载请注明作者和出处并告知</span></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<label class=reward-button for=reward>赞赏支持</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=/img/reward/WechatPay.png>
+<span>微信打赏</span></label>
+<label class=qr-code-image for=reward><img class=image src=/img/reward/AliPay.png>
+<span>支付宝打赏</span></label></div></div><footer class=post-footer><div class=post-tags><a href=/tags/github/>Github</a></div><nav class=post-nav><a class=prev href=/2017/deeplearning-on-windows/><i class="iconfont icon-left"></i><span class="prev-text nav-default">这是一份你们需要的Windows版深度学习软件安装指南</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/2017/emoji-cheat-sheet/><span class="next-text nav-default">emoji cheat sheet</span>
+<span class="prev-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><div class="post bg-white"><script src=https://cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=https://unpkg.com/valine/dist/Valine.min.js></script><div id=vcomments></div><script>new Valine({el:'#vcomments',appId:'aTnk2nRIOVuFeXVYCRqOhEQ1-MdYXbMMI',appKey:'fPBawjKkMiA8biHbwoDim1mJ',avatar:'mm',placeholder:'说点什么吧',})</script></div></div></div></main><footer id=footer class=footer><div class=icon-links><a href=/index.xml rel="noopener alternate" type=application/rss&#43;xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 0 1 140.501333 140.586667A140.928 140.928.0 0 1 140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme - <a class=theme-link href=https://github.com/xianmin/hugo-theme-jane>Jane</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020
+<span class=heart><i class=iconfont><svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"><path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7.0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1.0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2.0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3.1-42.5-8-83.6-24-122.2z" fill="#8a8a8a"/></svg></i></span><span class=author>Quanyin</span></span></div></footer><div class=back-to-top id=back-to-top><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35"><path d="M510.866688 227.694839 95.449397 629.218702h235.761562L329.15309 958.01517h362.40389L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777h894.052392v131.813095H63.840492V63.962777v0zm0 0"/></svg></i></div></div><script src=/lib/jquery/jquery-3.2.1.min.js></script><script src=/lib/slideout/slideout-1.0.1.min.js></script><script src="/dist/jane.min.js?v=2.7.0"></script><script src=/js/load-photoswipe.js></script><script src=/lib/photoswipe/photoswipe.min.js></script><script src=/lib/photoswipe/photoswipe-ui-default.min.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>

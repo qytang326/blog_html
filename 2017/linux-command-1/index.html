@@ -1,0 +1,611 @@
+<!doctype html><html lang=zh-cn itemscope itemtype=http://schema.org/WebPage><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Linux系统命令 I - 已停更的小博客</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content=width><meta name=HandheldFriendly content=true><meta name=applicable-device content=pc,mobile><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=mobile-web-app-capable content=yes><meta name=author content=Quanyin><meta name=description content=Linux系统下一些常用命令介绍><meta name=keywords content=技术博客><meta name=generator content="Hugo 0.55.6"><link rel=canonical href=/2017/linux-command-1/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media=screen crossorigin=anonymous><meta property=og:title content="Linux系统命令 I"><meta property=og:description content=Linux系统下一些常用命令介绍><meta property=og:type content=article><meta property=og:url content=/2017/linux-command-1/><meta property=article:published_time content=2017-10-23T00:00:00&#43;00:00><meta property=article:modified_time content=2020-05-07T17:24:00&#43;08:00><meta itemprop=name content="Linux系统命令 I"><meta itemprop=description content=Linux系统下一些常用命令介绍><meta itemprop=datePublished content=2017-10-23T00:00:00&#43;00:00><meta itemprop=dateModified content=2020-05-07T17:24:00&#43;08:00><meta itemprop=wordCount content=3650><meta itemprop=keywords content=Linux,><meta name=twitter:card content=summary><meta name=twitter:title content="Linux系统命令 I"><meta name=twitter:description content=Linux系统下一些常用命令介绍><script>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-126038371-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4469282388984999",enable_page_level_ads:true});</script><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=/>主页</a><li class=mobile-menu-item><a class=menu-item-link href=/notice/>通知</a><li class=mobile-menu-item><a class=menu-item-link href=/post/>时光机</a><li class=mobile-menu-item><div class=mobile-menu-parent><span class=mobile-submenu-open></span><a href=/categories/>分类</a></div><ul class=mobile-submenu-list><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=mobile-menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav><link rel=stylesheet href=/lib/photoswipe/photoswipe.min.css><link rel=stylesheet href=/lib/photoswipe/default-skin/default-skin.min.css><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>主页</a><li class=menu-item><a class=menu-item-link href=/notice/>通知</a><li class=menu-item><a class=menu-item-link href=/post/>时光机</a><li class=menu-item><a class="menu-item-link menu-parent" href=/categories/>分类</a><ul class=submenu><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>Linux系统命令 I</h1><div class=post-meta><time datetime=2017-10-23 class=post-time>2017-10-23</time><div class=post-category><a href=/categories/%E7%BC%96%E7%A8%8B/>编程</a></div><span class=more-meta>约 3650 字</span>
+<span class=more-meta>预计阅读 8 分钟</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#ls>ls</a><ul><li><a href=#1-用法>1. 用法</a><li><a href=#2-功能>2. 功能</a><li><a href=#3-常用参数>3. 常用参数</a><li><a href=#4-寻求帮助>4. 寻求帮助</a></ul><li><a href=#cd>cd</a><ul><li><a href=#1-用法-1>1. 用法</a><li><a href=#2-功能-1>2. 功能</a><li><a href=#3-常用参数-1>3. 常用参数</a><li><a href=#4-寻求帮助-1>4. 寻求帮助</a></ul><li><a href=#mkdir>mkdir</a><ul><li><a href=#1-用法-2>1. 用法</a><li><a href=#2-功能-2>2. 功能</a><li><a href=#3-常用参数-2>3. 常用参数</a><li><a href=#4-寻求帮助-2>4. 寻求帮助</a></ul><li><a href=#rmdir>rmdir</a><ul><li><a href=#1-用法-3>1. 用法</a><li><a href=#2-功能-3>2. 功能</a><li><a href=#3-常用参数-3>3. 常用参数</a><li><a href=#4-寻求帮助-3>4. 寻求帮助</a></ul><li><a href=#pwd>pwd</a><ul><li><a href=#1-用法-4>1. 用法</a><li><a href=#2-功能-4>2. 功能</a><li><a href=#3-常用参数-4>3. 常用参数</a><li><a href=#4-寻求帮助-4>4. 寻求帮助</a></ul></ul></ul></nav></div></div><div class=post-content><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=4019390506 data-ad-format=link data-full-width-responsive=true></ins><h2 id=ls>ls</h2><p>ls命令是Linux下用于显示目录相关信息的命令.<h3 id=1-用法>1. 用法</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>ls <span class=o>[</span>选项<span class=o>]</span> <span class=o>[</span>文件<span class=o>(</span>夹<span class=o>)]</span>
+ls <span class=o>[</span>OPTION<span class=o>]</span>... <span class=o>[</span>FILE<span class=o>]</span>...</code></pre></table></div></div><h3 id=2-功能>2. 功能</h3><p>列出 <code>[FILE]</code> 的相关信息<h3 id=3-常用参数>3. 常用参数</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>    -a,–all                         列出目录下的所有文件,包括以 . 开头的隐含文件
+
+    -A                              同-a,但不列出<span class=s2>&#34;.&#34;</span><span class=o>(</span>表示当前目录<span class=o>)</span>和<span class=s2>&#34;..&#34;</span><span class=o>(</span>表示当前目录的父目录<span class=o>)</span>。
+
+    -c                              配合 -lt:根据 ctime 排序及显示 ctime<span class=o>(</span>文件状态最后更改的时间<span class=o>)</span>
+                                    配合 -l:显示 ctime 但根据名称排序
+                                    否则:根据 ctime 排序
+
+    -C                              每栏由上至下列出项目
+
+    –color<span class=o>[=</span>WHEN<span class=o>]</span>                   控制是否使用色彩分辨文件。WHEN 可以是<span class=s1>&#39;never&#39;</span>、<span class=s1>&#39;always&#39;</span>或<span class=s1>&#39;auto&#39;</span>其中之一
+
+    -d,–directory                   将目录象文件一样显示,而不是显示其下的文件。
+
+    -D,–dired                       产生适合 Emacs 的 dired 模式使用的结果
+
+    -f                              对输出的文件不进行排序,-aU 选项生效,-lst 选项失效
+
+    -g                              类似 -l,但不列出所有者
+
+    -G,–no-group                    不列出任何有关组的信息
+
+    -h,–human-readable              以容易理解的格式列出文件大小<span class=o>(</span>例如 1K 234M 2G<span class=o>)</span>
+
+    –si                             类似 -h,但文件大小取 <span class=m>1000</span> 的次方而不是 <span class=m>1024</span>
+
+    -H,–dereference-command-line    使用命令列中的符号链接指示的真正目的地
+
+    –indicator-style<span class=o>=</span>方式           指定在每个项目名称后加上指示符号&lt;方式&gt;:none<span class=o>(</span>默认<span class=o>)</span>,classify<span class=o>(</span>-F<span class=o>)</span>,file-type<span class=o>(</span>-p<span class=o>)</span>
+
+    -i,–inode                       印出每个文件的 inode 号
+
+    -I,–ignore<span class=o>=</span>样式                 不印出任何符合 shell 万用字符&lt;样式&gt;的项目
+
+    -k                              即 <span class=sb>`</span>–block-size<span class=o>=</span>1K<span class=sb>`</span> ,以 k 字节的形式表示文件的大小。
+
+    -l                              除了文件名之外,还将文件的权限、所有者、文件大小等信息详细列出来。
+
+    -L, –dereference                当显示符号链接的文件信息时,显示符号链接所指示的对象而并非符号链接本身的信息
+
+    -m                              所有项目以逗号分隔,并填满整行行宽
+
+    -o                              类似 -l,显示文件的除组信息外的详细信息。
+
+    -r, –reverse                    依相反次序排列
+
+    -R, –recursive                  同时列出所有子目录层
+
+    -s, –size                       以块大小为单位列出所有文件的大小
+
+    -S                              根据文件大小排序
+
+    –sort<span class=o>=</span>WORD                      以下是可选用的 WORD 和它们代表的相应选项:
+                                    - extension -X status -c
+                                    - none -U <span class=nb>time</span> -t
+                                    - size -S atime -u
+                                    - <span class=nb>time</span> -t access -u
+                                    - version -v use -u
+
+    -t                              以文件修改时间排序
+
+    -u                              配合 -lt:显示访问时间而且依访问时间排序
+                                    配合 -l:显示访问时间但根据名称排序
+                                    否则:根据访问时间排序
+
+    -U                              不进行排序<span class=p>;</span>依文件系统原有的次序列出项目
+
+    -v                              根据版本进行排序
+
+    -w, –width<span class=o>=</span>COLS                 自行指定屏幕宽度而不使用目前的数值
+
+    -x                              逐行列出项目而不是逐栏列出
+
+    -X                              根据扩展名排序
+
+    -1                              每行只列出一个文件
+
+    –help                           显示此帮助信息并离开
+
+    –version                        显示版本信息并离开</code></pre></table></div></div><h3 id=4-寻求帮助>4. 寻求帮助</h3><ul><li>使用 <code>ls --help</code><li>使用 <code>man ls</code><li>使用 <code>info ls</code></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ ls --help
+
+用法:ls <span class=o>[</span>选项<span class=o>]</span>... <span class=o>[</span>文件<span class=o>]</span>...
+List information about the FILEs<span class=o>(</span>the current directory by default<span class=o>)</span>.
+Sort entries alphabetically <span class=k>if</span> none of -cftuvSUX nor --sort is specified.
+
+必选参数对长短选项同时适用。
+  -a, --all			不隐藏任何以. 开始的项目
+  -A, --almost-all		列出除. 及.. 以外的任何项目
+      --author			与-l 同时使用时列出每个文件的作者
+  -b, --escape			以八进制溢出序列表示不可打印的字符
+      --block-size<span class=o>=</span>SIZE      scale sizes by SIZE before printing them<span class=p>;</span> e.g.,
+                               <span class=s1>&#39;--block-size=M&#39;</span> prints sizes in units of
+                               <span class=m>1</span>,048,576 bytes<span class=p>;</span> see SIZE format below
+  -B, --ignore-backups       <span class=k>do</span> not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime<span class=o>(</span><span class=nb>time</span> of last
+                               modification of file status information<span class=o>)</span><span class=p>;</span>
+                               with -l: show ctime and sort by name<span class=p>;</span>
+                               otherwise: sort by ctime, newest first
+  -C                         list entries by columns
+      --color<span class=o>[=</span>WHEN<span class=o>]</span>         colorize the output<span class=p>;</span> WHEN can be <span class=s1>&#39;always&#39;</span><span class=o>(</span>default
+                               <span class=k>if</span> omitted<span class=o>)</span>, <span class=s1>&#39;auto&#39;</span>, or <span class=s1>&#39;never&#39;</span><span class=p>;</span> more info below
+  -d, --directory            list directories themselves, not their contents
+  -D, --dired                generate output designed <span class=k>for</span> Emacs<span class=s1>&#39; dired mode
+</span><span class=s1>  -f                         do not sort, enable -aU, disable -ls --color
+</span><span class=s1>  -F, --classify             append indicator(one of */=&gt;@|) to entries
+</span><span class=s1>      --file-type            likewise, except do not append &#39;</span>*<span class=s1>&#39;
+</span><span class=s1>      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+</span><span class=s1>                               single-column -1, verbose -l, vertical -C
+</span><span class=s1>      --full-time            like -l --time-style=full-iso
+</span><span class=s1>  -g				类似-l,但不列出所有者
+</span><span class=s1>      --group-directories-first
+</span><span class=s1>                             group directories before files;
+</span><span class=s1>                               can be augmented with a --sort option, but any
+</span><span class=s1>                               use of --sort=none(-U) disables grouping
+</span><span class=s1>  -G, --no-group             in a long listing, don&#39;</span>t print group names
+  -h, --human-readable       with -l and/or -s, print human readable sizes
+                              <span class=o>(</span>e.g., 1K 234M 2G<span class=o>)</span>
+      --si                   likewise, but use powers of <span class=m>1000</span> not <span class=m>1024</span>
+  -H, --dereference-command-line
+                             follow symbolic links listed on the <span class=nb>command</span> line
+      --dereference-command-line-symlink-to-dir
+                             follow each <span class=nb>command</span> line symbolic link
+                               that points to a directory
+      --hide<span class=o>=</span>PATTERN         <span class=k>do</span> not list implied entries matching shell PATTERN
+                              <span class=o>(</span>overridden by -a or -A<span class=o>)</span>
+      --indicator-style<span class=o>=</span>WORD  append indicator with style WORD to entry names:
+                               none<span class=o>(</span>default<span class=o>)</span>, slash<span class=o>(</span>-p<span class=o>)</span>,
+                               file-type<span class=o>(</span>--file-type<span class=o>)</span>, classify<span class=o>(</span>-F<span class=o>)</span>
+  -i, --inode                print the index number of each file
+  -I, --ignore<span class=o>=</span>PATTERN       <span class=k>do</span> not list implied entries matching shell PATTERN
+  -k, --kibibytes            default to <span class=m>1024</span>-byte blocks <span class=k>for</span> disk usage
+  -l				使用较长格式列出信息
+  -L, --dereference		当显示符号链接的文件信息时,显示符号链接所指示
+				的对象而并非符号链接本身的信息
+  -m				所有项目以逗号分隔,并填满整行行宽
+  -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+  -N, --literal              print entry names without quoting
+  -o                         like -l, but <span class=k>do</span> not list group information
+  -p, --indicator-style<span class=o>=</span>slash
+                             append / indicator to directories
+  -q, --hide-control-chars   print ? instead of nongraphic characters
+      --show-control-chars   show nongraphic characters as-is<span class=o>(</span>the default,
+                               unless program is <span class=s1>&#39;ls&#39;</span> and output is a terminal<span class=o>)</span>
+  -Q, --quote-name           enclose entry names in double quotes
+      --quoting-style<span class=o>=</span>WORD   use quoting style WORD <span class=k>for</span> entry names:
+                               literal, locale, shell, shell-always,
+                               shell-escape, shell-escape-always, c, escape
+  -r, --reverse			逆序排列
+  -R, --recursive		递归显示子目录
+  -s, --size			以块数形式显示每个文件分配的尺寸
+  -S                         sort by file size, largest first
+      --sort<span class=o>=</span>WORD            sort by WORD instead of name: none<span class=o>(</span>-U<span class=o>)</span>, size<span class=o>(</span>-S<span class=o>)</span>,
+                               time<span class=o>(</span>-t<span class=o>)</span>, version<span class=o>(</span>-v<span class=o>)</span>, extension<span class=o>(</span>-X<span class=o>)</span>
+      --time<span class=o>=</span>WORD            with -l, show <span class=nb>time</span> as WORD instead of default
+                               modification time: atime or access or use<span class=o>(</span>-u<span class=o>)</span><span class=p>;</span>
+                               ctime or status<span class=o>(</span>-c<span class=o>)</span><span class=p>;</span> also use specified <span class=nb>time</span>
+                               as sort key <span class=k>if</span> --sort<span class=o>=</span>time<span class=o>(</span>newest first<span class=o>)</span>
+      --time-style<span class=o>=</span>STYLE     with -l, show <span class=nb>times</span> using style STYLE:
+                               full-iso, long-iso, iso, locale, or +FORMAT<span class=p>;</span>
+                               FORMAT is interpreted like in <span class=s1>&#39;date&#39;</span><span class=p>;</span> <span class=k>if</span> FORMAT
+                               is FORMAT1&lt;newline&gt;FORMAT2, <span class=k>then</span> FORMAT1 applies
+                               to non-recent files and FORMAT2 to recent files<span class=p>;</span>
+                               <span class=k>if</span> STYLE is prefixed with <span class=s1>&#39;posix-&#39;</span>, STYLE
+                               takes effect only outside the POSIX locale
+  -t                         sort by modification time, newest first
+  -T, --tabsize<span class=o>=</span>COLS         assume tab stops at each COLS instead of <span class=m>8</span>
+  -u                         with -lt: sort by, and show, access time<span class=p>;</span>
+                               with -l: show access <span class=nb>time</span> and sort by name<span class=p>;</span>
+                               otherwise: sort by access time, newest first
+  -U                         <span class=k>do</span> not sort<span class=p>;</span> list entries in directory order
+  -v                         natural sort of<span class=o>(</span>version<span class=o>)</span> numbers within text
+  -w, --width<span class=o>=</span>COLS           <span class=nb>set</span> output width to COLS.  <span class=m>0</span> means no limit
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -Z, --context              print any security context of each file
+  -1                         list one file per line.  Avoid <span class=s1>&#39;\n&#39;</span> with -q or -b
+      --help		显示此帮助信息并退出
+      --version		显示版本信息并退出
+
+The SIZE argument is an integer and optional unit<span class=o>(</span>example: 10K is <span class=m>10</span>*1024<span class=o>)</span>.
+Units are K,M,G,T,P,E,Z,Y<span class=o>(</span>powers of <span class=m>1024</span><span class=o>)</span> or KB,MB,...<span class=o>(</span>powers of <span class=m>1000</span><span class=o>)</span>.
+
+使用色彩来区分文件类型的功能已被禁用,默认设置和 --color<span class=o>=</span>never 同时禁用了它。
+使用 --color<span class=o>=</span>auto 选项,ls 只在标准输出被连至终端时才生成颜色代码。
+LS_COLORS 环境变量可改变此设置,可使用 dircolors 命令来设置。
+
+退出状态:
+ <span class=m>0</span>  正常
+ <span class=m>1</span>  一般问题<span class=o>(</span>例如:无法访问子文件夹<span class=o>)</span>
+ <span class=m>2</span>  严重问题<span class=o>(</span>例如:无法使用命令行参数<span class=o>)</span></code></pre></table></div></div><h2 id=cd>cd</h2><h3 id=1-用法-1>1. 用法</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> <span class=o>[</span>目录名<span class=o>]</span>
+<span class=nb>cd</span> <span class=o>[</span>-L<span class=p>|</span><span class=o>[</span>-P <span class=o>[</span>-e<span class=o>]]</span> <span class=o>[</span>-@<span class=o>]]</span> <span class=o>[</span>目录<span class=o>]</span></code></pre></table></div></div><h3 id=2-功能-1>2. 功能</h3><p>改变当前工作目录;
+切换当前目录到<code>[目录]</code>,默认为<code>HOME</code>目录<h3 id=3-常用参数-1>3. 常用参数</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></pre><td class=lntd><pre class=chroma>cd .        进入到当前目录(没有任何改变)
+cd ..       进入到父目录(上层目录)
+cd ~        进入到`HOME`目录
+cd -        进入到上次工作目录(`$OLDPWD`)
+cd !$       把上个命令的参数作为cd参数使用
+cd DIR      进入到当前目录下的`DIR`中(相对目录),若没有`DIR`目录则报错`没有那个文件或目录`
+cd /a/b     进入到`/a/b`目录(绝对位置)
+
+选项 Option :
+      -L    force symbolic links to be followed: resolve symbolic
+            links in DIR after processing instances of `..&#39;
+      -P    use the physical directory structure without following
+            symbolic links: resolve symbolic links in DIR before
+            processing instances of `..&#39;
+      -e    if the -P option is supplied, and the current working
+            directory cannot be determined successfully, exit with
+            a non-zero status
+      -@    on systems that support it, present a file with extended
+            attributes as a directory containing the file attributes</pre></table></div></div><h3 id=4-寻求帮助-1>4. 寻求帮助</h3><ul><li>使用 <code>cd --help</code><li>使用 <code>man cd</code><li><p>使用 <code>info cd</code><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> <span class=o>[</span>-L<span class=p>|</span><span class=o>[</span>-P <span class=o>[</span>-e<span class=o>]]</span> <span class=o>[</span>-@<span class=o>]]</span> <span class=o>[</span>目录<span class=o>]</span>
+Change the shell working directory.
+
+Change the current directory to DIR.  The default DIR is the value of the
+HOME shell variable.
+
+The variable CDPATH defines the search path <span class=k>for</span> the directory containing
+DIR.  Alternative directory names in CDPATH are separated by a colon <span class=o>(</span>:<span class=o>)</span>.
+A null directory name is the same as the current directory.  If DIR begins
+with a slash <span class=o>(</span>/<span class=o>)</span>, <span class=k>then</span> CDPATH is not used.
+
+If the directory is not found, and the shell option <span class=s1>&#39;cdable_vars&#39;</span> is set,
+the word is assumed to be  a variable name.  If that variable has a value,
+its value is used <span class=k>for</span> DIR.
+
+Options:
+  -L	force symbolic links to be followed: resolve symbolic
+		links in DIR after processing instances of <span class=s1>&#39;..&#39;</span>
+  -P	use the physical directory structure without following
+		symbolic links: resolve symbolic links in DIR before
+		processing instances of <span class=s1>&#39;..&#39;</span>
+  -e	<span class=k>if</span> the -P option is supplied, and the current working
+		directory cannot be determined successfully, <span class=nb>exit</span> with
+		a non-zero status
+  -@	on systems that support it, present a file with extended
+		attributes as a directory containing the file attributes
+
+The default is to follow symbolic links, as <span class=k>if</span> <span class=s1>&#39;-L&#39;</span> were specified.
+<span class=s1>&#39;..&#39;</span> is processed by removing the immediately previous pathname component
+back to a slash or the beginning of DIR.
+
+Exit Status:
+Returns <span class=m>0</span> <span class=k>if</span> the directory is changed, and <span class=k>if</span> <span class=nv>$PWD</span> is <span class=nb>set</span> successfully when
+-P is used<span class=p>;</span> non-zero otherwise.</code></pre></table></div></div><h2 id=mkdir>mkdir</h2><h3 id=1-用法-2>1. 用法</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>mkdir <span class=o>[</span>选项<span class=o>]</span>... 目录...</code></pre></table></div></div></ul><h3 id=2-功能-2>2. 功能</h3><p>创建<code>目录</code>(如果不存在的话)<h3 id=3-常用参数-2>3. 常用参数</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></pre><td class=lntd><pre class=chroma>    -m,--mode=模式        设定权限`模式`(类似 chmod),而不是`rwxrwxrwx减umask`
+
+    -p,--parents          递归创建,可以是一个路径名称。此时若路径中的某些目录尚不存在,加上此选项后,系统将自动建立好那些尚不存在的目录,即一次可以建立多个目录;
+
+    -v,--verbose         每次创建新目录都显示信息
+
+    --help            显示此帮助信息并退出
+
+    --version         输出版本信息并退出</pre></table></div></div><h3 id=4-寻求帮助-2>4. 寻求帮助</h3><ul><li>使用 <code>mkdir --help</code><li>使用 <code>man mkdir</code><li>使用 <code>info mkdir</code></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>用法：mkdir <span class=o>[</span>选项<span class=o>]</span>... 目录...
+Create the DIRECTORY<span class=o>(</span>ies<span class=o>)</span>, <span class=k>if</span> they <span class=k>do</span> not already exist.
+
+必选参数对长短选项同时适用。
+  -m, --mode<span class=o>=</span>MODE   <span class=nb>set</span> file mode <span class=o>(</span>as in chmod<span class=o>)</span>, not <span class=nv>a</span><span class=o>=</span>rwx - <span class=nb>umask</span>
+  -p, --parents     no error <span class=k>if</span> existing, make parent directories as needed
+  -v, --verbose     print a message <span class=k>for</span> each created directory
+  -Z                   <span class=nb>set</span> SELinux security context of each created directory
+                         to the default <span class=nb>type</span>
+      --context<span class=o>[=</span>CTX<span class=o>]</span>  like -Z, or <span class=k>if</span> CTX is specified <span class=k>then</span> <span class=nb>set</span> the SELinux
+                         or SMACK security context to CTX
+      --help        显示此帮助信息并退出
+      --version     显示版本信息并退出</code></pre></table></div></div><h2 id=rmdir>rmdir</h2><h3 id=1-用法-3>1. 用法</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>rmdir <span class=o>[</span>选项<span class=o>]</span>... 目录...</code></pre></table></div></div><h3 id=2-功能-3>2. 功能</h3><p>删除指定的<code>空目录</code><h3 id=3-常用参数-3>3. 常用参数</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></pre><td class=lntd><pre class=chroma>-p                 递归删除目录dirname,当子目录删除后其父目录为空时,也一同被删除。如果整个路径被删除或者由于某种原因保留部分路径,则系统在标准输出上显示相应的信息。
+
+-v,--verbose        显示指令执行过程</pre></table></div></div><h3 id=4-寻求帮助-3>4. 寻求帮助</h3><ul><li>使用 <code>rmdir --help</code><li>使用 <code>man rmdir</code><li><p>使用 <code>info rmdir</code><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>用法：rmdir <span class=o>[</span>选项<span class=o>]</span>... 目录...
+删除指定的空目录。
+
+  --ignore-fail-on-non-empty
+			忽略仅由目录非空产生的所有错误
+-p, --parents   remove DIRECTORY and its ancestors<span class=p>;</span> e.g., <span class=s1>&#39;rmdir -p a/b/c&#39;</span> is
+                similar to <span class=s1>&#39;rmdir a/b/c a/b a&#39;</span>
+-v, --verbose   output a diagnostic <span class=k>for</span> every directory processed
+  --help		显示此帮助信息并退出
+  --version		显示版本信息并退出</code></pre></table></div></div><h2 id=pwd>pwd</h2><h3 id=1-用法-4>1. 用法</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=nb>pwd</span> <span class=o>[</span>-LP<span class=o>]</span></code></pre></table></div></div></ul><h3 id=2-功能-4>2. 功能</h3><p>打印当前工作目录的完整路径<h3 id=3-常用参数-4>3. 常用参数</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><span class=lnt>1
+</span><span class=lnt>2
+</span></pre><td class=lntd><pre class=chroma>-p                  显示实际物理路径,而不是符号链接
+-L                  print the value of $PWD if it names the current working directory</pre></table></div></div><h3 id=4-寻求帮助-4>4. 寻求帮助</h3><ul><li>使用 <code>pwd --help</code><li>使用 <code>man pwd</code><li><p>使用 <code>info pwd</code><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>pwd: <span class=nb>pwd</span> <span class=o>[</span>-LP<span class=o>]</span>
+Print the name of the current working directory.
+
+Options:
+  -L	print the value of <span class=nv>$PWD</span> <span class=k>if</span> it names the current working
+		directory
+  -P	print the physical directory, without any symbolic links
+
+By default, <span class=sb>`</span>pwd<span class=s1>&#39; behaves as if `-L&#39;</span> were specified.
+
+Exit Status:
+Returns <span class=m>0</span> unless an invalid option is given or the current directory
+cannot be read.</code></pre></table></div></div></ul><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-4469282388984999 data-ad-slot=5357438236></ins><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=5625031544 data-ad-format=auto data-full-width-responsive=true></ins></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Quanyin</span><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2020-05-07</span><p class=copyright-item><span class=item-title>许可协议</span>
+<span class=item-content>本博客所有文章除特别声明外，均采用 <a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>(CC) BY-NC-SA 4.0 </a>许可协议。转载请注明作者和出处并告知</span></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<label class=reward-button for=reward>赞赏支持</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=/img/reward/WechatPay.png>
+<span>微信打赏</span></label>
+<label class=qr-code-image for=reward><img class=image src=/img/reward/AliPay.png>
+<span>支付宝打赏</span></label></div></div><footer class=post-footer><div class=post-tags><a href=/tags/linux/>Linux</a></div><nav class=post-nav><a class=prev href=/2017/asian20-nanjing/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Mark第一次参加学术会议</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/2017/python-language-rules/><span class="next-text nav-default">Google Python 风格指南 I</span>
+<span class="prev-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><div class="post bg-white"><script src=https://cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=https://unpkg.com/valine/dist/Valine.min.js></script><div id=vcomments></div><script>new Valine({el:'#vcomments',appId:'aTnk2nRIOVuFeXVYCRqOhEQ1-MdYXbMMI',appKey:'fPBawjKkMiA8biHbwoDim1mJ',avatar:'mm',placeholder:'说点什么吧',})</script></div></div></div></main><footer id=footer class=footer><div class=icon-links><a href=/index.xml rel="noopener alternate" type=application/rss&#43;xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 0 1 140.501333 140.586667A140.928 140.928.0 0 1 140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme - <a class=theme-link href=https://github.com/xianmin/hugo-theme-jane>Jane</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020
+<span class=heart><i class=iconfont><svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"><path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7.0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1.0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2.0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3.1-42.5-8-83.6-24-122.2z" fill="#8a8a8a"/></svg></i></span><span class=author>Quanyin</span></span></div></footer><div class=back-to-top id=back-to-top><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35"><path d="M510.866688 227.694839 95.449397 629.218702h235.761562L329.15309 958.01517h362.40389L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777h894.052392v131.813095H63.840492V63.962777v0zm0 0"/></svg></i></div></div><script src=/lib/jquery/jquery-3.2.1.min.js></script><script src=/lib/slideout/slideout-1.0.1.min.js></script><script src="/dist/jane.min.js?v=2.7.0"></script><script src=/js/load-photoswipe.js></script><script src=/lib/photoswipe/photoswipe.min.js></script><script src=/lib/photoswipe/photoswipe-ui-default.min.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>

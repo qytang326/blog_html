@@ -1,0 +1,465 @@
+<!doctype html><html lang=zh-cn itemscope itemtype=http://schema.org/WebPage><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Google Python 风格指南 I - 已停更的小博客</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content=width><meta name=HandheldFriendly content=true><meta name=applicable-device content=pc,mobile><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=mobile-web-app-capable content=yes><meta name=author content=Quanyin><meta name=description content="Python 是 Google主要的脚本语言。这本风格指南主要包含的是针对python的编程准则。"><meta name=keywords content=技术博客><meta name=generator content="Hugo 0.55.6"><link rel=canonical href=/2017/python-language-rules/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media=screen crossorigin=anonymous><meta property=og:title content="Google Python 风格指南 I"><meta property=og:description content="Python 是 Google主要的脚本语言。这本风格指南主要包含的是针对python的编程准则。"><meta property=og:type content=article><meta property=og:url content=/2017/python-language-rules/><meta property=article:published_time content=2017-10-21T00:00:00&#43;00:00><meta property=article:modified_time content=2020-05-07T17:24:00&#43;08:00><meta itemprop=name content="Google Python 风格指南 I"><meta itemprop=description content="Python 是 Google主要的脚本语言。这本风格指南主要包含的是针对python的编程准则。"><meta itemprop=datePublished content=2017-10-21T00:00:00&#43;00:00><meta itemprop=dateModified content=2020-05-07T17:24:00&#43;08:00><meta itemprop=wordCount content=6897><meta itemprop=keywords content=Python,Style,><meta name=twitter:card content=summary><meta name=twitter:title content="Google Python 风格指南 I"><meta name=twitter:description content="Python 是 Google主要的脚本语言。这本风格指南主要包含的是针对python的编程准则。"><script>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-126038371-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4469282388984999",enable_page_level_ads:true});</script><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=/>主页</a><li class=mobile-menu-item><a class=menu-item-link href=/notice/>通知</a><li class=mobile-menu-item><a class=menu-item-link href=/post/>时光机</a><li class=mobile-menu-item><div class=mobile-menu-parent><span class=mobile-submenu-open></span><a href=/categories/>分类</a></div><ul class=mobile-submenu-list><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=mobile-menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav><link rel=stylesheet href=/lib/photoswipe/photoswipe.min.css><link rel=stylesheet href=/lib/photoswipe/default-skin/default-skin.min.css><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>主页</a><li class=menu-item><a class=menu-item-link href=/notice/>通知</a><li class=menu-item><a class=menu-item-link href=/post/>时光机</a><li class=menu-item><a class="menu-item-link menu-parent" href=/categories/>分类</a><ul class=submenu><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>Google Python 风格指南 I</h1><div class=post-meta><time datetime=2017-10-21 class=post-time>2017-10-21</time><div class=post-category><a href=/categories/%E7%BC%96%E7%A8%8B/>编程</a>
+<a href=/categories/%E7%AC%94%E8%AE%B0/>笔记</a></div><span class=more-meta>约 6897 字</span>
+<span class=more-meta>预计阅读 14 分钟</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#lint>Lint</a><li><a href=#导入>导入</a><li><a href=#包>包</a><li><a href=#异常>异常</a><li><a href=#全局变量>全局变量</a><li><a href=#嵌套-局部-内部类或函数>嵌套/局部/内部类或函数</a><li><a href=#列表推导-list-comprehensions>列表推导(List Comprehensions)</a><li><a href=#默认迭代器和操作符>默认迭代器和操作符</a><li><a href=#生成器>生成器</a><li><a href=#lambda函数>Lambda函数</a><li><a href=#条件表达式>条件表达式</a><li><a href=#默认参数值>默认参数值</a><li><a href=#属性-properties>属性(properties)</a><li><a href=#true-false的求值>True/False的求值</a><li><a href=#过时的语言特性>过时的语言特性</a><li><a href=#词法作用域-lexical-scoping>词法作用域(Lexical Scoping)</a><li><a href=#函数与方法装饰器>函数与方法装饰器</a><li><a href=#线程>线程</a><li><a href=#威力过大的特性>威力过大的特性</a></ul></ul></nav></div></div><div class=post-content><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=4019390506 data-ad-format=link data-full-width-responsive=true></ins><blockquote><p><strong>背景:</strong><ul><li>Python 是 Google主要的脚本语言。这本风格指南主要包含的是针对python的编程准则。<li>为帮助读者能够将代码准确格式化,我们提供了针对 <a href=//github.com/google/styleguide/blob/gh-pages/google_python_style.vim target=_blank><code>Vim的配置文件</code></a>。对于Emacs用户,保持默认设置即可。</ul></blockquote><p><link rel=stylesheet href=/css/hugo-easy-gallery.css><div class=box><figure class="center lazyload" itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/img/post-content/style/python-logo.jpg></div><a href=/img/post-content/style/python-logo.jpg itemprop=contentUrl></a></figure></div><hr><h2 id=lint>Lint</h2><hr><blockquote><p><strong>tip:</strong>
+对你的代码运行pylint</blockquote><dl><dt>定义:<dd>pylint是一个在Python源代码中查找bug的工具.
+对于C和C++这样的不那么动态的(译者注: 原文是less dynamic)语言,
+这些bug通常由编译器来捕获. 由于Python的动态特性, 有些警告可能不对.
+不过伪告警应该很少.<dt>优点:<dd>可以捕获容易忽视的错误, 例如输入错误, 使用未赋值的变量等.<dt>缺点:<dd>pylint不完美. 要利用其优势, 我们有时侯需要: a) 围绕着它来写代码 b)
+抑制其告警 c) 改进它, 或者d) 忽略它.<dt>结论:<dd><p>确保对你的代码运行pylint.抑制不准确的警告,以便能够将其他警告暴露出来。<p>你可以通过设置一个行注释来抑制告警. 例如:<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=nb>dict</span> <span class=o>=</span> <span class=s1>&#39;something awful&#39;</span>  <span class=c1># Bad Idea... pylint: disable=redefined-builtin</span></code></pre></table></div></div><p>pylint警告是以一个数字编号(如 <code>C0112</code> )和一个符号名(如
+<code>empty-docstring</code> )来标识的.
+在编写新代码或更新已有代码时对告警进行医治, 推荐使用符号名来标识.<p>如果警告的符号名不够见名知意,那么请对其增加一个详细解释。<p>采用这种抑制方式的好处是我们可以轻松查找抑制并回顾它们.<p>你可以使用命令 <code>pylint --list-msgs</code> 来获取pylint告警列表.
+你可以使用命令 <code>pylint --help-msg=C6409</code> ,
+以获取关于特定消息的更多信息.<p>相比较于之前使用的 <code>pylint: disable-msg</code> , 本文推荐使用
+<code>pylint: disable</code> .<p>要抑制&rdquo;参数未使用&rdquo;告警, 你可以用<code>_</code>作为参数标识符,
+或者在参数名前加<code>unused_</code>. 遇到不能改变参数名的情况,
+你可以通过在函数开头&rdquo;提到&rdquo;它们来消除告警. 例如:<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>foo</span><span class=p>(</span><span class=n>a</span><span class=p>,</span> <span class=n>unused_b</span><span class=p>,</span> <span class=n>unused_c</span><span class=p>,</span> <span class=n>d</span><span class=o>=</span><span class=bp>None</span><span class=p>,</span> <span class=n>e</span><span class=o>=</span><span class=bp>None</span><span class=p>):</span>
+    <span class=n>_</span> <span class=o>=</span> <span class=n>d</span><span class=p>,</span> <span class=n>e</span>
+    <span class=k>return</span> <span class=n>a</span></code></pre></table></div></div></dl><h2 id=导入>导入</h2><hr><blockquote><p><strong>tip:</strong>
+仅对包和模块使用导入</blockquote><dl><dt>定义：<dd>模块间共享代码的重用机制.<dt>优点：<dd>命名空间管理约定十分简单. 每个标识符的源都用一种一致的方式指示.
+x.Obj表示Obj对象定义在模块x中.<dt>缺点：<dd>模块名仍可能冲突. 有些模块名太长, 不太方便.<dt>结论：<dd><p>使用 <code>import x</code> 来导入包和模块.<p>使用 <code>from x import y</code> , 其中x是包前缀, y是不带前缀的模块名.<p>使用 <code>from x import y as z</code>, 如果两个要导入的模块都叫做y或者y太长了.<p>例如, 模块 <code>sound.effects.echo</code> 可以用如下方式导入:<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>sound.effects</span> <span class=kn>import</span> <span class=n>echo</span>
+<span class=o>...</span>
+<span class=n>echo</span><span class=o>.</span><span class=n>EchoFilter</span><span class=p>(</span><span class=nb>input</span><span class=p>,</span> <span class=n>output</span><span class=p>,</span> <span class=n>delay</span><span class=o>=</span><span class=mf>0.7</span><span class=p>,</span> <span class=n>atten</span><span class=o>=</span><span class=mi>4</span><span class=p>)</span></code></pre></table></div></div><p>导入时不要使用相对名称. 即使模块在同一个包中, 也要使用完整包名.
+这能帮助你避免无意间导入一个包两次.<h2 id=包>包</h2><hr><blockquote><p><strong>tip:</strong>
+使用模块的全路径名来导入每个模块</blockquote><dl><dt>优点：<dd>避免模块名冲突. 查找包更容易.<dt>缺点：<dd>部署代码变难, 因为你必须复制包层次.<dt>结论：<dd>所有的新代码都应该用完整包名来导入每个模块.</dl><p>应该像下面这样导入:<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=c1># Reference in code with complete name.</span>
+<span class=kn>import</span> <span class=nn>sound.effects.echo</span>
+
+<span class=c1># Reference in code with just module name (preferred).</span>
+<span class=kn>from</span> <span class=nn>sound.effects</span> <span class=kn>import</span> <span class=n>echo</span></code></pre></table></div></div></dl><h2 id=异常>异常</h2><hr><blockquote><p><strong>tip:</strong>
+允许使用异常, 但必须小心</blockquote><dl><dt>定义：<dd>异常是一种跳出代码块的正常控制流来处理错误或者其它异常条件的方式.<dt>优点：<dd>正常操作代码的控制流不会和错误处理代码混在一起. 当某种条件发生时,
+它也允许控制流跳过多个框架. 例如, 一步跳出N个嵌套的函数,
+而不必继续执行错误的代码.<dt>缺点：<dd>可能会导致让人困惑的控制流. 调用库时容易错过错误情况.<dt>结论：<dd><p>异常必须遵守特定条件:<ol><li>像这样触发异常: <code>raise MyException(&quot;Error message&quot;)</code> 或者
+<code>raise MyException</code> . 不要使用两个参数的形式(
+<code>raise MyException, &quot;Error message&quot;</code> )或者过时的字符串异常(
+<code>raise &quot;Error message&quot;</code> ).<li><p>模块或包应该定义自己的特定域的异常基类,
+这个基类应该从内建的Exception类继承.
+模块的异常基类应该叫做&rdquo;Error&rdquo;.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python> <span class=k>class</span> <span class=nc>Error</span><span class=p>(</span><span class=ne>Exception</span><span class=p>):</span>
+     <span class=k>pass</span>   </code></pre></table></div></div><ol><li>永远不要使用 <code>except:</code> 语句来捕获所有异常, 也不要捕获
+<code>Exception</code> 或者 <code>StandardError</code> , 除非你打算重新触发该异常,
+或者你已经在当前线程的最外层(记得还是要打印一条错误消息).
+在异常这方面, Python非常宽容, <code>except:</code>
+真的会捕获包括Python语法错误在内的任何错误. 使用 <code>except:</code>
+很容易隐藏真正的bug.<li>尽量减少try/except块中的代码量. try块的体积越大,
+期望之外的异常就越容易被触发. 这种情况下,
+try/except块将隐藏真正的错误.<li>使用finally子句来执行那些无论try块中有没有异常都应该被执行的代码.
+这对于清理资源常常很有用, 例如关闭文件.<li>当捕获异常时, 使用 <code>as</code> 而不要用逗号. 例如</ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python> <span class=k>try</span><span class=p>:</span>
+     <span class=k>raise</span> <span class=n>Error</span>
+ <span class=k>except</span> <span class=n>Error</span> <span class=k>as</span> <span class=n>error</span><span class=p>:</span>
+     <span class=k>pass</span></code></pre></table></div></div></ol></dl><h2 id=全局变量>全局变量</h2><hr><blockquote><p><strong>tip:</strong>
+避免全局变量</blockquote><dl><dt>定义：<dd>定义在模块级的变量.<dt>优点：<dd>偶尔有用.<dt>缺点：<dd>导入时可能改变模块行为, 因为导入模块时会对模块级变量赋值.<dt>结论：<dd><p>避免使用全局变量, 用类变量来代替. 但也有一些例外:<ol><li>脚本的默认选项.<li>模块级常量. 例如:　PI = 3.14159. 常量应该全大写, 用下划线连接.<li>有时候用全局变量来缓存值或者作为函数返回值很有用.<li>如果需要, 全局变量应该仅在模块内部可用,
+并通过模块级的公共函数来访问.</ol></dl><h2 id=嵌套-局部-内部类或函数>嵌套/局部/内部类或函数</h2><hr><blockquote><p><strong>tip:</strong>
+鼓励使用嵌套/本地/内部类或函数</blockquote><dl><dt>定义：<dd>类可以定义在方法, 函数或者类中. 函数可以定义在方法或函数中.
+封闭区间中定义的变量对嵌套函数是只读的.<dt>优点：<dd>允许定义仅用于有效范围的工具类和函数.<dt>缺点：<dd>嵌套类或局部类的实例不能序列化(pickled).<dt>结论：<dd>推荐使用.</dl><h2 id=列表推导-list-comprehensions>列表推导(List Comprehensions)</h2><hr><blockquote><p><strong>tip:</strong>
+可以在简单情况下使用</blockquote><dl><dt>定义：<dd>列表推导(list comprehensions)与生成器表达式(generator
+expression)提供了一种简洁高效的方式来创建列表和迭代器,
+而不必借助map(), filter(), 或者lambda.<dt>优点：<dd>简单的列表推导可以比其它的列表创建方法更加清晰简单.
+生成器表达式可以十分高效, 因为它们避免了创建整个列表.<dt>缺点：<dd>复杂的列表推导或者生成器表达式可能难以阅读.<dt>结论：<dd><p>适用于简单情况. 每个部分应该单独置于一行: 映射表达式, for语句,
+过滤器表达式. 禁止多重for语句或过滤器表达式. 复杂情况下还是使用循环.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span>
+  <span class=n>result</span> <span class=o>=</span> <span class=p>[]</span>
+  <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>):</span>
+      <span class=k>for</span> <span class=n>y</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>5</span><span class=p>):</span>
+          <span class=k>if</span> <span class=n>x</span> <span class=o>*</span> <span class=n>y</span> <span class=o>&gt;</span> <span class=mi>10</span><span class=p>:</span>
+              <span class=n>result</span><span class=o>.</span><span class=n>append</span><span class=p>((</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>))</span>
+
+  <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>xrange</span><span class=p>(</span><span class=mi>5</span><span class=p>):</span>
+      <span class=k>for</span> <span class=n>y</span> <span class=ow>in</span> <span class=nb>xrange</span><span class=p>(</span><span class=mi>5</span><span class=p>):</span>
+          <span class=k>if</span> <span class=n>x</span> <span class=o>!=</span> <span class=n>y</span><span class=p>:</span>
+              <span class=k>for</span> <span class=n>z</span> <span class=ow>in</span> <span class=nb>xrange</span><span class=p>(</span><span class=mi>5</span><span class=p>):</span>
+                  <span class=k>if</span> <span class=n>y</span> <span class=o>!=</span> <span class=n>z</span><span class=p>:</span>
+                      <span class=k>yield</span> <span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>,</span> <span class=n>z</span><span class=p>)</span>
+
+  <span class=k>return</span> <span class=p>((</span><span class=n>x</span><span class=p>,</span> <span class=n>complicated_transform</span><span class=p>(</span><span class=n>x</span><span class=p>))</span>
+          <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>long_generator_function</span><span class=p>(</span><span class=n>parameter</span><span class=p>)</span>
+          <span class=k>if</span> <span class=n>x</span> <span class=ow>is</span> <span class=ow>not</span> <span class=bp>None</span><span class=p>)</span>
+
+  <span class=n>squares</span> <span class=o>=</span> <span class=p>[</span><span class=n>x</span> <span class=o>*</span> <span class=n>x</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)]</span>
+
+  <span class=n>eat</span><span class=p>(</span><span class=n>jelly_bean</span> <span class=k>for</span> <span class=n>jelly_bean</span> <span class=ow>in</span> <span class=n>jelly_beans</span>
+      <span class=k>if</span> <span class=n>jelly_bean</span><span class=o>.</span><span class=n>color</span> <span class=o>==</span> <span class=s1>&#39;black&#39;</span><span class=p>)</span>   </code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>
+  <span class=n>result</span> <span class=o>=</span> <span class=p>[(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>)</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>)</span> <span class=k>for</span> <span class=n>y</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span> <span class=k>if</span> <span class=n>x</span> <span class=o>*</span> <span class=n>y</span> <span class=o>&gt;</span> <span class=mi>10</span><span class=p>]</span>
+
+  <span class=k>return</span> <span class=p>((</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>,</span> <span class=n>z</span><span class=p>)</span>
+          <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=nb>xrange</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
+          <span class=k>for</span> <span class=n>y</span> <span class=ow>in</span> <span class=nb>xrange</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
+          <span class=k>if</span> <span class=n>x</span> <span class=o>!=</span> <span class=n>y</span>
+          <span class=k>for</span> <span class=n>z</span> <span class=ow>in</span> <span class=nb>xrange</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
+          <span class=k>if</span> <span class=n>y</span> <span class=o>!=</span> <span class=n>z</span><span class=p>)</span></code></pre></table></div></div></dl><h2 id=默认迭代器和操作符>默认迭代器和操作符</h2><hr><blockquote><p><strong>tip:</strong>
+如果类型支持, 就使用默认迭代器和操作符. 比如列表, 字典及文件等.</blockquote><dl><dt>定义：<dd>容器类型, 像字典和列表, 定义了默认的迭代器和关系测试操作符(in和not
+in)<dt>优点：<dd>默认操作符和迭代器简单高效, 它们直接表达了操作, 没有额外的方法调用.
+使用默认操作符的函数是通用的. 它可以用于支持该操作的任何类型.<dt>缺点：<dd>你没法通过阅读方法名来区分对象的类型(例如, <code>has_key()</code>意味着字典).
+不过这也是优点.<dt>结论：<dd><p>如果类型支持, 就使用默认迭代器和操作符, 例如列表, 字典和文件.
+内建类型也定义了迭代器方法. 优先考虑这些方法,
+而不是那些返回列表的方法. 当然,这样遍历容器时,你将不能修改容器.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span>  <span class=k>for</span> <span class=n>key</span> <span class=ow>in</span> <span class=n>adict</span><span class=p>:</span> <span class=o>...</span>
+      <span class=k>if</span> <span class=n>key</span> <span class=ow>not</span> <span class=ow>in</span> <span class=n>adict</span><span class=p>:</span> <span class=o>...</span>
+      <span class=k>if</span> <span class=n>obj</span> <span class=ow>in</span> <span class=n>alist</span><span class=p>:</span> <span class=o>...</span>
+      <span class=k>for</span> <span class=n>line</span> <span class=ow>in</span> <span class=n>afile</span><span class=p>:</span> <span class=o>...</span>
+      <span class=k>for</span> <span class=n>k</span><span class=p>,</span> <span class=n>v</span> <span class=ow>in</span> <span class=nb>dict</span><span class=o>.</span><span class=n>iteritems</span><span class=p>():</span> <span class=o>...</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span> <span class=k>for</span> <span class=n>key</span> <span class=ow>in</span> <span class=n>adict</span><span class=o>.</span><span class=n>keys</span><span class=p>():</span> <span class=o>...</span>
+      <span class=k>if</span> <span class=ow>not</span> <span class=n>adict</span><span class=o>.</span><span class=n>has_key</span><span class=p>(</span><span class=n>key</span><span class=p>):</span> <span class=o>...</span>
+      <span class=k>for</span> <span class=n>line</span> <span class=ow>in</span> <span class=n>afile</span><span class=o>.</span><span class=n>readlines</span><span class=p>():</span> <span class=o>...</span></code></pre></table></div></div></dl><h2 id=生成器>生成器</h2><hr><blockquote><p><strong>tip:</strong>
+按需使用生成器.</blockquote><dl><dt>定义：<dd>所谓生成器函数, 就是每当它执行一次生成(yield)语句,
+它就返回一个迭代器, 这个迭代器生成一个值. 生成值后,
+生成器函数的运行状态将被挂起, 直到下一次生成.<dt>优点：<dd>简化代码, 因为每次调用时, 局部变量和控制流的状态都会被保存.
+比起一次创建一系列值的函数, 生成器使用的内存更少.<dt>缺点：<dd>没有.<dt>结论：<dd><p>鼓励使用.
+注意在生成器函数的文档字符串中使用&rdquo;Yields:&ldquo;而不是&rdquo;Returns:&ldquo;.<p>(译者注: 参看 <a href=#注释>注释</a> )</dl><h2 id=lambda函数>Lambda函数</h2><hr><blockquote><p><strong>tip:</strong>
+适用于单行函数</blockquote><dl><dt>定义：<dd>与语句相反, lambda在一个表达式中定义匿名函数. 常用于为 <code>map()</code> 和
+<code>filter()</code> 之类的高阶函数定义回调函数或者操作符.<dt>优点：<dd>方便.<dt>缺点：<dd>比本地函数更难阅读和调试. 没有函数名意味着堆栈跟踪更难理解.
+由于lambda函数通常只包含一个表达式, 因此其表达能力有限.<dt>结论：<dd><p>适用于单行函数. 如果代码超过60-80个字符,
+最好还是定义成常规(嵌套)函数.<p>对于常见的操作符,例如乘法操作符,使用 <code>operator</code>
+模块中的函数以代替lambda函数. 例如, 推荐使用 <code>operator.mul</code> , 而不是
+<code>lambda x, y: x * y</code> .</dl><h2 id=条件表达式>条件表达式</h2><hr><blockquote><p><strong>tip:</strong>
+适用于单行函数</blockquote><dl><dt>定义：<dd>条件表达式是对于if语句的一种更为简短的句法规则. 例如:
+<code>x = 1 if cond else 2</code> .<dt>优点：<dd>比if语句更加简短和方便.<dt>缺点：<dd>比if语句难于阅读. 如果表达式很长, 难于定位条件.<dt>结论：<dd>适用于单行函数. 在其他情况下,推荐使用完整的if语句.</dl><h2 id=默认参数值>默认参数值</h2><hr><blockquote><p><strong>tip:</strong>
+适用于大部分情况.</blockquote><dl><dt>定义：<dd>你可以在函数参数列表的最后指定变量的值, 例如, <code>def foo(a, b = 0):</code> .
+如果调用foo时只带一个参数, 则b被设为0. 如果带两个参数,
+则b的值等于第二个参数.<dt>优点：<dd>你经常会碰到一些使用大量默认值的函数,
+但偶尔(比较少见)你想要覆盖这些默认值.
+默认参数值提供了一种简单的方法来完成这件事,
+你不需要为这些罕见的例外定义大量函数. 同时,
+Python也不支持重载方法和函数,
+默认参数是一种&rdquo;仿造&rdquo;重载行为的简单方式.<dt>缺点：<dd>默认参数只在模块加载时求值一次. 如果参数是列表或字典之类的可变类型,
+这可能会导致问题. 如果函数修改了对象(例如向列表追加项),
+默认值就被修改了.<dt>结论：<dd><p>鼓励使用, 不过有如下注意事项:<p>不要在函数或方法定义中使用可变对象作为默认值.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=k>def</span> <span class=nf>foo</span><span class=p>(</span><span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=o>=</span><span class=bp>None</span><span class=p>):</span>
+         <span class=k>if</span> <span class=n>b</span> <span class=ow>is</span> <span class=bp>None</span><span class=p>:</span>
+             <span class=n>b</span> <span class=o>=</span> <span class=p>[]</span>        </code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>  <span class=k>def</span> <span class=nf>foo</span><span class=p>(</span><span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=o>=</span><span class=p>[]):</span>
+         <span class=o>...</span>    
+<span class=n>No</span><span class=p>:</span>  <span class=k>def</span> <span class=nf>foo</span><span class=p>(</span><span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=o>=</span><span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()):</span>  <span class=c1># The time the module was loaded???</span>
+         <span class=o>...</span>
+<span class=n>No</span><span class=p>:</span>  <span class=k>def</span> <span class=nf>foo</span><span class=p>(</span><span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=o>=</span><span class=n>FLAGS</span><span class=o>.</span><span class=n>my_thing</span><span class=p>):</span>  <span class=c1># sys.argv has not yet been parsed...</span>
+         <span class=o>...</span></code></pre></table></div></div></dl><h2 id=属性-properties>属性(properties)</h2><hr><blockquote><p><strong>tip:</strong>
+访问和设置数据成员时, 你通常会使用简单, 轻量级的访问和设置函数.
+建议用属性(properties）来代替它们.</blockquote><dl><dt>定义：<dd>一种用于包装方法调用的方式. 当运算量不大,
+它是获取和设置属性(attribute)的标准方式.<dt>优点：<dd>通过消除简单的属性(attribute)访问时显式的get和set方法调用,
+可读性提高了. 允许懒惰的计算. 用Pythonic的方式来维护类的接口.
+就性能而言, 当直接访问变量是合理的, 添加访问方法就显得琐碎而无意义.
+使用属性(properties)可以绕过这个问题.
+将来也可以在不破坏接口的情况下将访问方法加上.<dt>缺点：<dd>属性(properties)是在get和set方法声明后指定,
+这需要使用者在接下来的代码中注意:
+set和get是用于属性(properties)的(除了用 <code>@property</code>
+装饰器创建的只读属性). 必须继承自object类.
+可能隐藏比如操作符重载之类的副作用. 继承时可能会让人困惑.<dt>结论：<dd><p>你通常习惯于使用访问或设置方法来访问或设置数据, 它们简单而轻量.
+不过我们建议你在新的代码中使用属性. 只读属性应该用 <code>@property</code>
+<a href=http://google-styleguide.googlecode.com/svn/trunk/pyguide.html#Function_and_Method_Decorators target=_blank>装饰器</a>
+来创建.<p>如果子类没有覆盖属性, 那么属性的继承可能看上去不明显.
+因此使用者必须确保访问方法间接被调用,
+以保证子类中的重载方法被属性调用(使用模板方法设计模式).<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=kn>import</span> <span class=nn>math</span>
+
+     <span class=k>class</span> <span class=nc>Square</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+         <span class=s2>&#34;&#34;&#34;A square with two properties: a writable area and a read-only perimeter.
+</span><span class=s2>
+</span><span class=s2>         To use:
+</span><span class=s2>         &gt;&gt;&gt; sq = Square(3)
+</span><span class=s2>         &gt;&gt;&gt; sq.area
+</span><span class=s2>         9
+</span><span class=s2>         &gt;&gt;&gt; sq.perimeter
+</span><span class=s2>         12
+</span><span class=s2>         &gt;&gt;&gt; sq.area = 16
+</span><span class=s2>         &gt;&gt;&gt; sq.side
+</span><span class=s2>         4
+</span><span class=s2>         &gt;&gt;&gt; sq.perimeter
+</span><span class=s2>         16
+</span><span class=s2>         &#34;&#34;&#34;</span>
+
+         <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>side</span><span class=p>):</span>
+             <span class=bp>self</span><span class=o>.</span><span class=n>side</span> <span class=o>=</span> <span class=n>side</span>
+
+         <span class=k>def</span> <span class=nf>__get_area</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+             <span class=s2>&#34;&#34;&#34;Calculates the &#39;area&#39; property.&#34;&#34;&#34;</span>
+             <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>side</span> <span class=o>**</span> <span class=mi>2</span>
+
+         <span class=k>def</span> <span class=nf>___get_area</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+             <span class=s2>&#34;&#34;&#34;Indirect accessor for &#39;area&#39; property.&#34;&#34;&#34;</span>
+             <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>__get_area</span><span class=p>()</span>
+
+         <span class=k>def</span> <span class=nf>__set_area</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>area</span><span class=p>):</span>
+             <span class=s2>&#34;&#34;&#34;Sets the &#39;area&#39; property.&#34;&#34;&#34;</span>
+             <span class=bp>self</span><span class=o>.</span><span class=n>side</span> <span class=o>=</span> <span class=n>math</span><span class=o>.</span><span class=n>sqrt</span><span class=p>(</span><span class=n>area</span><span class=p>)</span>
+
+         <span class=k>def</span> <span class=nf>___set_area</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>area</span><span class=p>):</span>
+             <span class=s2>&#34;&#34;&#34;Indirect setter for &#39;area&#39; property.&#34;&#34;&#34;</span>
+             <span class=bp>self</span><span class=o>.</span><span class=n>_SetArea</span><span class=p>(</span><span class=n>area</span><span class=p>)</span>
+
+         <span class=n>area</span> <span class=o>=</span> <span class=nb>property</span><span class=p>(</span><span class=n>___get_area</span><span class=p>,</span> <span class=n>___set_area</span><span class=p>,</span>
+                         <span class=n>doc</span><span class=o>=</span><span class=s2>&#34;&#34;&#34;Gets or sets the area of the square.&#34;&#34;&#34;</span><span class=p>)</span>
+
+         <span class=nd>@property</span>
+         <span class=k>def</span> <span class=nf>perimeter</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+             <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>side</span> <span class=o>*</span> <span class=mi>4</span></code></pre></table></div></div><p>(译者注: 老实说, 我觉得这段示例代码很不恰当, 有必要这么蛋疼吗?)<h2 id=true-false的求值>True/False的求值</h2><hr><blockquote><p><strong>tip:</strong>
+尽可能使用隐式false</blockquote><dl><dt>定义：<dd>Python在布尔上下文中会将某些值求值为false. 按简单的直觉来讲,
+就是所有的&rdquo;空&rdquo;值都被认为是false. 因此0, None, [], {}, &ldquo;&rdquo;
+都被认为是false.<dt>优点：<dd>使用Python布尔值的条件语句更易读也更不易犯错. 大部分情况下, 也更快.<dt>缺点：<dd>对C/C++开发人员来说, 可能看起来有点怪.<dt>结论：<dd>尽可能使用隐式的false, 例如: 使用 <code>if foo:</code> 而不是 <code>if foo != []:</code> .
+不过还是有一些注意事项需要你铭记在心:</dl><ol><li>永远不要用==或者!=来比较单件, 比如None. 使用is或者is not.<li>注意: 当你写下 <code>if x:</code> 时, 你其实表示的是 <code>if x is not None</code> .
+例如: 当你要测试一个默认值是None的变量或参数是否被设为其它值.
+这个值在布尔语义下可能是false!<li>永远不要用==将一个布尔量与false相比较. 使用 <code>if not x:</code> 代替.
+如果你需要区分false和None, 你应该用像
+<code>if not x and x is not None:</code> 这样的语句.<li>对于序列(字符串, 列表, 元组), 要注意空序列是false. 因此
+<code>if not seq:</code> 或者 <code>if seq:</code> 比 <code>if len(seq):</code> 或
+<code>if not len(seq):</code> 要更好.<li><p>处理整数时,
+使用隐式false可能会得不偿失(即不小心将None当做0来处理).
+你可以将一个已知是整型(且不是len()的返回结果)的值与0比较.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python> <span class=n>Yes</span><span class=p>:</span> <span class=k>if</span> <span class=ow>not</span> <span class=n>users</span><span class=p>:</span>
+          <span class=k>print</span> <span class=s1>&#39;no users&#39;</span>
+        
+      <span class=k>if</span> <span class=n>foo</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+          <span class=bp>self</span><span class=o>.</span><span class=n>handle_zero</span><span class=p>()</span>
+        
+      <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>10</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+          <span class=bp>self</span><span class=o>.</span><span class=n>handle_multiple_of_ten</span><span class=p>()</span>  </code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python> <span class=n>No</span><span class=p>:</span>  <span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=n>users</span><span class=p>)</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+          <span class=k>print</span> <span class=s1>&#39;no users&#39;</span>
+        
+      <span class=k>if</span> <span class=n>foo</span> <span class=ow>is</span> <span class=ow>not</span> <span class=bp>None</span> <span class=ow>and</span> <span class=ow>not</span> <span class=n>foo</span><span class=p>:</span>
+          <span class=bp>self</span><span class=o>.</span><span class=n>handle_zero</span><span class=p>()</span>
+        
+      <span class=k>if</span> <span class=ow>not</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>10</span><span class=p>:</span>
+          <span class=bp>self</span><span class=o>.</span><span class=n>handle_multiple_of_ten</span><span class=p>()</span>  </code></pre></table></div></div><li><p>注意&rsquo;0&rsquo;(字符串)会被当做true.</ol><h2 id=过时的语言特性>过时的语言特性</h2><hr><blockquote><p><strong>tip:</strong>
+尽可能使用字符串方法取代字符串模块. 使用函数调用语法取代apply().
+使用列表推导, for循环取代filter(), map()以及reduce().</blockquote><dl><dt>定义：<dd>当前版本的Python提供了大家通常更喜欢的替代品.<dt>结论：<dd>我们不使用不支持这些特性的Python版本, 所以没理由不用新的方式.</dl><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=n>words</span> <span class=o>=</span> <span class=n>foo</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;:&#39;</span><span class=p>)</span>
+
+     <span class=p>[</span><span class=n>x</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=k>for</span> <span class=n>x</span> <span class=ow>in</span> <span class=n>my_list</span> <span class=k>if</span> <span class=n>x</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span> <span class=o>==</span> <span class=mi>5</span><span class=p>]</span>
+
+     <span class=nb>map</span><span class=p>(</span><span class=n>math</span><span class=o>.</span><span class=n>sqrt</span><span class=p>,</span> <span class=n>data</span><span class=p>)</span>    <span class=c1># Ok. No inlined lambda expression.</span>
+
+     <span class=n>fn</span><span class=p>(</span><span class=o>*</span><span class=n>args</span><span class=p>,</span> <span class=o>**</span><span class=n>kwargs</span><span class=p>)</span>   </code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>  <span class=n>words</span> <span class=o>=</span> <span class=n>string</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=n>foo</span><span class=p>,</span> <span class=s1>&#39;:&#39;</span><span class=p>)</span>
+
+     <span class=nb>map</span><span class=p>(</span><span class=k>lambda</span> <span class=n>x</span><span class=p>:</span> <span class=n>x</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=nb>filter</span><span class=p>(</span><span class=k>lambda</span> <span class=n>x</span><span class=p>:</span> <span class=n>x</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span> <span class=o>==</span> <span class=mi>5</span><span class=p>,</span> <span class=n>my_list</span><span class=p>))</span>
+
+     <span class=nb>apply</span><span class=p>(</span><span class=n>fn</span><span class=p>,</span> <span class=n>args</span><span class=p>,</span> <span class=n>kwargs</span><span class=p>)</span>             </code></pre></table></div></div><h2 id=词法作用域-lexical-scoping>词法作用域(Lexical Scoping)</h2><hr><blockquote><p><strong>tip:</strong>
+推荐使用</blockquote><dl><dt>定义：<dd>嵌套的Python函数可以引用外层函数中定义的变量, 但是不能够对它们赋值.
+变量绑定的解析是使用词法作用域, 也就是基于静态的程序文本.
+对一个块中的某个名称的任何赋值都会导致Python将对该名称的全部引用当做局部变量,
+甚至是赋值前的处理. 如果碰到global声明, 该名称就会被视作全局变量.</dl><p>一个使用这个特性的例子:<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>get_adder</span><span class=p>(</span><span class=n>summand1</span><span class=p>):</span>
+    <span class=s2>&#34;&#34;&#34;Returns a function that adds numbers to a given number.&#34;&#34;&#34;</span>
+    <span class=k>def</span> <span class=nf>adder</span><span class=p>(</span><span class=n>summand2</span><span class=p>):</span>
+        <span class=k>return</span> <span class=n>summand1</span> <span class=o>+</span> <span class=n>summand2</span>
+
+    <span class=k>return</span> <span class=n>adder</span>  </code></pre></table></div></div><p>(译者注: 这个例子有点诡异, 你应该这样使用这个函数:
+<code>sum = get_adder(summand1)(summand2)</code> )<dt>优点：<dd><p>通常可以带来更加清晰, 优雅的代码.
+尤其会让有经验的Lisp和Scheme(还有Haskell, ML等)程序员感到欣慰.<dt>缺点：<dd><p>可能导致让人迷惑的bug. 例如下面这个依据
+<a href=http://www.python.org/dev/peps/pep-0227/ target=_blank>PEP-0227</a> 的例子:<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>i</span> <span class=o>=</span> <span class=mi>4</span>
+<span class=k>def</span> <span class=nf>foo</span><span class=p>(</span><span class=n>x</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>bar</span><span class=p>():</span>
+        <span class=k>print</span> <span class=n>i</span><span class=p>,</span>
+    <span class=c1># ...</span>
+    <span class=c1># A bunch of code here</span>
+    <span class=c1># ...</span>
+    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=n>x</span><span class=p>:</span>  <span class=c1># Ah, i *is* local to Foo, so this is what Bar sees</span>
+        <span class=k>print</span> <span class=n>i</span><span class=p>,</span>
+    <span class=n>bar</span><span class=p>()</span>    </code></pre></table></div></div><p>因此 <code>foo([1, 2, 3])</code> 会打印 <code>1 2 3 3</code> , 不是 <code>1 2 3 4</code> .<p>(译者注: x是一个列表,
+for循环其实是将x中的值依次赋给i.这样对i的赋值就隐式的发生了,
+整个foo函数体中的i都会被当做局部变量, 包括bar()中的那个.
+这一点与C++之类的静态语言还是有很大差别的.)<dl><dt>结论：<dd>鼓励使用.</dl><h2 id=函数与方法装饰器>函数与方法装饰器</h2><hr><blockquote><p><strong>tip:</strong>
+如果好处很显然, 就明智而谨慎的使用装饰器</blockquote><dl><dt>定义：<dd><a href=https://docs.python.org/release/2.4.3/whatsnew/node6.html target=_blank>用于函数及方法的装饰器</a>
+(<a href=mailto:也就是@标记 target=_blank>也就是@标记</a>).
+<a href=mailto:最常见的装饰器是@classmethod target=_blank>最常见的装饰器是@classmethod</a>
+<a href=mailto:和@staticmethod target=_blank>和@staticmethod</a>,
+用于将常规函数转换成类方法或静态方法. 不过,
+装饰器语法也允许用户自定义装饰器. 特别地, 对于某个函数
+<code>my_decorator</code> , 下面的两段代码是等效的:</dl><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>class</span> <span class=nc>C</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+   <span class=nd>@my_decorator</span>
+   <span class=k>def</span> <span class=nf>method</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+       <span class=c1># method body ...   </span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>class</span> <span class=nc>C</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+    <span class=k>def</span> <span class=nf>method</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=c1># method body ...</span>
+    <span class=n>method</span> <span class=o>=</span> <span class=n>my_decorator</span><span class=p>(</span><span class=n>method</span><span class=p>)</span></code></pre></table></div></div><dl><dt>优点：<dd>优雅的在函数上指定一些转换. 该转换可能减少一些重复代码,
+保持已有函数不变(enforce invariants), 等.<dt>缺点：<dd>装饰器可以在函数的参数或返回值上执行任何操作,
+这可能导致让人惊异的隐藏行为. 而且, 装饰器在导入时执行.
+从装饰器代码的失败中恢复更加不可能.<dt>结论：<dd>如果好处很显然, 就明智而谨慎的使用装饰器.
+装饰器应该遵守和函数一样的导入和命名规则.
+装饰器的python文档应该清晰的说明该函数是一个装饰器.
+请为装饰器编写单元测试.</dl><p>避免装饰器自身对外界的依赖(即不要依赖于文件, socket, 数据库连接等),
+因为装饰器运行时这些资源可能不可用(由 <code>pydoc</code> 或其它工具导入).
+应该保证一个用有效参数调用的装饰器在所有情况下都是成功的.<p>装饰器是一种特殊形式的&rdquo;顶级代码&rdquo;. 参考后面关于 <a href=Main target=_blank>Main</a> 的话题.<h2 id=线程>线程</h2><hr><blockquote><p><strong>tip:</strong>
+不要依赖内建类型的原子性.</blockquote><p>虽然Python的内建类型例如字典看上去拥有原子操作,
+但是在某些情形下它们仍然不是原子的(即:
+如果<code>__hash__</code>或<code>__eq__</code>被实现为Python方法)且它们的原子性是靠不住的.
+你也不能指望原子变量赋值(因为这个反过来依赖字典).<p>优先使用Queue模块的 <code>Queue</code> 数据类型作为线程间的数据通信方式. 另外,
+使用threading模块及其锁原语(locking primitives).
+了解条件变量的合适使用方式, 这样你就可以使用 <code>threading.Condition</code>
+来取代低级别的锁了.<h2 id=威力过大的特性>威力过大的特性</h2><hr><blockquote><p><strong>tip:</strong>
+避免使用这些特性</blockquote><dl><dt>定义：<dd>Python是一种异常灵活的语言, 它为你提供了很多花哨的特性,
+诸如元类(metaclasses), 字节码访问, 任意编译(on-the-fly compilation),
+动态继承, 对象父类重定义(object reparenting), 导入黑客(import
+hacks), 反射, 系统内修改(modification of system internals), 等等.<dt>优点：<dd>强大的语言特性, 能让你的代码更紧凑.<dt>缺点：<dd>使用这些很&rdquo;酷&rdquo;的特性十分诱人, 但不是绝对必要.
+使用奇技淫巧的代码将更加难以阅读和调试. 开始可能还好(对原作者而言),
+但当你回顾代码,
+它们可能会比那些稍长一点但是很直接的代码更加难以理解.<dt>结论：<dd>在你的代码中避免这些特性.</dl><hr><blockquote><p>版本:<ul><li>2.59</ul><p>原作者:<ul><li>Amit Patel<li>Antoine Picard<li>Eugene Jhong<li>Jeremy Hylton<li>Matt Smart<li>Mike Shields</ul><p>翻译:<ul><li>guoqiao v2.19<li>xuxinkun v2.59<br></ul><p>项目主页<ul><li><a href=https://github.com/google/styleguide target=_blank>Google Style Guide</a><li><a href=http://github.com/zh-google-styleguide/zh-google-styleguide target=_blank>Google 开源项目风格指南 - 中文版</a></ul></blockquote></dl><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-4469282388984999 data-ad-slot=5357438236></ins><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=5625031544 data-ad-format=auto data-full-width-responsive=true></ins></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Quanyin</span><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2020-05-07</span><p class=copyright-item><span class=item-title>许可协议</span>
+<span class=item-content>本博客所有文章除特别声明外，均采用 <a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>(CC) BY-NC-SA 4.0 </a>许可协议。转载请注明作者和出处并告知</span></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<label class=reward-button for=reward>赞赏支持</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=/img/reward/WechatPay.png>
+<span>微信打赏</span></label>
+<label class=qr-code-image for=reward><img class=image src=/img/reward/AliPay.png>
+<span>支付宝打赏</span></label></div></div><footer class=post-footer><div class=post-tags><a href=/tags/python/>Python</a>
+<a href=/tags/style/>Style</a></div><nav class=post-nav><a class=prev href=/2017/linux-command-1/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Linux系统命令 I</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/2017/python-style-rules/><span class="next-text nav-default">Google Python 风格指南 II</span>
+<span class="prev-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><div class="post bg-white"><script src=https://cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=https://unpkg.com/valine/dist/Valine.min.js></script><div id=vcomments></div><script>new Valine({el:'#vcomments',appId:'aTnk2nRIOVuFeXVYCRqOhEQ1-MdYXbMMI',appKey:'fPBawjKkMiA8biHbwoDim1mJ',avatar:'mm',placeholder:'说点什么吧',})</script></div></div></div></main><footer id=footer class=footer><div class=icon-links><a href=/index.xml rel="noopener alternate" type=application/rss&#43;xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 0 1 140.501333 140.586667A140.928 140.928.0 0 1 140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme - <a class=theme-link href=https://github.com/xianmin/hugo-theme-jane>Jane</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020
+<span class=heart><i class=iconfont><svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"><path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7.0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1.0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2.0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3.1-42.5-8-83.6-24-122.2z" fill="#8a8a8a"/></svg></i></span><span class=author>Quanyin</span></span></div></footer><div class=back-to-top id=back-to-top><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35"><path d="M510.866688 227.694839 95.449397 629.218702h235.761562L329.15309 958.01517h362.40389L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777h894.052392v131.813095H63.840492V63.962777v0zm0 0"/></svg></i></div></div><script src=/lib/jquery/jquery-3.2.1.min.js></script><script src=/lib/slideout/slideout-1.0.1.min.js></script><script src="/dist/jane.min.js?v=2.7.0"></script><script src=/js/load-photoswipe.js></script><script src=/lib/photoswipe/photoswipe.min.js></script><script src=/lib/photoswipe/photoswipe-ui-default.min.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>

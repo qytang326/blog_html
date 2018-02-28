@@ -1,0 +1,577 @@
+<!doctype html><html lang=zh-cn itemscope itemtype=http://schema.org/WebPage><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Google Python 风格指南 II - 已停更的小博客</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content=width><meta name=HandheldFriendly content=true><meta name=applicable-device content=pc,mobile><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=mobile-web-app-capable content=yes><meta name=author content=Quanyin><meta name=description content="Python 是 Google主要的脚本语言。这本风格指南主要包含的是针对python的编程准则。"><meta name=keywords content=技术博客><meta name=generator content="Hugo 0.55.6"><link rel=canonical href=/2017/python-style-rules/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media=screen crossorigin=anonymous><meta property=og:title content="Google Python 风格指南 II"><meta property=og:description content="Python 是 Google主要的脚本语言。这本风格指南主要包含的是针对python的编程准则。"><meta property=og:type content=article><meta property=og:url content=/2017/python-style-rules/><meta property=article:published_time content=2017-10-21T00:00:00&#43;00:00><meta property=article:modified_time content=2020-05-07T17:24:00&#43;08:00><meta itemprop=name content="Google Python 风格指南 II"><meta itemprop=description content="Python 是 Google主要的脚本语言。这本风格指南主要包含的是针对python的编程准则。"><meta itemprop=datePublished content=2017-10-21T00:00:00&#43;00:00><meta itemprop=dateModified content=2020-05-07T17:24:00&#43;08:00><meta itemprop=wordCount content=6316><meta itemprop=keywords content=Python,Style,><meta name=twitter:card content=summary><meta name=twitter:title content="Google Python 风格指南 II"><meta name=twitter:description content="Python 是 Google主要的脚本语言。这本风格指南主要包含的是针对python的编程准则。"><script>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-126038371-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4469282388984999",enable_page_level_ads:true});</script><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=/>主页</a><li class=mobile-menu-item><a class=menu-item-link href=/notice/>通知</a><li class=mobile-menu-item><a class=menu-item-link href=/post/>时光机</a><li class=mobile-menu-item><div class=mobile-menu-parent><span class=mobile-submenu-open></span><a href=/categories/>分类</a></div><ul class=mobile-submenu-list><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=mobile-menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav><link rel=stylesheet href=/lib/photoswipe/photoswipe.min.css><link rel=stylesheet href=/lib/photoswipe/default-skin/default-skin.min.css><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>主页</a><li class=menu-item><a class=menu-item-link href=/notice/>通知</a><li class=menu-item><a class=menu-item-link href=/post/>时光机</a><li class=menu-item><a class="menu-item-link menu-parent" href=/categories/>分类</a><ul class=submenu><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>Google Python 风格指南 II</h1><div class=post-meta><time datetime=2017-10-21 class=post-time>2017-10-21</time><div class=post-category><a href=/categories/%E7%AC%94%E8%AE%B0/>笔记</a>
+<a href=/categories/%E7%BC%96%E7%A8%8B/>编程</a></div><span class=more-meta>约 6316 字</span>
+<span class=more-meta>预计阅读 13 分钟</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#分号>分号</a><li><a href=#行长度>行长度</a><li><a href=#括号>括号</a><li><a href=#缩进>缩进</a><li><a href=#空行>空行</a><li><a href=#空格>空格</a><li><a href=#shebang>Shebang</a><li><a href=#注释>注释</a><li><a href=#类>类</a><li><a href=#字符串>字符串</a><li><a href=#文件和sockets>文件和sockets</a><li><a href=#todo注释>TODO注释</a><li><a href=#导入格式>导入格式</a><li><a href=#语句>语句</a><li><a href=#访问控制>访问控制</a><li><a href=#命名>命名</a><li><a href=#main>Main</a><li><a href=#临别赠言><strong>临别赠言</strong></a></ul></ul></nav></div></div><div class=post-content><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=4019390506 data-ad-format=link data-full-width-responsive=true></ins><p><link rel=stylesheet href=/css/hugo-easy-gallery.css><div class=box><figure class="center lazyload" itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/img/post-content/style/google-style-guide.jpg></div><a href=/img/post-content/style/google-style-guide.jpg itemprop=contentUrl></a></figure></div><h2 id=分号>分号</h2><hr><blockquote><p><strong>tip:</strong>
+不要在行尾加分号, 也不要用分号将两条命令放在同一行.</blockquote><h2 id=行长度>行长度</h2><hr><blockquote><p><strong>tip:</strong>
+每行不超过80个字符</blockquote><p>例外:<ol><li>长的导入模块语句<li>注释里的URL</ol><p>不要使用反斜杠连接行.<p>Python会将 <a href=http://docs.python.org/2/reference/lexical_analysis.html#implicit-line-joining target=_blank>圆括号,
+中括号和花括号中的行隐式的连接起来</a>
+, 你可以利用这个特点. 如果需要, 你可以在表达式外围增加一对额外的圆括号.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=n>foo_bar</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>width</span><span class=p>,</span> <span class=n>height</span><span class=p>,</span> <span class=n>color</span><span class=o>=</span><span class=s1>&#39;black&#39;</span><span class=p>,</span> <span class=n>design</span><span class=o>=</span><span class=bp>None</span><span class=p>,</span> <span class=n>x</span><span class=o>=</span><span class=s1>&#39;foo&#39;</span><span class=p>,</span>
+             <span class=n>emphasis</span><span class=o>=</span><span class=bp>None</span><span class=p>,</span> <span class=n>highlight</span><span class=o>=</span><span class=mi>0</span><span class=p>)</span>
+
+     <span class=k>if</span> <span class=p>(</span><span class=n>width</span> <span class=o>==</span> <span class=mi>0</span> <span class=ow>and</span> <span class=n>height</span> <span class=o>==</span> <span class=mi>0</span> <span class=ow>and</span>
+         <span class=n>color</span> <span class=o>==</span> <span class=s1>&#39;red&#39;</span> <span class=ow>and</span> <span class=n>emphasis</span> <span class=o>==</span> <span class=s1>&#39;strong&#39;</span><span class=p>):</span>    </code></pre></table></div></div><p>如果一个文本字符串在一行放不下, 可以使用圆括号来实现隐式行连接:<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>x</span> <span class=o>=</span> <span class=p>(</span><span class=s1>&#39;This will build a very long long &#39;</span>
+     <span class=s1>&#39;long long long long long long string&#39;</span><span class=p>)</span></code></pre></table></div></div><p>在注释中,如果必要,将长的URL放在一行上。<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span>  <span class=c1># See details at</span>
+      <span class=c1># http://www.example.com/us/developer/documentation/api/content/v2.0/csv_file_name_extension_full_specification.html</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>  <span class=c1># See details at</span>
+     <span class=c1># http://www.example.com/us/developer/documentation/api/content/\</span>
+     <span class=c1># v2.0/csv_file_name_extension_full_specification.html     </span></code></pre></table></div></div><p>注意上面例子中的元素缩进; 你可以在本文的<a href=#缩进>缩进</a>部分找到解释.<h2 id=括号>括号</h2><hr><blockquote><p><strong>tip:</strong>
+宁缺毋滥的使用括号</blockquote><p>除非是用于实现行连接, 否则不要在返回语句或条件语句中使用括号.
+不过在元组两边使用括号是可以的.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=k>if</span> <span class=n>foo</span><span class=p>:</span>
+         <span class=n>bar</span><span class=p>()</span>
+     <span class=k>while</span> <span class=n>x</span><span class=p>:</span>
+         <span class=n>x</span> <span class=o>=</span> <span class=n>bar</span><span class=p>()</span>
+     <span class=k>if</span> <span class=n>x</span> <span class=ow>and</span> <span class=n>y</span><span class=p>:</span>
+         <span class=n>bar</span><span class=p>()</span>
+     <span class=k>if</span> <span class=ow>not</span> <span class=n>x</span><span class=p>:</span>
+         <span class=n>bar</span><span class=p>()</span>
+     <span class=k>return</span> <span class=n>foo</span>
+     <span class=k>for</span> <span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>)</span> <span class=ow>in</span> <span class=nb>dict</span><span class=o>.</span><span class=n>items</span><span class=p>():</span> <span class=o>...</span>  </code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>  <span class=k>if</span> <span class=p>(</span><span class=n>x</span><span class=p>):</span>
+         <span class=n>bar</span><span class=p>()</span>
+     <span class=k>if</span> <span class=ow>not</span><span class=p>(</span><span class=n>x</span><span class=p>):</span>
+         <span class=n>bar</span><span class=p>()</span>
+     <span class=k>return</span> <span class=p>(</span><span class=n>foo</span><span class=p>)</span></code></pre></table></div></div><h2 id=缩进>缩进</h2><hr><blockquote><p><strong>tip:</strong>
+用4个空格来缩进代码</blockquote><p>绝对不要用tab, 也不要tab和空格混用. 对于行连接的情况,
+你应该要么垂直对齐换行的元素(见 <a href=#行长度>行长度</a> 部分的示例),
+或者使用4空格的悬挂式缩进(这时第一行不应该有参数):<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span>   <span class=c1># Aligned with opening delimiter</span>
+       <span class=n>foo</span> <span class=o>=</span> <span class=n>long_function_name</span><span class=p>(</span><span class=n>var_one</span><span class=p>,</span> <span class=n>var_two</span><span class=p>,</span>
+                                <span class=n>var_three</span><span class=p>,</span> <span class=n>var_four</span><span class=p>)</span>
+
+       <span class=c1># Aligned with opening delimiter in a dictionary</span>
+       <span class=n>foo</span> <span class=o>=</span> <span class=p>{</span>
+           <span class=n>long_dictionary_key</span><span class=p>:</span> <span class=n>value1</span> <span class=o>+</span>
+                                <span class=n>value2</span><span class=p>,</span>
+           <span class=o>...</span>
+       <span class=p>}</span>
+
+       <span class=c1># 4-space hanging indent; nothing on first line</span>
+       <span class=n>foo</span> <span class=o>=</span> <span class=n>long_function_name</span><span class=p>(</span>
+           <span class=n>var_one</span><span class=p>,</span> <span class=n>var_two</span><span class=p>,</span> <span class=n>var_three</span><span class=p>,</span>
+           <span class=n>var_four</span><span class=p>)</span>
+
+       <span class=c1># 4-space hanging indent in a dictionary</span>
+       <span class=n>foo</span> <span class=o>=</span> <span class=p>{</span>
+           <span class=n>long_dictionary_key</span><span class=p>:</span>
+               <span class=n>long_dictionary_value</span><span class=p>,</span>
+           <span class=o>...</span>
+       <span class=p>}</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>    <span class=c1># Stuff on first line forbidden</span>
+      <span class=n>foo</span> <span class=o>=</span> <span class=n>long_function_name</span><span class=p>(</span><span class=n>var_one</span><span class=p>,</span> <span class=n>var_two</span><span class=p>,</span>
+          <span class=n>var_three</span><span class=p>,</span> <span class=n>var_four</span><span class=p>)</span>
+
+      <span class=c1># 2-space hanging indent forbidden</span>
+      <span class=n>foo</span> <span class=o>=</span> <span class=n>long_function_name</span><span class=p>(</span>
+        <span class=n>var_one</span><span class=p>,</span> <span class=n>var_two</span><span class=p>,</span> <span class=n>var_three</span><span class=p>,</span>
+        <span class=n>var_four</span><span class=p>)</span>
+
+      <span class=c1># No hanging indent in a dictionary</span>
+      <span class=n>foo</span> <span class=o>=</span> <span class=p>{</span>
+          <span class=n>long_dictionary_key</span><span class=p>:</span>
+              <span class=n>long_dictionary_value</span><span class=p>,</span>
+              <span class=o>...</span>
+      <span class=p>}</span></code></pre></table></div></div><h2 id=空行>空行</h2><hr><blockquote><p><strong>tip:</strong>
+顶级定义之间空两行, 方法定义之间空一行</blockquote><p>顶级定义之间空两行, 比如函数或者类定义. 方法定义,
+类定义与第一个方法之间, 都应该空一行. 函数或方法中,
+某些地方要是你觉得合适, 就空一行.<h2 id=空格>空格</h2><hr><blockquote><p><strong>tip:</strong>
+按照标准的排版规范来使用标点两边的空格</blockquote><p>括号内不要有空格.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=n>spam</span><span class=p>(</span><span class=n>ham</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=p>{</span><span class=n>eggs</span><span class=p>:</span> <span class=mi>2</span><span class=p>},</span> <span class=p>[])</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>  <span class=n>spam</span><span class=p>(</span> <span class=n>ham</span><span class=p>[</span> <span class=mi>1</span> <span class=p>],</span> <span class=p>{</span> <span class=n>eggs</span><span class=p>:</span> <span class=mi>2</span> <span class=p>},</span> <span class=p>[</span> <span class=p>]</span> <span class=p>)</span></code></pre></table></div></div><p>不要在逗号, 分号, 冒号前面加空格, 但应该在它们后面加(除了在行尾).<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=k>if</span> <span class=n>x</span> <span class=o>==</span> <span class=mi>4</span><span class=p>:</span>
+         <span class=k>print</span> <span class=n>x</span><span class=p>,</span> <span class=n>y</span>
+     <span class=n>x</span><span class=p>,</span> <span class=n>y</span> <span class=o>=</span> <span class=n>y</span><span class=p>,</span> <span class=n>x</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>  <span class=k>if</span> <span class=n>x</span> <span class=o>==</span> <span class=mi>4</span> <span class=p>:</span>
+         <span class=k>print</span> <span class=n>x</span> <span class=p>,</span> <span class=n>y</span>
+     <span class=n>x</span> <span class=p>,</span> <span class=n>y</span> <span class=o>=</span> <span class=n>y</span> <span class=p>,</span> <span class=n>x</span></code></pre></table></div></div><p>参数列表, 索引或切片的左括号前不应加空格.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=n>spam</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>no</span><span class=p>:</span> <span class=n>spam</span> <span class=p>(</span><span class=mi>1</span><span class=p>)</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=nb>dict</span><span class=p>[</span><span class=s1>&#39;key&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=nb>list</span><span class=p>[</span><span class=n>index</span><span class=p>]</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>  <span class=nb>dict</span> <span class=p>[</span><span class=s1>&#39;key&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=nb>list</span> <span class=p>[</span><span class=n>index</span><span class=p>]</span>       </code></pre></table></div></div><p>在二元操作符两边都加上一个空格, 比如赋值(<code>=</code>), 比较(<code>==, &lt;, &gt;, !=, &lt;&gt;,
+&lt;=, &gt;=, in, not in, is, is not</code>), 布尔(<code>and, or, not</code>).
+至于算术操作符两边的空格该如何使用, 需要你自己好好判断.
+不过两侧务必要保持一致.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=n>x</span> <span class=o>==</span> <span class=mi>1</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>  <span class=n>x</span><span class=o>&lt;</span><span class=mi>1</span></code></pre></table></div></div><p>当&rsquo;=&lsquo;用于指示关键字参数或默认参数值时, 不要在其两侧使用空格.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=k>def</span> <span class=nf>complex</span><span class=p>(</span><span class=n>real</span><span class=p>,</span> <span class=n>imag</span><span class=o>=</span><span class=mf>0.0</span><span class=p>):</span> <span class=k>return</span> <span class=n>magic</span><span class=p>(</span><span class=n>r</span><span class=o>=</span><span class=n>real</span><span class=p>,</span> <span class=n>i</span><span class=o>=</span><span class=n>imag</span><span class=p>)</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>  <span class=k>def</span> <span class=nf>complex</span><span class=p>(</span><span class=n>real</span><span class=p>,</span> <span class=n>imag</span> <span class=o>=</span> <span class=mf>0.0</span><span class=p>):</span> <span class=k>return</span> <span class=n>magic</span><span class=p>(</span><span class=n>r</span> <span class=o>=</span> <span class=n>real</span><span class=p>,</span> <span class=n>i</span> <span class=o>=</span> <span class=n>imag</span><span class=p>)</span></code></pre></table></div></div><p>不要用空格来垂直对齐多行间的标记, 因为这会成为维护的负担(适用于:, <code>#,
+=</code>等):<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span>
+     <span class=n>foo</span> <span class=o>=</span> <span class=mi>1000</span>  <span class=c1># comment</span>
+     <span class=n>long_name</span> <span class=o>=</span> <span class=mi>2</span>  <span class=c1># comment that should not be aligned</span>
+
+     <span class=n>dictionary</span> <span class=o>=</span> <span class=p>{</span>
+         <span class=s2>&#34;foo&#34;</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span>
+         <span class=s2>&#34;long_name&#34;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span>
+         <span class=p>}</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>
+     <span class=n>foo</span>       <span class=o>=</span> <span class=mi>1000</span>  <span class=c1># comment</span>
+     <span class=n>long_name</span> <span class=o>=</span> <span class=mi>2</span>     <span class=c1># comment that should not be aligned</span>
+
+     <span class=n>dictionary</span> <span class=o>=</span> <span class=p>{</span>
+         <span class=s2>&#34;foo&#34;</span>      <span class=p>:</span> <span class=mi>1</span><span class=p>,</span>
+         <span class=s2>&#34;long_name&#34;</span><span class=p>:</span> <span class=mi>2</span><span class=p>,</span>
+         <span class=p>}</span></code></pre></table></div></div><h2 id=shebang>Shebang</h2><hr><blockquote><p><strong>tip:</strong>
+大部分.py文件不必以<code>#!</code>作为文件的开始. 根据
+<a href=http://www.python.org/dev/peps/pep-0394/ target=_blank>PEP-394</a> ,
+程序的main文件应该以 <code>#!/usr/bin/python2</code>或者 <code>#!/usr/bin/python3</code>开始.</blockquote><p>(译者注: 在计算机科学中,
+<a href=http://en.wikipedia.org/wiki/Shebang_(Unix) target=_blank>Shebang</a>
+(也称为Hashbang)是一个由井号和叹号构成的字符串行(<code>\#!</code>),
+其出现在文本文件的第一行的前两个字符. 在文件中存在Shebang的情况下,
+类Unix操作系统的程序载入器会分析Shebang后的内容,
+将这些内容作为解释器指令, 并调用该指令,
+并将载有Shebang的文件路径作为该解释器的参数. 例如,
+以指令<code>#!/bin/sh</code>开头的文件在执行时会实际调用<code>/bin/sh</code>程序.)<p><code>#!</code>先用于帮助内核找到Python解释器, 但是在导入模块时, 将会被忽略.
+因此只有被直接执行的文件中才有必要加入<code>#!</code>.<h2 id=注释>注释</h2><hr><blockquote><p><strong>tip:</strong>
+确保对模块, 函数, 方法和行内注释使用正确的风格</blockquote><p><strong>文档字符串</strong><blockquote><p>Python有一种独一无二的的注释方式: 使用文档字符串. 文档字符串是包,
+模块, 类或函数里的第一个语句.
+这些字符串可以通过对象的<code>__doc__</code>成员被自动提取, 并且被pydoc所用.
+(你可以在你的模块上运行pydoc试一把, 看看它长什么样).
+我们对文档字符串的惯例是使用三重双引号<code>&quot;&quot;&quot;</code>(
+<a href=http://www.python.org/dev/peps/pep-0257/ target=_blank>PEP-257</a> ).
+一个文档字符串应该这样组织: 首先是一行以句号,问号或惊叹号结尾的概述
+(或者该文档字符串单纯只有一行). 接着是一个空行.接着是文档字符串剩下的部分,
+它应该与文档字符串的第一行的第一个引号对齐.下面有更多文档字符串的格式化规范.</blockquote><p><strong>模块</strong><blockquote><p>每个文件应该包含一个许可样板. 根据项目使用的许可(例如, Apache 2.0,
+BSD, LGPL, GPL), 选择合适的样板.</blockquote><p><strong>函数和方法</strong><blockquote><p>下文所指的函数,包括函数, 方法, 以及生成器.
+一个函数必须要有文档字符串, 除非它满足以下条件:
+1. 外部不可见
+2. 非常短小
+3. 简单明了<p>文档字符串应该包含函数做什么, 以及输入和输出的详细描述. 通常,不应该描述
+&ldquo;怎么做&rdquo;, 除非是一些复杂的算法.
+文档字符串应该提供足够的信息, 当别人编写代码调用该函数时,
+他不需要看一行代码, 只要看文档字符串就可以了. 对于复杂的代码,
+在代码旁边加注释会比使用文档字符串更有意义.
+关于函数的几个方面应该在特定的小节中进行描述记录,
+这几个方面如下文所述. 每节应该以一个标题行开始. 标题行以冒号结尾.
+除标题行外, 节的其他内容应被缩进2个空格.<dl><dt>Args:<dd>列出每个参数的名字, 并在名字后使用一个冒号和一个空格,
+分隔对该参数的描述.如果描述太长超过了单行80字符,使用2或者4个空格的悬挂缩进(与文件其他部分保持一致).
+描述应该包括所需的类型和含义.
+如果一个函数接受<code>*foo</code>(可变长度参数列表)或者<code>**bar</code>
+(任意关键字参数), 应该详细列出<code>*foo</code>和<code>**bar</code>.<dt>Returns: (或者 Yields: 用于生成器)<dd>描述返回值的类型和语义. 如果函数返回None, 这一部分可以省略.<dt>Raises:<dd>列出与接口有关的所有异常.</dl></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python> <span class=k>def</span> <span class=nf>fetch_bigtable_rows</span><span class=p>(</span><span class=n>big_table</span><span class=p>,</span> <span class=n>keys</span><span class=p>,</span> <span class=n>other_silly_variable</span><span class=o>=</span><span class=bp>None</span><span class=p>):</span>
+     <span class=s2>&#34;&#34;&#34;Fetches rows from a Bigtable.
+</span><span class=s2>     Retrieves rows pertaining to the given keys from the Table instance
+</span><span class=s2>     represented by big_table.  Silly things may happen if
+</span><span class=s2>     other_silly_variable is not None.
+</span><span class=s2>     Args:
+</span><span class=s2>         big_table: An open Bigtable Table instance.
+</span><span class=s2>         keys: A sequence of strings representing the key of each table row
+</span><span class=s2>             to fetch.
+</span><span class=s2>         other_silly_variable: Another optional variable, that has a much
+</span><span class=s2>             longer name than the other args, and which does nothing.
+</span><span class=s2>     Returns:
+</span><span class=s2>         A dict mapping keys to the corresponding table row data
+</span><span class=s2>         fetched. Each row is represented as a tuple of strings. For
+</span><span class=s2>         example:
+</span><span class=s2>         {&#39;Serak&#39;: (&#39;Rigel VII&#39;, &#39;Preparer&#39;),
+</span><span class=s2>          &#39;Zim&#39;: (&#39;Irk&#39;, &#39;Invader&#39;),
+</span><span class=s2>          &#39;Lrrr&#39;: (&#39;Omicron Persei 8&#39;, &#39;Emperor&#39;)}
+</span><span class=s2>         If a key from the keys argument is missing from the dictionary,
+</span><span class=s2>         then that row was not found in the table.
+</span><span class=s2>     Raises:
+</span><span class=s2>         IOError: An error occurred accessing the bigtable.Table object.
+</span><span class=s2>     &#34;&#34;&#34;</span>
+     <span class=k>pass</span></code></pre></table></div></div><p><strong>类</strong><blockquote><p>类应该在其定义下有一个用于描述该类的文档字符串.
+如果你的类有公共属性(Attributes),
+那么文档中应该有一个属性(Attributes)段.
+并且应该遵守和函数参数相同的格式.</blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python> <span class=k>class</span> <span class=nc>SampleClass</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+     <span class=s2>&#34;&#34;&#34;Summary of class here.
+</span><span class=s2>     Longer class information....
+</span><span class=s2>     Longer class information....
+</span><span class=s2>     Attributes:
+</span><span class=s2>         likes_spam: A boolean indicating if we like SPAM or not.
+</span><span class=s2>         eggs: An integer count of the eggs we have laid.
+</span><span class=s2>     &#34;&#34;&#34;</span>
+     <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>likes_spam</span><span class=o>=</span><span class=bp>False</span><span class=p>):</span>
+         <span class=s2>&#34;&#34;&#34;Inits SampleClass with blah.&#34;&#34;&#34;</span>
+         <span class=bp>self</span><span class=o>.</span><span class=n>likes_spam</span> <span class=o>=</span> <span class=n>likes_spam</span>
+         <span class=bp>self</span><span class=o>.</span><span class=n>eggs</span> <span class=o>=</span> <span class=mi>0</span>
+     <span class=k>def</span> <span class=nf>public_method</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+         <span class=s2>&#34;&#34;&#34;Performs operation blah.&#34;&#34;&#34;</span></code></pre></table></div></div><p><strong>块注释和行注释</strong><blockquote><p>最需要写注释的是代码中那些技巧性的部分. 如果你在下次
+<a href=http://en.wikipedia.org/wiki/Code_review target=_blank>代码审查</a>
+的时候必须解释一下, 那么你应该现在就给它写注释. 对于复杂的操作,
+应该在其操作开始前写上若干行注释. 对于不是一目了然的代码,
+应在其行尾添加注释.</blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python> <span class=c1># We use a weighted dictionary search to find out where i is in</span>
+ <span class=c1># the array.  We extrapolate position based on the largest num</span>
+ <span class=c1># in the array and the array size and then do binary search to</span>
+ <span class=c1># get the exact number.</span>
+ <span class=k>if</span> <span class=n>i</span> <span class=o>&amp;</span> <span class=p>(</span><span class=n>i</span><span class=o>-</span><span class=mi>1</span><span class=p>)</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>        <span class=c1># true iff i is a power of 2</span></code></pre></table></div></div><blockquote><p>为了提高可读性, 注释应该至少离开代码2个空格.
+另一方面, 绝不要描述代码. 假设阅读代码的人比你更懂Python,
+他只是不知道你的代码要做什么.</blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python> <span class=c1># BAD COMMENT: Now go through the b array and make sure whenever i occurs</span>
+ <span class=c1># the next element is i+1</span></code></pre></table></div></div><h2 id=类>类</h2><hr><blockquote><p><strong>tip:</strong>
+如果一个类不继承自其它类, 就显式的从object继承. 嵌套类也一样.</blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=k>class</span> <span class=nc>SampleClass</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+         <span class=k>pass</span>
+
+
+     <span class=k>class</span> <span class=nc>OuterClass</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+
+         <span class=k>class</span> <span class=nc>InnerClass</span><span class=p>(</span><span class=nb>object</span><span class=p>):</span>
+             <span class=k>pass</span>
+
+
+     <span class=k>class</span> <span class=nc>ChildClass</span><span class=p>(</span><span class=n>ParentClass</span><span class=p>):</span>
+         <span class=s2>&#34;&#34;&#34;Explicitly inherits from another class already.&#34;&#34;&#34;</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span> <span class=k>class</span> <span class=nc>SampleClass</span><span class=p>:</span>
+        <span class=k>pass</span>
+
+
+    <span class=k>class</span> <span class=nc>OuterClass</span><span class=p>:</span>
+
+        <span class=k>class</span> <span class=nc>InnerClass</span><span class=p>:</span>
+            <span class=k>pass</span></code></pre></table></div></div><p>继承自 <code>object</code> 是为了使属性(properties)正常工作,
+并且这样可以保护你的代码, 使其不受
+<a href=http://www.python.org/dev/peps/pep-3000/ target=_blank>PEP-3000</a>
+的一个特殊的潜在不兼容性影响. 这样做也定义了一些特殊的方法,
+这些方法实现了对象的默认语义, 包括
+<code>__new__, __init__, __delattr__, __getattribute__, __setattr__, __hash__, __repr__, and __str__</code>
+.<h2 id=字符串>字符串</h2><hr><blockquote><p><strong>tip:</strong>
+即使参数都是字符串, 使用%操作符或者格式化方法格式化字符串.
+不过也不能一概而论, 你需要在+和%之间好好判定.</blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=n>x</span> <span class=o>=</span> <span class=n>a</span> <span class=o>+</span> <span class=n>b</span>
+     <span class=n>x</span> <span class=o>=</span> <span class=s1>&#39;</span><span class=si>%s</span><span class=s1>, </span><span class=si>%s</span><span class=s1>!&#39;</span> <span class=o>%</span> <span class=p>(</span><span class=n>imperative</span><span class=p>,</span> <span class=n>expletive</span><span class=p>)</span>
+     <span class=n>x</span> <span class=o>=</span> <span class=s1>&#39;{}, {}!&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>imperative</span><span class=p>,</span> <span class=n>expletive</span><span class=p>)</span>
+     <span class=n>x</span> <span class=o>=</span> <span class=s1>&#39;name: </span><span class=si>%s</span><span class=s1>; score: </span><span class=si>%d</span><span class=s1>&#39;</span> <span class=o>%</span> <span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>n</span><span class=p>)</span>
+     <span class=n>x</span> <span class=o>=</span> <span class=s1>&#39;name: {}; score: {}&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>name</span><span class=p>,</span> <span class=n>n</span><span class=p>)</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span> <span class=n>x</span> <span class=o>=</span> <span class=s1>&#39;</span><span class=si>%s%s</span><span class=s1>&#39;</span> <span class=o>%</span> <span class=p>(</span><span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=p>)</span>  <span class=c1># use + in this case</span>
+    <span class=n>x</span> <span class=o>=</span> <span class=s1>&#39;{}{}&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>a</span><span class=p>,</span> <span class=n>b</span><span class=p>)</span>  <span class=c1># use + in this case</span>
+    <span class=n>x</span> <span class=o>=</span> <span class=n>imperative</span> <span class=o>+</span> <span class=s1>&#39;, &#39;</span> <span class=o>+</span> <span class=n>expletive</span> <span class=o>+</span> <span class=s1>&#39;!&#39;</span>
+    <span class=n>x</span> <span class=o>=</span> <span class=s1>&#39;name: &#39;</span> <span class=o>+</span> <span class=n>name</span> <span class=o>+</span> <span class=s1>&#39;; score: &#39;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>n</span><span class=p>)</span></code></pre></table></div></div><p>避免在循环中用+和+=操作符来累加字符串. 由于字符串是不可变的,
+这样做会创建不必要的临时对象, 并且导致二次方而不是线性的运行时间.
+作为替代方案, 你可以将每个子串加入列表, 然后在循环结束后用 <code>.join</code>
+连接列表. (也可以将每个子串写入一个 <code>cStringIO.StringIO</code> 缓存中.)<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=n>items</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;&lt;table&gt;&#39;</span><span class=p>]</span>
+     <span class=k>for</span> <span class=n>last_name</span><span class=p>,</span> <span class=n>first_name</span> <span class=ow>in</span> <span class=n>employee_list</span><span class=p>:</span>
+         <span class=n>items</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=s1>&#39;&lt;tr&gt;&lt;td&gt;</span><span class=si>%s</span><span class=s1>, </span><span class=si>%s</span><span class=s1>&lt;/td&gt;&lt;/tr&gt;&#39;</span> <span class=o>%</span> <span class=p>(</span><span class=n>last_name</span><span class=p>,</span> <span class=n>first_name</span><span class=p>))</span>
+     <span class=n>items</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=s1>&#39;&lt;/table&gt;&#39;</span><span class=p>)</span>
+     <span class=n>employee_table</span> <span class=o>=</span> <span class=s1>&#39;&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>items</span><span class=p>)</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span> <span class=n>employee_table</span> <span class=o>=</span> <span class=s1>&#39;&lt;table&gt;&#39;</span>
+    <span class=k>for</span> <span class=n>last_name</span><span class=p>,</span> <span class=n>first_name</span> <span class=ow>in</span> <span class=n>employee_list</span><span class=p>:</span>
+        <span class=n>employee_table</span> <span class=o>+=</span> <span class=s1>&#39;&lt;tr&gt;&lt;td&gt;</span><span class=si>%s</span><span class=s1>, </span><span class=si>%s</span><span class=s1>&lt;/td&gt;&lt;/tr&gt;&#39;</span> <span class=o>%</span> <span class=p>(</span><span class=n>last_name</span><span class=p>,</span> <span class=n>first_name</span><span class=p>)</span>
+    <span class=n>employee_table</span> <span class=o>+=</span> <span class=s1>&#39;&lt;/table&gt;&#39;</span></code></pre></table></div></div><p>在同一个文件中, 保持使用字符串引号的一致性.
+使用单引号&rsquo;或者双引号&rdquo;之一用以引用字符串, 并在同一文件中沿用.
+在字符串内可以使用另外一种引号, 以避免在字符串中使用.GPyLint已经加入了这一检查.<p>(译者注:GPyLint疑为笔误, 应为PyLint.)<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span>
+     <span class=n>Python</span><span class=p>(</span><span class=s1>&#39;Why are you hiding your eyes?&#39;</span><span class=p>)</span>
+     <span class=n>Gollum</span><span class=p>(</span><span class=s2>&#34;I&#39;m scared of lint errors.&#34;</span><span class=p>)</span>
+     <span class=n>Narrator</span><span class=p>(</span><span class=s1>&#39;&#34;Good!&#34; thought a happy Python reviewer.&#39;</span><span class=p>)</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>
+     <span class=n>Python</span><span class=p>(</span><span class=s2>&#34;Why are you hiding your eyes?&#34;</span><span class=p>)</span>
+     <span class=n>Gollum</span><span class=p>(</span><span class=s1>&#39;The lint. It burns. It burns us.&#39;</span><span class=p>)</span>
+     <span class=n>Gollum</span><span class=p>(</span><span class=s2>&#34;Always the great lint. Watching. Watching.&#34;</span><span class=p>)</span></code></pre></table></div></div><p>为多行字符串使用三重双引号<code>&quot;&quot;&quot;</code>而非三重单引号<code>'''</code>.
+当且仅当项目中使用单引号<code>'</code>来引用字符串时,
+才可能会使用三重<code>'''</code>为非文档字符串的多行字符串来标识引用.
+文档字符串必须使用三重双引号<code>&quot;&quot;&quot;</code>. 不过要注意, 通常用隐式行连接更清晰,
+因为多行字符串与程序其他部分的缩进方式不一致.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span>
+    <span class=k>print</span> <span class=p>(</span><span class=s2>&#34;This is much nicer.</span><span class=se>\n</span><span class=s2>&#34;</span>
+           <span class=s2>&#34;Do it this way.</span><span class=se>\n</span><span class=s2>&#34;</span><span class=p>)</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>
+      <span class=k>print</span> <span class=s2>&#34;&#34;&#34;This is pretty ugly.
+</span><span class=s2>  Don&#39;t do this.
+</span><span class=s2>  &#34;&#34;&#34;</span></code></pre></table></div></div><h2 id=文件和sockets>文件和sockets</h2><hr><blockquote><p><strong>tip:</strong>
+在文件和sockets结束时, 显式的关闭它.</blockquote><p>除文件外, sockets或其他类似文件的对象在没有必要的情况下打开,
+会有许多副作用, 例如:<ol><li>它们可能会消耗有限的系统资源, 如文件描述符.
+如果这些资源在使用后没有及时归还系统,
+那么用于处理这些对象的代码会将资源消耗殆尽.<li>持有文件将会阻止对于文件的其他诸如移动、删除之类的操作.<li>仅仅是从逻辑上关闭文件和sockets,
+那么它们仍然可能会被其共享的程序在无意中进行读或者写操作.
+只有当它们真正被关闭后, 对于它们尝试进行读或者写操作将会抛出异常,
+并使得问题快速显现出来.</ol><p>而且, 幻想当文件对象析构时, 文件和sockets会自动关闭,
+试图将文件对象的生命周期和文件的状态绑定在一起的想法, 都是不现实的.
+因为有如下原因:<ol><li>没有任何方法可以确保运行环境会真正的执行文件的析构.
+不同的Python实现采用不同的内存管理技术, 比如延时垃圾处理机制.
+延时垃圾处理机制可能会导致对象生命周期被任意无限制的延长.<li>对于文件意外的引用,会导致对于文件的持有时间超出预期(比如对于异常的跟踪,
+包含有全局变量等).</ol><p>推荐使用
+<a href=http://docs.python.org/reference/compound_stmts.html#the-with-statement target=_blank>&ldquo;with&rdquo;语句</a>
+以管理文件:<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=s2>&#34;hello.txt&#34;</span><span class=p>)</span> <span class=k>as</span> <span class=n>hello_file</span><span class=p>:</span>
+    <span class=k>for</span> <span class=n>line</span> <span class=ow>in</span> <span class=n>hello_file</span><span class=p>:</span>
+        <span class=k>print</span> <span class=n>line</span></code></pre></table></div></div><p>对于不支持使用&rdquo;with&rdquo;语句的类似文件的对象,使用 contextlib.closing():<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>contextlib</span>
+
+<span class=k>with</span> <span class=n>contextlib</span><span class=o>.</span><span class=n>closing</span><span class=p>(</span><span class=n>urllib</span><span class=o>.</span><span class=n>urlopen</span><span class=p>(</span><span class=s2>&#34;http://www.python.org/&#34;</span><span class=p>))</span> <span class=k>as</span> <span class=n>front_page</span><span class=p>:</span>
+    <span class=k>for</span> <span class=n>line</span> <span class=ow>in</span> <span class=n>front_page</span><span class=p>:</span>
+        <span class=k>print</span> <span class=n>line</span></code></pre></table></div></div><p>Legacy AppEngine 中Python 2.5的代码如使用<code>with</code>语句, 需要添加 <code>from__future__ import with_statement</code>.<h2 id=todo注释>TODO注释</h2><hr><blockquote><p><strong>tip:</strong>
+为临时代码使用TODO注释, 它是一种短期解决方案. 不算完美, 但够好了.</blockquote><p>TODO注释应该在所有开头处包含<code>TODO</code>字符串,
+紧跟着是用括号括起来的你的名字, email地址或其它标识符.
+然后是一个可选的冒号. 接着必须有一行注释, 解释要做什么.
+主要目的是为了有一个统一的TODO格式,
+这样添加注释的人就可以搜索到(并可以按需提供更多细节).
+写了TODO注释并不保证写的人会亲自解决问题. 当你写了一个TODO,
+请注上你的名字.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=c1># TODO(kl@gmail.com): Use a &#34;*&#34; here for string repetition.</span>
+<span class=c1># TODO(Zeke) Change this to use relations.</span></code></pre></table></div></div><p>如果你的TODO是<code>将来做某事</code>的形式,
+那么请确保你包含了一个指定的日期(<code>2009年11月解决</code>)或者一个特定的事件(<code>等到所有的客户都可以处理XML请求就移除这些代码</code>).<h2 id=导入格式>导入格式</h2><hr><blockquote><p><strong>tip:</strong>
+每个导入应该独占一行</blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span> <span class=kn>import</span> <span class=nn>os</span>
+     <span class=kn>import</span> <span class=nn>sys</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>  <span class=kn>import</span> <span class=nn>os</span><span class=o>,</span> <span class=nn>sys</span></code></pre></table></div></div><p>导入总应该放在文件顶部, 位于模块注释和文档字符串之后,
+模块全局变量和常量之前. 导入应该按照从最通用到最不通用的顺序分组:<ol><li>标准库导入<li>第三方库导入<li>应用程序指定导入</ol><p>每种分组中, 应该根据每个模块的完整包路径按字典序排序, 忽略大小写.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>foo</span>
+<span class=kn>from</span> <span class=nn>foo</span> <span class=kn>import</span> <span class=n>bar</span>
+<span class=kn>from</span> <span class=nn>foo.bar</span> <span class=kn>import</span> <span class=n>baz</span>
+<span class=kn>from</span> <span class=nn>foo.bar</span> <span class=kn>import</span> <span class=n>Quux</span>
+<span class=kn>from</span> <span class=nn>Foob</span> <span class=kn>import</span> <span class=n>ar</span></code></pre></table></div></div><h2 id=语句>语句</h2><hr><blockquote><p><strong>tip:</strong>
+通常每个语句应该独占一行</blockquote><p>不过, 如果测试结果与测试语句在一行放得下, 你也可以将它们放在同一行.
+如果是if语句, 只有在没有else时才能这样做. 特别地, 绝不要对 <code>try/except</code>
+这样做, 因为try和except不能放在同一行.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>Yes</span><span class=p>:</span>
+
+  <span class=k>if</span> <span class=n>foo</span><span class=p>:</span> <span class=n>bar</span><span class=p>(</span><span class=n>foo</span><span class=p>)</span></code></pre></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=n>No</span><span class=p>:</span>
+
+  <span class=k>if</span> <span class=n>foo</span><span class=p>:</span> <span class=n>bar</span><span class=p>(</span><span class=n>foo</span><span class=p>)</span>
+  <span class=k>else</span><span class=p>:</span>   <span class=n>baz</span><span class=p>(</span><span class=n>foo</span><span class=p>)</span>
+
+  <span class=k>try</span><span class=p>:</span>               <span class=n>bar</span><span class=p>(</span><span class=n>foo</span><span class=p>)</span>
+  <span class=k>except</span> <span class=ne>ValueError</span><span class=p>:</span> <span class=n>baz</span><span class=p>(</span><span class=n>foo</span><span class=p>)</span>
+
+  <span class=k>try</span><span class=p>:</span>
+      <span class=n>bar</span><span class=p>(</span><span class=n>foo</span><span class=p>)</span>
+  <span class=k>except</span> <span class=ne>ValueError</span><span class=p>:</span> <span class=n>baz</span><span class=p>(</span><span class=n>foo</span><span class=p>)</span></code></pre></table></div></div><h2 id=访问控制>访问控制</h2><hr><blockquote><p><strong>tip:</strong>
+在Python中, 对于琐碎又不太重要的访问函数,
+你应该直接使用公有变量来取代它们, 这样可以避免额外的函数调用开销.
+当添加更多功能时, 你可以用属性(property)来保持语法的一致性.
+(译者注: 重视封装的面向对象程序员看到这个可能会很反感,
+因为他们一直被教育: 所有成员变量都必须是私有的! 其实,
+那真的是有点麻烦啊. 试着去接受Pythonic哲学吧)</blockquote><p>另一方面, 如果访问更复杂, 或者变量的访问开销很显著, 那么你应该使用像
+<code>get_foo()</code> 和 <code>set_foo()</code> 这样的函数调用.
+如果之前的代码行为允许通过属性(property)访问 ,
+那么就不要将新的访问函数与属性绑定. 这样,
+任何试图通过老方法访问变量的代码就没法运行,
+使用者也就会意识到复杂性发生了变化.<h2 id=命名>命名</h2><hr><blockquote><p><strong>tip:</strong>
+<code>module_name, package_name, ClassName, method_name, ExceptionName,
+function_name, GLOBAL_VAR_NAME, instance_var_name,
+function_parameter_name, local_var_name</code>.</blockquote><p><strong>应该避免的名称</strong><blockquote><ol><li>单字符名称, 除了计数器和迭代器.<li>包/模块名中的连字符(-)<li>双下划线开头并结尾的名称(Python保留, 例如<code>__init__</code>)</ol></blockquote><p><strong>命名约定</strong><blockquote><ol><li>所谓&rdquo;内部(Internal)&ldquo;表示仅模块内可用, 或者, 在类内是保护或私有的.<li>用单下划线(<code>_</code>)开头表示模块变量或函数是protected的(使用<code>import *
+from</code>时不会包含).<li>用双下划线(<code>__</code>)开头的实例变量或方法表示类内私有.<li>将相关的类和顶级函数放在同一个模块里. 不像Java,
+没必要限制一个类一个模块.<li>对类名使用大写字母开头的单词(如CapWords, 即Pascal风格),
+但是模块名应该用小写加下划线的方式(如<code>lower_with_under.py</code>).
+尽管已经有很多现存的模块使用类似于CapWords.py这样的命名,
+但现在已经不鼓励这样做, 因为如果模块名碰巧和类名一致,
+这会让人困扰.</ol></blockquote><p><strong>Python之父Guido推荐的规范</strong><table><thead><tr><th align=center>Type<th align=center>Public<th align=center>Internal<tbody><tr><td align=center>Modules<td align=center>lower_with_under<td align=center>_lower_with_under<tr><td align=center>Packages<td align=center>lower_with_under<td align=center><tr><td align=center>Classes<td align=center>CapWords<td align=center>_CapWords<tr><td align=center>Exceptions<td align=center>CapWords<td align=center><tr><td align=center>Functions<td align=center>lower_with_under()<td align=center>_lower_with_under()<tr><td align=center>Global/Class Constants<td align=center>CAPS_WITH_UNDER<td align=center>_CAPS_WITH_UNDER<tr><td align=center>Global/Class Variables<td align=center>lower_with_under<td align=center>_lower_with_under<tr><td align=center>Instance Variables<td align=center>lower_with_under<td align=center>_lower_with_under (protected) or __lower_with_under (private)<tr><td align=center>Method Names<td align=center>lower_with_under()<td align=center>_lower_with_under() (protected) or __lower_with_under() (private)<tr><td align=center>Function/Method Parameters<td align=center>lower_with_under<td align=center><tr><td align=center>Local Variables<td align=center>lower_with_under<td align=center></table><h2 id=main>Main</h2><hr><blockquote><p><strong>tip:</strong>
+即使是一个打算被用作脚本的文件, 也应该是可导入的.
+并且简单的导入不应该导致这个脚本的主功能(main functionality)被执行,
+这是一种副作用. 主功能应该放在一个main()函数中.</blockquote><p>在Python中, pydoc以及单元测试要求模块必须是可导入的.
+你的代码应该在执行主程序前总是检查 <code>if __name__ == '__main__'</code> ,
+这样当模块被导入时主程序就不会被执行.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>main</span><span class=p>():</span>
+      <span class=o>...</span>
+
+<span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s1>&#39;__main__&#39;</span><span class=p>:</span>
+    <span class=n>main</span><span class=p>()</span></code></pre></table></div></div><p>所有的顶级代码在模块导入时都会被执行. 要小心不要去调用函数, 创建对象,
+或者执行那些不应该在使用pydoc时执行的操作.<hr><blockquote><h2 id=临别赠言><strong>临别赠言</strong></h2><p><strong>请务必保持代码的一致性</strong>
+- 如果你正在编辑代码, 花几分钟看一下周边代码, 然后决定风格. 如果它们在所有的算术操作符两边都使用空格, 那么你也应该这样做. 如果它们的注释都用标记包围起来, 那么你的注释也要这样.
+- 制定风格指南的目的在于让代码有规可循, 这样人们就可以专注于&rdquo;你在说什么&rdquo;, 而不是&rdquo;你在怎么说&rdquo;. 我们在这里给出的是全局的规范, 但是本地的规范同样重要. 如果你加到一个文件里的代码和原有代码大相径庭, 它会让读者不知所措. 避免这种情况.</blockquote><hr><blockquote><p>版本:<ul><li>2.59</ul><p>原作者:<ul><li>Amit Patel<li>Antoine Picard<li>Eugene Jhong<li>Jeremy Hylton<li>Matt Smart<li>Mike Shields</ul><p>翻译:<ul><li>guoqiao v2.19<li>xuxinkun v2.59<br></ul><p>项目主页<ul><li><a href=https://github.com/google/styleguide target=_blank>Google Style Guide</a><li><a href=http://github.com/zh-google-styleguide/zh-google-styleguide target=_blank>Google 开源项目风格指南 - 中文版</a></ul></blockquote><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-4469282388984999 data-ad-slot=5357438236></ins><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=5625031544 data-ad-format=auto data-full-width-responsive=true></ins></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Quanyin</span><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2020-05-07</span><p class=copyright-item><span class=item-title>许可协议</span>
+<span class=item-content>本博客所有文章除特别声明外，均采用 <a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>(CC) BY-NC-SA 4.0 </a>许可协议。转载请注明作者和出处并告知</span></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<label class=reward-button for=reward>赞赏支持</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=/img/reward/WechatPay.png>
+<span>微信打赏</span></label>
+<label class=qr-code-image for=reward><img class=image src=/img/reward/AliPay.png>
+<span>支付宝打赏</span></label></div></div><footer class=post-footer><div class=post-tags><a href=/tags/python/>Python</a>
+<a href=/tags/style/>Style</a></div><nav class=post-nav><a class=prev href=/2017/python-language-rules/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Google Python 风格指南 I</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/2017/git-cheet-sheet/><span class="next-text nav-default">git 常用命令</span>
+<span class="prev-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><div class="post bg-white"><script src=https://cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=https://unpkg.com/valine/dist/Valine.min.js></script><div id=vcomments></div><script>new Valine({el:'#vcomments',appId:'aTnk2nRIOVuFeXVYCRqOhEQ1-MdYXbMMI',appKey:'fPBawjKkMiA8biHbwoDim1mJ',avatar:'mm',placeholder:'说点什么吧',})</script></div></div></div></main><footer id=footer class=footer><div class=icon-links><a href=/index.xml rel="noopener alternate" type=application/rss&#43;xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 0 1 140.501333 140.586667A140.928 140.928.0 0 1 140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme - <a class=theme-link href=https://github.com/xianmin/hugo-theme-jane>Jane</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020
+<span class=heart><i class=iconfont><svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"><path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7.0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1.0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2.0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3.1-42.5-8-83.6-24-122.2z" fill="#8a8a8a"/></svg></i></span><span class=author>Quanyin</span></span></div></footer><div class=back-to-top id=back-to-top><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35"><path d="M510.866688 227.694839 95.449397 629.218702h235.761562L329.15309 958.01517h362.40389L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777h894.052392v131.813095H63.840492V63.962777v0zm0 0"/></svg></i></div></div><script src=/lib/jquery/jquery-3.2.1.min.js></script><script src=/lib/slideout/slideout-1.0.1.min.js></script><script src="/dist/jane.min.js?v=2.7.0"></script><script src=/js/load-photoswipe.js></script><script src=/lib/photoswipe/photoswipe.min.js></script><script src=/lib/photoswipe/photoswipe-ui-default.min.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>

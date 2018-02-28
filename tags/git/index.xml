@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on 已停更的小博客</title><link>/tags/git/</link><description>Recent content in Git on 已停更的小博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>i@imtqy.com (Quanyin)</managingEditor><webMaster>i@imtqy.com (Quanyin)</webMaster><copyright> Quanyin</copyright><lastBuildDate>Wed, 13 Jun 2018 22:26:24 +0800</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>一份 Git 中的奇淫技巧的驳杂记录</title><link>/2018/useful-git-command/</link><pubDate>Wed, 13 Jun 2018 22:26:24 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/useful-git-command/</guid><description>&lt;p&gt;在 &lt;a href=&#34;/2017/10/git-cheet-sheet/&#34;&gt; git 常用命令&lt;/a&gt; 一文中介绍了 git 的一些基本命令，
+在 &lt;a href=&#34;/2017/12/git-reset/&#34;&gt; Git 中 4 个阶段的撤销更改&lt;/a&gt; 中则介绍了 git 四个阶段的&amp;rdquo;后悔药&amp;rdquo;，
+这篇文章则汇集了几个不太常用但非常有用的命令。&lt;/p&gt;</description></item><item><title>Git 风格指南</title><link>/2017/git-style-guide/</link><pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/git-style-guide/</guid><description>&lt;p&gt;这份风格指南受到 &lt;a href=&#34;https://www.kernel.org/doc/Documentation/SubmittingPatches&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;How to Get Your Change Into the Linux Kernel&lt;/em&gt;&lt;/a&gt;，&lt;a href=&#34;http://git-scm.com/doc&#34; target=&#34;_blank&#34;&gt;git man pages&lt;/a&gt; 和大量社区通用实践的启发。&lt;/p&gt;</description></item><item><title>Git 中 4 个阶段的撤销更改</title><link>/2017/git-reset/</link><pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/git-reset/</guid><description>&lt;p&gt;错误修改了代码不要紧，这里教你如何恢复以前的正确代码。&lt;/p&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure class=&#34;center lazyload&#34; itemprop=&#34;associatedMedia&#34;
+itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+&lt;div class=&#34;img&#34;&gt;
+&lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/post-content/git-reset/git-working-mode.png&#34; /&gt;
+&lt;/div&gt;
+&lt;a href=&#34;/img/post-content/git-reset/git-working-mode.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;</description></item><item><title>git 常用命令</title><link>/2017/git-cheet-sheet/</link><pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/git-cheet-sheet/</guid><description>&lt;p&gt;git是现在最流行的版本控制工具。与CVS、Subversion一类的集中式版本控制工具不同,它采用了分布式版本库的作法,不需要服务器端软件,就可以运作版本控制,使得源代码的发布和交流极其方便。git的速度很快,git最为出色的是它的合并追踪(merge
+tracing)能力。&lt;/p&gt;</description></item></channel></rss>

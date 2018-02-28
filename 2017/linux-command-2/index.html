@@ -1,0 +1,694 @@
+<!doctype html><html lang=zh-cn itemscope itemtype=http://schema.org/WebPage><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Linux系统命令 II - 已停更的小博客</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content=width><meta name=HandheldFriendly content=true><meta name=applicable-device content=pc,mobile><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=mobile-web-app-capable content=yes><meta name=author content=Quanyin><meta name=description content=利用tar,我们将许多文件一起保存至一个单独的磁带或磁盘归档,并能从归档中单独还原所需文件,可以轻易的实现文件的压缩与打包。><meta name=keywords content=tar,linux,><meta name=generator content="Hugo 0.55.6"><link rel=canonical href=/2017/linux-command-2/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media=screen crossorigin=anonymous><meta property=og:title content="Linux系统命令 II"><meta property=og:description content=利用tar,我们将许多文件一起保存至一个单独的磁带或磁盘归档,并能从归档中单独还原所需文件,可以轻易的实现文件的压缩与打包。><meta property=og:type content=article><meta property=og:url content=/2017/linux-command-2/><meta property=article:published_time content=2017-12-02T00:00:00&#43;00:00><meta property=article:modified_time content=2020-05-07T17:24:00&#43;08:00><meta itemprop=name content="Linux系统命令 II"><meta itemprop=description content=利用tar,我们将许多文件一起保存至一个单独的磁带或磁盘归档,并能从归档中单独还原所需文件,可以轻易的实现文件的压缩与打包。><meta itemprop=datePublished content=2017-12-02T00:00:00&#43;00:00><meta itemprop=dateModified content=2020-05-07T17:24:00&#43;08:00><meta itemprop=wordCount content=4178><meta itemprop=keywords content=Linux,><meta name=twitter:card content=summary><meta name=twitter:title content="Linux系统命令 II"><meta name=twitter:description content=利用tar,我们将许多文件一起保存至一个单独的磁带或磁盘归档,并能从归档中单独还原所需文件,可以轻易的实现文件的压缩与打包。><script>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-126038371-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4469282388984999",enable_page_level_ads:true});</script><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=/>主页</a><li class=mobile-menu-item><a class=menu-item-link href=/notice/>通知</a><li class=mobile-menu-item><a class=menu-item-link href=/post/>时光机</a><li class=mobile-menu-item><div class=mobile-menu-parent><span class=mobile-submenu-open></span><a href=/categories/>分类</a></div><ul class=mobile-submenu-list><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=mobile-menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav><link rel=stylesheet href=/lib/photoswipe/photoswipe.min.css><link rel=stylesheet href=/lib/photoswipe/default-skin/default-skin.min.css><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>主页</a><li class=menu-item><a class=menu-item-link href=/notice/>通知</a><li class=menu-item><a class=menu-item-link href=/post/>时光机</a><li class=menu-item><a class="menu-item-link menu-parent" href=/categories/>分类</a><ul class=submenu><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>Linux系统命令 II</h1><div class=post-meta><time datetime=2017-12-02 class=post-time>2017-12-02</time><div class=post-category><a href=/categories/%E7%BC%96%E7%A8%8B/>编程</a></div><span class=more-meta>约 4178 字</span>
+<span class=more-meta>预计阅读 9 分钟</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#用法>用法</a><li><a href=#选项>选项</a><li><a href=#常用选项>常用选项</a><li><a href=#寻求帮助>寻求帮助</a><li><a href=#示例>示例</a></ul></ul></ul></nav></div></div><div class=post-content><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=4019390506 data-ad-format=link data-full-width-responsive=true></ins><p>tar命令可以为linux的文件和目录创建文档。利用tar,可以为某一特定文件创建档案(备份),也可以
+在其中改变文件,或者向其中加入新的文件。<blockquote><p>利用 tar命令,我们可以将文件/目录进行打包和压缩,以减少文件大小和便于管理。<ul><li><p>打包:将一大堆文件或者目录变成一个总的文件；<li><p>压缩:将一个大的文件通过一些压缩算法变成小的文件</ul></blockquote><h3 id=用法>用法</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ tar <span class=o>[</span>选项...<span class=o>]</span> <span class=o>[</span>FILE<span class=o>]</span>...</code></pre></table></div></div><p>将许多文件一起保存至一个单独的磁带或磁盘归档,并能从归档中单独还原所需文件。<h3 id=选项>选项</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span><span class=lnt>150
+</span><span class=lnt>151
+</span><span class=lnt>152
+</span><span class=lnt>153
+</span><span class=lnt>154
+</span><span class=lnt>155
+</span><span class=lnt>156
+</span><span class=lnt>157
+</span><span class=lnt>158
+</span><span class=lnt>159
+</span><span class=lnt>160
+</span><span class=lnt>161
+</span><span class=lnt>162
+</span><span class=lnt>163
+</span><span class=lnt>164
+</span><span class=lnt>165
+</span><span class=lnt>166
+</span><span class=lnt>167
+</span><span class=lnt>168
+</span><span class=lnt>169
+</span><span class=lnt>170
+</span><span class=lnt>171
+</span><span class=lnt>172
+</span><span class=lnt>173
+</span><span class=lnt>174
+</span><span class=lnt>175
+</span><span class=lnt>176
+</span><span class=lnt>177
+</span><span class=lnt>178
+</span><span class=lnt>179
+</span><span class=lnt>180
+</span><span class=lnt>181
+</span><span class=lnt>182
+</span><span class=lnt>183
+</span><span class=lnt>184
+</span><span class=lnt>185
+</span><span class=lnt>186
+</span><span class=lnt>187
+</span><span class=lnt>188
+</span><span class=lnt>189
+</span><span class=lnt>190
+</span><span class=lnt>191
+</span><span class=lnt>192
+</span><span class=lnt>193
+</span><span class=lnt>194
+</span><span class=lnt>195
+</span><span class=lnt>196
+</span><span class=lnt>197
+</span><span class=lnt>198
+</span><span class=lnt>199
+</span><span class=lnt>200
+</span><span class=lnt>201
+</span><span class=lnt>202
+</span><span class=lnt>203
+</span><span class=lnt>204
+</span><span class=lnt>205
+</span><span class=lnt>206
+</span><span class=lnt>207
+</span><span class=lnt>208
+</span><span class=lnt>209
+</span><span class=lnt>210
+</span><span class=lnt>211
+</span><span class=lnt>212
+</span><span class=lnt>213
+</span><span class=lnt>214
+</span><span class=lnt>215
+</span><span class=lnt>216
+</span><span class=lnt>217
+</span><span class=lnt>218
+</span><span class=lnt>219
+</span><span class=lnt>220
+</span><span class=lnt>221
+</span><span class=lnt>222
+</span><span class=lnt>223
+</span><span class=lnt>224
+</span><span class=lnt>225
+</span><span class=lnt>226
+</span><span class=lnt>227
+</span><span class=lnt>228
+</span><span class=lnt>229
+</span><span class=lnt>230
+</span><span class=lnt>231
+</span><span class=lnt>232
+</span><span class=lnt>233
+</span><span class=lnt>234
+</span><span class=lnt>235
+</span><span class=lnt>236
+</span><span class=lnt>237
+</span><span class=lnt>238
+</span><span class=lnt>239
+</span><span class=lnt>240
+</span><span class=lnt>241
+</span><span class=lnt>242
+</span><span class=lnt>243
+</span><span class=lnt>244
+</span><span class=lnt>245
+</span><span class=lnt>246
+</span><span class=lnt>247
+</span><span class=lnt>248
+</span><span class=lnt>249
+</span><span class=lnt>250
+</span><span class=lnt>251
+</span><span class=lnt>252
+</span><span class=lnt>253
+</span><span class=lnt>254
+</span><span class=lnt>255
+</span><span class=lnt>256
+</span><span class=lnt>257
+</span><span class=lnt>258
+</span><span class=lnt>259
+</span><span class=lnt>260
+</span><span class=lnt>261
+</span><span class=lnt>262
+</span><span class=lnt>263
+</span><span class=lnt>264
+</span><span class=lnt>265
+</span><span class=lnt>266
+</span><span class=lnt>267
+</span><span class=lnt>268
+</span><span class=lnt>269
+</span><span class=lnt>270
+</span><span class=lnt>271
+</span><span class=lnt>272
+</span><span class=lnt>273
+</span><span class=lnt>274
+</span><span class=lnt>275
+</span><span class=lnt>276
+</span><span class=lnt>277
+</span><span class=lnt>278
+</span><span class=lnt>279
+</span><span class=lnt>280
+</span><span class=lnt>281
+</span><span class=lnt>282
+</span><span class=lnt>283
+</span><span class=lnt>284
+</span><span class=lnt>285
+</span><span class=lnt>286
+</span><span class=lnt>287
+</span><span class=lnt>288
+</span><span class=lnt>289
+</span><span class=lnt>290
+</span><span class=lnt>291
+</span><span class=lnt>292
+</span><span class=lnt>293
+</span><span class=lnt>294
+</span><span class=lnt>295
+</span><span class=lnt>296
+</span><span class=lnt>297
+</span><span class=lnt>298
+</span><span class=lnt>299
+</span><span class=lnt>300
+</span><span class=lnt>301
+</span><span class=lnt>302
+</span><span class=lnt>303
+</span><span class=lnt>304
+</span><span class=lnt>305
+</span><span class=lnt>306
+</span><span class=lnt>307
+</span><span class=lnt>308
+</span><span class=lnt>309
+</span><span class=lnt>310
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash> 本地文件名选择:
+
+      --add-file<span class=o>=</span>FILE        添加指定的 FILE 至归档<span class=o>(</span>如果名字以 -
+                             开始会很有用的<span class=o>)</span>
+  -C, --directory<span class=o>=</span>DIR        改变至目录 DIR
+      --exclude<span class=o>=</span>PATTERN      排除以 PATTERN 指定的文件
+      --exclude-backups      排除备份和锁文件
+      --exclude-caches       除标识文件本身外,排除包含
+                             CACHEDIR.TAG 的目录中的内容
+      --exclude-caches-all   排除包含 CACHEDIR.TAG 的目录
+      --exclude-caches-under 排除包含 CACHEDIR.TAG
+                             的目录中所有内容
+      --exclude-ignore<span class=o>=</span>FILE  若存在FILE,
+                             则从其中读取每个目录的例外匹配项
+      --exclude-ignore-recursive<span class=o>=</span>FILE
+                             若存在FILE,
+                             则从其中为每个目录及其子目录读取需要排除的例外匹配项
+      --exclude-tag<span class=o>=</span>FILE     除 FILE 自身外,排除包含 FILE
+                             的目录中的内容
+      --exclude-tag-all<span class=o>=</span>FILE 排除包含 FILE 的目录
+      --exclude-tag-under<span class=o>=</span>FILE   排除包含 FILE 的目录中的所有内容
+      --exclude-vcs          排除版本控制系统目录
+      --exclude-vcs-ignores  从VCS 忽略文件中读取排除匹配项
+      --no-null              禁用上一次的效果 --null 选项
+      --no-recursion         避免目录中的自动降级
+      --no-unquote           不要unquote 输入文件或成员名称
+      --no-verbatim-files-from   -T
+                             把以‘-’开始的文件作为选项<span class=o>(</span>默认<span class=o>)</span>
+      --null                 -T 读取以空终止的名字<span class=p>;</span> 隐含
+                             --verbatim-files-from
+      --recursion            目录递归<span class=o>(</span>默认<span class=o>)</span>
+  -T, --files-from<span class=o>=</span>FILE      从 FILE
+                             中获取文件名来解压或创建文件
+      --unquote              unquote 输入文件或成员名称<span class=o>(</span>默认<span class=o>)</span>
+      --verbatim-files-from  -T 逐字读取文件名<span class=o>(</span>不处理选项<span class=o>)</span>
+  -X, --exclude-from<span class=o>=</span>FILE    排除 FILE 中列出的模式串
+
+ 文件名匹配选项<span class=o>(</span>同时影响排除和包括模式串<span class=o>)</span>:
+
+      --anchored             模式串匹配文件名头部
+      --ignore-case          忽略大小写
+      --no-anchored          模式串匹配任意‘/’后字符<span class=o>(</span>默认对
+                             exclusion 有效<span class=o>)</span>
+      --no-ignore-case       匹配大小写<span class=o>(</span>默认<span class=o>)</span>
+      --no-wildcards         逐字匹配字符串
+      --no-wildcards-match-slash   通配符不匹配‘/’
+      --wildcards            使用通配符<span class=o>(</span>默认对 exclusion <span class=o>)</span>
+      --wildcards-match-slash   通配符匹配‘/’<span class=o>(</span>默认对exclusion
+                             有效<span class=o>)</span>
+
+ 主操作模式:
+
+  -A, --catenate, --concatenate   追加 tar 文件至归档
+  -c, --create               创建一个新归档
+  -d, --diff, --compare      找出归档和文件系统的差异
+      --delete               从归档<span class=o>(</span>非磁带！<span class=o>)</span>中删除
+  -r, --append               追加文件至归档结尾
+  -t, --list                 列出归档内容
+      --test-label           测试归档卷标并退出
+  -u, --update               仅追加比归档中副本更新的文件
+  -x, --extract, --get       从归档中解出文件
+
+ 操作修饰符:
+
+      --check-device         当创建增量归档时检查设备号<span class=o>(</span>默认<span class=o>)</span>
+  -g, --listed-incremental<span class=o>=</span>FILE   处理新式的 GNU 格式的增量备份
+  -G, --incremental          处理老式的 GNU 格式的增量备份
+      --hole-detection<span class=o>=</span>TYPE  用于探测holes 的技术
+      --ignore-failed-read
+                             当遇上不可读文件时不要以非零值退出
+      --level<span class=o>=</span>NUMBER         所创建的增量列表归档的输出级别
+  -n, --seek                 归档可检索
+      --no-check-device      当创建增量归档时不要检查设备号
+      --no-seek              归档不可检索
+      --occurrence<span class=o>[=</span>NUMBER<span class=o>]</span>  仅处理归档中每个文件的第 NUMBER
+                             个事件；仅当与以下子命令 --delete,
+                             --diff, --extract 或是 --list
+                             中的一个联合使用时,此选项才有效。而且不管文件列表是以命令行形式给出或是通过
+                             -T 选项指定的；NUMBER 值默认为 <span class=m>1</span>
+      --sparse-version<span class=o>=</span>MAJOR<span class=o>[</span>.MINOR<span class=o>]</span>
+                             设置所用的离散格式版本<span class=o>(</span>隐含
+                             --sparse<span class=o>)</span>
+  -S, --sparse               高效处理离散文件
+
+ 重写控制:
+
+  -k, --keep-old-files       解压时不替换存在的文件,
+                             而将其认为是错误
+      --keep-directory-symlink   解压时保留已存在的目录符号链接
+      --keep-newer-files
+                             不要替换比归档中副本更新的已存在的文件
+      --no-overwrite-dir     保留已存在目录的元数据
+      --one-top-level<span class=o>[=</span>DIR<span class=o>]</span>  创建子目录以避免解压松散文件
+      --overwrite            解压时重写存在的文件
+      --overwrite-dir
+                             解压时重写已存在目录的元数据<span class=o>(</span>默认<span class=o>)</span>
+      --recursive-unlink     解压目录之前先清除目录层次
+      --remove-files         在添加文件至归档后删除它们
+      --skip-old-files
+                             解压时不替换存在的文件,而是自动忽略
+  -U, --unlink-first         在解压要重写的文件之前先删除它们
+  -W, --verify               在写入以后尝试校验归档
+
+ 选择输出流:
+
+      --ignore-command-error 忽略子进程的退出代码
+      --no-ignore-command-error
+                             将子进程的非零退出代码认为发生错误
+  -O, --to-stdout            解压文件至标准输出
+      --to-command<span class=o>=</span>COMMAND
+                             将解压的文件通过管道传送至另一个程序
+
+ 操作文件属性:
+
+      --atime-preserve<span class=o>[=</span>METHOD<span class=o>]</span>
+                             在输出的文件上保留访问时间,要么通过在读取<span class=o>(</span>默认
+                             <span class=nv>METHOD</span><span class=o>=</span>‘replace’<span class=o>)</span>后还原时间,要不就不要在第一次<span class=o>(</span><span class=nv>METHOD</span><span class=o>=</span>‘system’<span class=o>)</span>设置时间
+      --clamp-mtime          only <span class=nb>set</span> <span class=nb>time</span> when the file is more recent than
+                             what was given with --mtime
+      --delay-directory-restore
+                             直到解压结束才设置修改时间和所解目录的权限
+      --group<span class=o>=</span>名称         强制将 NAME
+                             作为所添加的文件的组所有者
+      --group-map<span class=o>=</span>FILE       用FILE 映射文件所有者GIDs 和名字
+      --mode<span class=o>=</span>CHANGES         强制将所添加的文件<span class=o>(</span>符号<span class=o>)</span>更改为权限
+                             CHANGES
+      --mtime<span class=o>=</span>DATE-OR-FILE   从 DATE-OR-FILE 中为添加的文件设置
+                             mtime
+  -m, --touch                不要解压文件的修改时间
+      --no-delay-directory-restore
+                             取消 --delay-directory-restore 选项的效果
+      --no-same-owner
+                             将文件解压为您所有<span class=o>(</span>普通用户默认此项<span class=o>)</span>
+      --no-same-permissions
+                             从归档中解压权限时使用用户的掩码位<span class=o>(</span>默认为普通用户服务<span class=o>)</span>
+      --numeric-owner        总是以数字代表用户/组的名称
+      --owner<span class=o>=</span>名称         强制将 NAME
+                             作为所添加的文件的所有者
+      --owner-map<span class=o>=</span>FILE       用FILE 映射文件所有者UIDs 和名字
+  -p, --preserve-permissions, --same-permissions
+                             解压文件权限信息<span class=o>(</span>默认只为超级用户服务<span class=o>)</span>
+      --same-owner
+                             尝试解压时保持所有者关系一致<span class=o>(</span>超级用户默认此项<span class=o>)</span>
+  -s, --preserve-order, --same-order
+                             成员参数按归档中的文件顺序列出
+      --sort<span class=o>=</span>ORDER           目录排序顺序: none<span class=o>(</span>默认<span class=o>)</span>, name 或inode
+
+ 操作extended 文件属性:
+
+      --acls                 开启POSIX ACLs 支持
+      --no-acls              关闭POSIX ACLs 支持
+      --no-selinux           关闭SELinux 上下文支持
+      --no-xattrs            关闭extended 属性支持
+      --selinux              开启SELinux 上下文支持
+      --xattrs               开启extended 属性支持
+      --xattrs-exclude<span class=o>=</span>MASK  为xattr 关键字指定排除匹配项
+      --xattrs-include<span class=o>=</span>MASK  为xattr 关键字指定包含匹配项
+
+ 设备选择和切换:
+
+  -f, --file<span class=o>=</span>ARCHIVE         使用归档文件或 ARCHIVE 设备
+      --force-local
+                             即使归档文件存在副本还是把它认为是本地归档
+  -F, --info-script<span class=o>=</span>名称, --new-volume-script<span class=o>=</span>名称
+                             在每卷磁带最后运行脚本<span class=o>(</span>隐含 -M<span class=o>)</span>
+  -L, --tape-length<span class=o>=</span>NUMBER   写入 NUMBER × <span class=m>1024</span> 字节后更换磁带
+  -M, --multi-volume         创建/列出/解压多卷归档文件
+      --rmt-command<span class=o>=</span>COMMAND  使用指定的 rmt COMMAND 代替 rmt
+      --rsh-command<span class=o>=</span>COMMAND  使用远程 COMMAND 代替 rsh
+      --volno-file<span class=o>=</span>FILE      使用/更新 FILE 中的卷数
+
+ 设备分块:
+
+  -b, --blocking-factor<span class=o>=</span>BLOCKS   每个记录 BLOCKS x <span class=m>512</span> 字节
+  -B, --read-full-records    读取时重新分块<span class=o>(</span>只对 <span class=m>4</span>.2BSD 管道有效<span class=o>)</span>
+  -i, --ignore-zeros         忽略归档中的零字节块<span class=o>(</span>即文件结尾<span class=o>)</span>
+      --record-size<span class=o>=</span>NUMBER   每个记录的字节数 NUMBER,乘以 <span class=m>512</span>
+
+ 选择归档格式:
+
+  -H, --format<span class=o>=</span>FORMAT        创建指定格式的归档
+
+ FORMAT 是以下格式中的一种:
+
+    gnu                      GNU tar <span class=m>1</span>.13.x 格式
+    oldgnu                   GNU 格式 as per tar &lt;<span class=o>=</span> <span class=m>1</span>.12
+    pax                      POSIX <span class=m>1003</span>.1-2001 <span class=o>(</span>pax<span class=o>)</span> 格式
+    posix                    等同于 pax
+    ustar                    POSIX <span class=m>1003</span>.1-1988 <span class=o>(</span>ustar<span class=o>)</span> 格式
+    v7                       old V7 tar 格式
+
+      --old-archive, --portability
+                             等同于 --format<span class=o>=</span>v7
+      --pax-option<span class=o>=</span>关键字<span class=o>[[</span>:<span class=o>]=</span>值<span class=o>][</span>,关键字<span class=o>[[</span>:<span class=o>]=</span>值<span class=o>]]</span>...
+                             控制 pax 关键字
+      --posix                等同于 --format<span class=o>=</span>posix
+  -V, --label<span class=o>=</span>TEXT           创建带有卷名 TEXT
+                             的归档；在列出/解压时,使用 TEXT
+                             作为卷名的模式串
+
+ 压缩选项:
+
+  -a, --auto-compress        使用归档后缀名来决定压缩程序
+  -I, --use-compress-program<span class=o>=</span>PROG
+                             通过 PROG 过滤<span class=o>(</span>必须是能接受 -d
+                             选项的程序<span class=o>)</span>
+  -j, --bzip2                通过 bzip2 过滤归档
+  -J, --xz                   通过 xz 过滤归档
+      --lzip                 通过 lzip 过滤归档
+      --lzma                 通过 lzma 过滤归档
+      --lzop                 通过 xz 过滤归档
+      --no-auto-compress     不使用归档后缀名来决定压缩程序
+  -z, --gzip, --gunzip, --ungzip   通过 gzip 过滤归档
+  -Z, --compress, --uncompress   通过 compress 过滤归档
+
+ 本地文件选择:
+
+      --backup<span class=o>[=</span>CONTROL<span class=o>]</span>     在删除前备份,选择 CONTROL 版本
+  -h, --dereference
+                             跟踪符号链接；将它们所指向的文件归档并输出
+      --hard-dereference
+                             跟踪硬链接；将它们所指向的文件归档并输出
+  -K, --starting-file<span class=o>=</span>MEMBER-NAME
+                             从归档中的 MEMBER-NAME
+                             成员处开始读取归档
+      --newer-mtime<span class=o>=</span>DATE     当只有数据改变时比较数据和时间
+  -N, --newer<span class=o>=</span>DATE-OR-FILE, --after-date<span class=o>=</span>DATE-OR-FILE
+                             只保存比 DATE-OR-FILE 更新的文件
+      --one-file-system      创建归档时保存在本地文件系统中
+  -P, --absolute-names       不要从文件名中清除引导符‘/’
+      --suffix<span class=o>=</span>STRING        在删除前备份,除非被环境变量
+                             SIMPLE_BACKUP_SUFFIX
+                             覆盖,否则覆盖常用后缀<span class=o>(</span>‘’<span class=o>)</span>
+
+ 文件名变换:
+
+      --strip-components<span class=o>=</span>NUMBER   解压时从文件名中清除 NUMBER
+                             个引导部分
+      --transform<span class=o>=</span>EXPRESSION, --xform<span class=o>=</span>EXPRESSION
+                             使用 sed 代替 EXPRESSION
+                             来进行文件名变换
+
+ 提示性输出:
+
+      --checkpoint<span class=o>[=</span>NUMBER<span class=o>]</span>  每隔 NUMBER
+                             个记录显示进度信息<span class=o>(</span>默认为 <span class=m>10</span> 个<span class=o>)</span>
+      --checkpoint-action<span class=o>=</span>ACTION   在每个检查点上执行 ACTION
+      --full-time            按文件原本时间格式打印
+      --index-file<span class=o>=</span>FILE      将详细输出发送至 FILE
+  -l, --check-links
+                             只要不是所有链接都被输出就打印信息
+      --no-quote-chars<span class=o>=</span>STRING   禁用来自 STRING 的字符引用
+      --quote-chars<span class=o>=</span>STRING   来自 STRING 的额外的引用字符
+      --quoting-style<span class=o>=</span>STYLE  设置名称引用风格；有效的 STYLE
+                             值请参阅以下说明
+  -R, --block-number         每个信息都显示归档内的块数
+      --show-defaults        显示 tar 默认选项
+      --show-omitted-dirs
+                             列表或解压时,列出每个不匹配查找标准的目录
+      --show-snapshot-field-ranges
+                             显示快照文件区的有效范围
+      --show-transformed-names, --show-stored-names
+                             显示变换后的文件名或归档名
+      --totals<span class=o>[=</span>SIGNAL<span class=o>]</span>      处理归档后打印出总字节数；当此
+                             SIGNAL 被触发时带参数 -
+                             打印总字节数；允许的信号为:
+                             SIGHUP,SIGQUIT,SIGINT,SIGUSR1 和
+                             SIGUSR2；同时也接受不带 SIG
+                             前缀的信号名称
+      --utc                  以 UTC 格式打印文件修改时间
+  -v, --verbose              详细地列出处理的文件
+      --warning<span class=o>=</span>KEYWORD      警告控制:
+  -w, --interactive, --confirmation
+                             每次操作都要求确认
+
+ 兼容性选项:
+
+  -o                         创建归档时,相当于
+                             --old-archive；展开归档时,相当于
+                             --no-same-owner
+
+ 其它选项:
+
+  -?, --help                 显示此帮助列表
+      --restrict             禁用某些潜在的有危险的选项
+      --usage                显示简短的用法说明
+      --version              打印程序版本
+
+长选项和相应短选项具有相同的强制参数或可选参数。
+
+除非以 --suffix 或 SIMPLE_BACKUP_SUFFIX
+设置备份后缀,否则备份后缀就是“~”。
+可以用 --backup 或 VERSION_CONTROL 设置版本控制,可能的值为：
+
+  none, off	   从不做备份
+  t, numbered     进行编号备份
+  nil, existing
+如果编号备份存在则进行编号备份,否则进行简单备份
+  never, simple   总是使用简单备份
+
+--quoting-style 选项的有效参数为:
+
+  literal
+  shell
+  shell-always
+  c
+  c-maybe
+  escape
+  locale
+  clocale</code></pre></table></div></div><h3 id=常用选项>常用选项</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>-A或--catenate：新增文件到以存在的备份文件；
+-B：设置区块大小； 
+-c或--create：建立新的备份文件； 
+-C &lt;目录&gt;：这个选项用在解压缩,若要在特定目录解压缩,可以使用这个选项。 
+-d：记录文件的差别； 
+-x或--extract或--get：从备份文件中还原文件； 
+-t或--list：列出备份文件的内容； 
+-z或--gzip或--ungzip：通过gzip指令处理备份文件； 
+-Z或--compress或--uncompress：通过compress指令处理备份文件； 
+-f&lt;备份文件&gt;或--file<span class=o>=</span>&lt;备份文件&gt;：指定备份文件； 
+-v或--verbose：显示指令执行过程； 
+-r：添加文件到已经压缩的文件； 
+-u：添加改变了和现有的文件到已经存在的压缩文件； 
+-j：支持bzip2解压文件； 
+-v：显示操作过程； 
+-l：文件系统边界设置； 
+-k：保留原有文件不覆盖； 
+-m：保留文件不被覆盖； 
+-w：确认压缩文件的正确性； 
+-p或--same-permissions：用原来的文件权限还原文件； 
+-P或--absolute-names：文件名使用绝对名称,不移除文件名称前的“/”号； 
+-N &lt;日期格式&gt; 或 --newer<span class=o>=</span>&lt;日期时间&gt;：只将较指定日期更新的文件保存到备份文件里； 
+--exclude<span class=o>=</span>&lt;范本样式&gt;：排除符合范本样式的文件。</code></pre></table></div></div><h3 id=寻求帮助>寻求帮助</h3><ul><li>使用 <code>tar --help</code><li>使用 <code>man tar</code><li>使用 <code>info tar</code></ul><h3 id=示例>示例</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash>$ tar -cf archive.tar foo bar  <span class=c1># 从文件 foo 和 bar 创建归档文件archive.tar。</span>
+$ tar -tvf archive.tar         <span class=c1># 详细列举归档文件 archive.tar中的所有文件。</span>
+$ tar -xf archive.tar          <span class=c1># 解开归档文件 archive.tar中的所有文件。</span></code></pre></table></div></div><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-4469282388984999 data-ad-slot=5357438236></ins><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=5625031544 data-ad-format=auto data-full-width-responsive=true></ins></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Quanyin</span><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2020-05-07</span><p class=copyright-item><span class=item-title>许可协议</span>
+<span class=item-content>本博客所有文章除特别声明外，均采用 <a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>(CC) BY-NC-SA 4.0 </a>许可协议。转载请注明作者和出处并告知</span></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<label class=reward-button for=reward>赞赏支持</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=/img/reward/WechatPay.png>
+<span>微信打赏</span></label>
+<label class=qr-code-image for=reward><img class=image src=/img/reward/AliPay.png>
+<span>支付宝打赏</span></label></div></div><footer class=post-footer><div class=post-tags><a href=/tags/linux/>Linux</a></div><nav class=post-nav><a class=prev href=/2017/git-reset/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Git 中 4 个阶段的撤销更改</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/2017/gcp-ssr/><span class="next-text nav-default">Google Cloud Pltform申请与SSR搭建</span>
+<span class="prev-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><div class="post bg-white"><script src=https://cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=https://unpkg.com/valine/dist/Valine.min.js></script><div id=vcomments></div><script>new Valine({el:'#vcomments',appId:'aTnk2nRIOVuFeXVYCRqOhEQ1-MdYXbMMI',appKey:'fPBawjKkMiA8biHbwoDim1mJ',avatar:'mm',placeholder:'说点什么吧',})</script></div></div></div></main><footer id=footer class=footer><div class=icon-links><a href=/index.xml rel="noopener alternate" type=application/rss&#43;xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 0 1 140.501333 140.586667A140.928 140.928.0 0 1 140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme - <a class=theme-link href=https://github.com/xianmin/hugo-theme-jane>Jane</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020
+<span class=heart><i class=iconfont><svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"><path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7.0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1.0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2.0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3.1-42.5-8-83.6-24-122.2z" fill="#8a8a8a"/></svg></i></span><span class=author>Quanyin</span></span></div></footer><div class=back-to-top id=back-to-top><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35"><path d="M510.866688 227.694839 95.449397 629.218702h235.761562L329.15309 958.01517h362.40389L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777h894.052392v131.813095H63.840492V63.962777v0zm0 0"/></svg></i></div></div><script src=/lib/jquery/jquery-3.2.1.min.js></script><script src=/lib/slideout/slideout-1.0.1.min.js></script><script src="/dist/jane.min.js?v=2.7.0"></script><script src=/js/load-photoswipe.js></script><script src=/lib/photoswipe/photoswipe.min.js></script><script src=/lib/photoswipe/photoswipe-ui-default.min.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>

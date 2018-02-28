@@ -1,0 +1,108 @@
+<!doctype html><html lang=zh-cn itemscope itemtype=http://schema.org/WebPage><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>借助 Travis CI 实现自动部署 - 已停更的小博客</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content=width><meta name=HandheldFriendly content=true><meta name=applicable-device content=pc,mobile><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=mobile-web-app-capable content=yes><meta name=author content=Quanyin><meta name=description content="使用 Travis CI 进行 github pages 持续集成部署"><meta name=keywords content="Blog,Travis CI,持续集成"><meta name=generator content="Hugo 0.55.6"><link rel=canonical href=/2018/deploy-by-travis-ci/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media=screen crossorigin=anonymous><meta property=og:title content="借助 Travis CI 实现自动部署"><meta property=og:description content="使用 Travis CI 进行 github pages 持续集成部署"><meta property=og:type content=article><meta property=og:url content=/2018/deploy-by-travis-ci/><meta property=article:published_time content=2018-06-07T00:38:51&#43;08:00><meta property=article:modified_time content=2020-05-07T17:24:00&#43;08:00><meta itemprop=name content="借助 Travis CI 实现自动部署"><meta itemprop=description content="使用 Travis CI 进行 github pages 持续集成部署"><meta itemprop=datePublished content=2018-06-07T00:38:51&#43;08:00><meta itemprop=dateModified content=2020-05-07T17:24:00&#43;08:00><meta itemprop=wordCount content=1493><meta itemprop=keywords content=Blog,><meta name=twitter:card content=summary><meta name=twitter:title content="借助 Travis CI 实现自动部署"><meta name=twitter:description content="使用 Travis CI 进行 github pages 持续集成部署"><script>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-126038371-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4469282388984999",enable_page_level_ads:true});</script><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=/>主页</a><li class=mobile-menu-item><a class=menu-item-link href=/notice/>通知</a><li class=mobile-menu-item><a class=menu-item-link href=/post/>时光机</a><li class=mobile-menu-item><div class=mobile-menu-parent><span class=mobile-submenu-open></span><a href=/categories/>分类</a></div><ul class=mobile-submenu-list><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=mobile-menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav><link rel=stylesheet href=/lib/photoswipe/photoswipe.min.css><link rel=stylesheet href=/lib/photoswipe/default-skin/default-skin.min.css><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>主页</a><li class=menu-item><a class=menu-item-link href=/notice/>通知</a><li class=menu-item><a class=menu-item-link href=/post/>时光机</a><li class=menu-item><a class="menu-item-link menu-parent" href=/categories/>分类</a><ul class=submenu><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>借助 Travis CI 实现自动部署</h1><div class=post-meta><time datetime=2018-06-07 class=post-time>2018-06-07</time><div class=post-category><a href=/categories/%E7%AC%94%E8%AE%B0/>笔记</a></div><span class=more-meta>约 1493 字</span>
+<span class=more-meta>预计阅读 3 分钟</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#持续集成>持续集成</a><li><a href=#travis-ci>Travis CI</a><ul><li><a href=#设置>设置</a><li><a href=#生命周期>生命周期</a><li><a href=#运行流程>运行流程</a></ul><li><a href=#一个-hugo-的例子>一个 Hugo 的例子</a><li><a href=#参考>参考</a></ul></ul></nav></div></div><div class=post-content><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=4019390506 data-ad-format=link data-full-width-responsive=true></ins><p>Travis CI 提供的是持续集成服务（Continuous Integration，简称 CI）。它绑定 Github
+上面的项目，只要有新的代码，就会自动抓取。然后，提供一个运行环境，执行测试，完成
+构建，还能部署到服务器。<p><link rel=stylesheet href=/css/hugo-easy-gallery.css><div class=box><figure class="center lazyload" itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/img/background/post-bg-travis-ci.jpg></div><a href=/img/background/post-bg-travis-ci.jpg itemprop=contentUrl></a></figure></div><h2 id=持续集成>持续集成</h2><p>持续集成（Continuous Integration）指的是，频繁地（一天多次）将代码集成到主干。<p>持续集成的目的，就是让产品可以快速迭代，同时还能保持高质量。<p>它的核心措施是，代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。<h2 id=travis-ci>Travis CI</h2><p>Travis CI 对 Github 上的开源项目提供免费服务，这要求必须有 Github 账号。
+官网<travis-ci.org>只支持开源项目，如果想要对私人项目使用，则需要使用<a href=https://travis-ci.com target=_blank>https://travis-ci.com</a>.<p>首先，访问官方网站，点击右上角的个人头像，使用 Github 账户登入 Travis CI。
+Travis 会列出 Github 上面你的所有仓库，以及你所属于的组织。此时，选择你需要 Travis
+帮你构建的仓库，打开仓库旁边的开关。一旦激活了一个仓库，Travis 会监听这个仓库的所有变化。<div class=box><figure class="center lazyload" itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/img/post-content/travis-ci/post-travis-ci-list.png alt=选择仓库></div><a href=/img/post-content/travis-ci/post-travis-ci-list.png itemprop=contentUrl></a><figcaption><h4>选择仓库</h4></figcaption></figure></div><h3 id=设置>设置</h3><p>选择好要进行持续集成的仓库之后，然后指定分支，在 <code>setting</code> 里选择 <code>Build only if .travis.yml is present</code> ，
+因为要进行提交部署，所以要在 Github 里生成 <code>personal access token</code> 并作为环境变
+量填在 Travis 里。<div class=box><figure class="center lazyload" itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/img/post-content/travis-ci/post-travis-ci-setting.png alt=设置></div><a href=/img/post-content/travis-ci/post-travis-ci-setting.png itemprop=contentUrl></a><figcaption><h4>设置</h4></figcaption></figure></div><div class=box><figure class="center lazyload" itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/img/post-content/travis-ci/post-travis-ci-token-ui.png alt="personal access token"></div><a href=/img/post-content/travis-ci/post-travis-ci-token-ui.png itemprop=contentUrl></a><figcaption><h4>personal access token</h4></figcaption></figure></div><h3 id=生命周期>生命周期</h3><p>Travis 具有一个完整的生命周期，从开始到结束是下面的流程。<ol><li>before_install：install 阶段之前执行<li>install: 用来指定安装脚本<li>before_script：script 阶段之前执行<li>script: 用来指定构建或测试脚本<li>after_failure 或 after_success：script 阶段失败(成功)时执行<li>[OPTIONAL] before_deploy：deploy 步骤之前执行<li>[OPTIONAL] deploy:<li>[OPTIONAL] after_deploy：deploy 步骤之后执行<li>after_script：script 阶段之后执行</ol><h3 id=运行流程>运行流程</h3><p>Travis 的运行流程很简单，任何项目都会经过两个阶段。<ul><li>install 阶段：安装依赖<li>script 阶段：运行脚本</ul><p>其中，如果不需要安装，即跳过安装阶段，就直接设为 <code>true</code>。<p>Travis 每次运行，可能会返回四种状态。<ul><li>passed：运行成功，所有步骤的退出码都是0<li>canceled：用户取消执行<li>errored：before_install、install、before_script有非零退出码，运行会立即停止<li>failed ：script有非零状态码 ，会继续运行</ul><h2 id=一个-hugo-的例子>一个 Hugo 的例子</h2><p>下面的这个<code>.travis.yml</code>脚本实现的是每当想 <code>Hugo-theme</code> 继续 commit 时，travis 就会自动
+的把 <code>exampleSite</code> 生成为网页文件并提交到 <code>Github 的 gh-pages 分支</code> 。<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-yml data-lang=yml><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-yml data-lang=yml>sudo<span class=p>:</span><span class=w> </span>required<span class=w>
+</span><span class=w></span>dist<span class=p>:</span><span class=w> </span>trusty<span class=w>
+</span><span class=w></span>git<span class=p>:</span><span class=w>
+</span><span class=w>  </span>depth<span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>
+</span><span class=w></span>matrix<span class=p>:</span><span class=w>
+</span><span class=w>  </span>fast_finish<span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w></span>branches<span class=p>:</span><span class=w>
+</span><span class=w>  </span>only<span class=p>:</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>hugo-theme<span class=w>              </span><span class=c># 只有特定分支的推送才触发构建</span><span class=w>
+</span><span class=w></span>env<span class=p>:</span><span class=w>                        </span><span class=c># 设置环境变量</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>HUGO_VERSION<span class=w> </span><span class=p>:</span><span class=w> </span><span class=m>0.41</span><span class=w>
+</span><span class=w>
+</span><span class=w></span>install<span class=p>:</span><span class=w>                    </span><span class=c># 安装hugo</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>cd<span class=w> </span>$TRAVIS_BUILD_DIR<span class=w>    </span><span class=c>#回到初始目录</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>wget<span class=w> </span>-O<span class=w> </span>hugo.tar.gz<span class=w> </span>https<span class=p>:</span>//github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>tar<span class=w> </span>-xzvf<span class=w> </span>hugo.tar.gz<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>chmod<span class=w> </span>a+x<span class=w> </span>hugo<span class=w>
+</span><span class=w></span><span class=c>#after_install:</span><span class=w>
+</span><span class=w>
+</span><span class=w></span>before_script<span class=p>:</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>cd<span class=w> </span>$TRAVIS_BUILD_DIR<span class=w>            
+</span><span class=w>
+</span><span class=w></span>script<span class=p>:</span><span class=w>
+</span><span class=w>    </span>-<span class=w> </span>cd<span class=w> </span>exampleSite<span class=w>
+</span><span class=w>    </span>-<span class=w> </span>../hugo<span class=w> </span>version<span class=w>
+</span><span class=w>    </span>-<span class=w> </span>../hugo<span class=w> </span>--baseUrl=<span class=s2>&#34;https://theme.quanyin.ml&#34;</span><span class=w> </span>-t<span class=w> </span>Blog-theme<span class=w>
+</span><span class=w>
+</span><span class=w></span>after_success<span class=p>:</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>cd<span class=w> </span>public<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>git<span class=w> </span>config<span class=w> </span>--global<span class=w> </span>user.name<span class=w> </span><span class=s2>&#34;Quanyin Tang&#34;</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>git<span class=w> </span>config<span class=w> </span>--global<span class=w> </span>user.email<span class=w> </span><span class=s2>&#34;i@imtqy.com&#34;</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>git<span class=w> </span>init<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>git<span class=w> </span>add<span class=w> </span>.<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>git<span class=w> </span>commit<span class=w> </span>-m<span class=w> </span><span class=s2>&#34;Travis CI build&#34;</span><span class=w>
+</span><span class=w>  </span>-<span class=w> </span>git<span class=w> </span>branch<span class=w> </span>gh-pages<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>git<span class=w> </span>checkout<span class=w> </span>gh-pages<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>git<span class=w> </span>remote<span class=w> </span>add<span class=w> </span>origin<span class=w> </span>https<span class=p>:</span>//${GH_TOKEN}@github.com/qytang326/Blog-theme.git<span class=w>
+</span><span class=w>  </span>-<span class=w> </span>git<span class=w> </span>push<span class=w> </span>-f<span class=w> </span>-u<span class=w> </span>origin<span class=w> </span>gh-pages</code></pre></table></div></div><h2 id=参考>参考</h2><ul><li><a href=http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html target=_blank>持续集成服务 Travis CI 教程</a></ul><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-4469282388984999 data-ad-slot=5357438236></ins><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=5625031544 data-ad-format=auto data-full-width-responsive=true></ins></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Quanyin</span><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2020-05-07</span><p class=copyright-item><span class=item-title>许可协议</span>
+<span class=item-content>本博客所有文章除特别声明外，均采用 <a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>(CC) BY-NC-SA 4.0 </a>许可协议。转载请注明作者和出处并告知</span></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<label class=reward-button for=reward>赞赏支持</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=/img/reward/WechatPay.png>
+<span>微信打赏</span></label>
+<label class=qr-code-image for=reward><img class=image src=/img/reward/AliPay.png>
+<span>支付宝打赏</span></label></div></div><footer class=post-footer><div class=post-tags><a href=/tags/blog/>Blog</a></div><nav class=post-nav><a class=prev href=/2018/useful-git-command/><i class="iconfont icon-left"></i><span class="prev-text nav-default">一份 Git 中的奇淫技巧的驳杂记录</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/2018/c-compile-error-lm/><span class="next-text nav-default">C 程序编译错误处理</span>
+<span class="prev-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article><div class="post bg-white"><script src=https://cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=https://unpkg.com/valine/dist/Valine.min.js></script><div id=vcomments></div><script>new Valine({el:'#vcomments',appId:'aTnk2nRIOVuFeXVYCRqOhEQ1-MdYXbMMI',appKey:'fPBawjKkMiA8biHbwoDim1mJ',avatar:'mm',placeholder:'说点什么吧',})</script></div></div></div></main><footer id=footer class=footer><div class=icon-links><a href=/index.xml rel="noopener alternate" type=application/rss&#43;xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 0 1 140.501333 140.586667A140.928 140.928.0 0 1 140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme - <a class=theme-link href=https://github.com/xianmin/hugo-theme-jane>Jane</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020
+<span class=heart><i class=iconfont><svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"><path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7.0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1.0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2.0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3.1-42.5-8-83.6-24-122.2z" fill="#8a8a8a"/></svg></i></span><span class=author>Quanyin</span></span></div></footer><div class=back-to-top id=back-to-top><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35"><path d="M510.866688 227.694839 95.449397 629.218702h235.761562L329.15309 958.01517h362.40389L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777h894.052392v131.813095H63.840492V63.962777v0zm0 0"/></svg></i></div></div><script src=/lib/jquery/jquery-3.2.1.min.js></script><script src=/lib/slideout/slideout-1.0.1.min.js></script><script src="/dist/jane.min.js?v=2.7.0"></script><script src=/js/load-photoswipe.js></script><script src=/lib/photoswipe/photoswipe.min.js></script><script src=/lib/photoswipe/photoswipe-ui-default.min.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>

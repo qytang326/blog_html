@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>编程 on 已停更的小博客</title><link>/categories/%E7%BC%96%E7%A8%8B/</link><description>Recent content in 编程 on 已停更的小博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>i@imtqy.com (Quanyin)</managingEditor><webMaster>i@imtqy.com (Quanyin)</webMaster><copyright> Quanyin</copyright><lastBuildDate>Sat, 02 Jun 2018 20:17:26 +0800</lastBuildDate><atom:link href="/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>C 程序编译错误处理</title><link>/2018/c-compile-error-lm/</link><pubDate>Sat, 02 Jun 2018 20:17:26 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/c-compile-error-lm/</guid><description>&lt;p&gt;最近在写程序编译时，遇到了一个在 Windows 下的 IDE 里可以编译通过，放到 Linux 上
+就编译不过去的问题，简单记录下。&lt;/p&gt;</description></item><item><title>Linux系统命令 III</title><link>/2018/linux-command-3/</link><pubDate>Mon, 16 Apr 2018 17:49:40 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/linux-command-3/</guid><description>&lt;p&gt;find命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录
+名。如果使用该命令时，不设置任何参数，则find命令将在当前目录下查找子目录与文件。
+并且将查找到的子目录和文件全部进行显示。&lt;/p&gt;</description></item><item><title>Theme Preview | 主题预览</title><link>/2018/theme-preview/</link><pubDate>Sun, 11 Mar 2018 12:36:38 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2018/theme-preview/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;前两天动手把之前博客从Jekyll移植到Hugo上，原因是Hugo又快又方便&lt;/p&gt;
+&lt;p&gt;Copy from &lt;a href=&#34;https://laozhu.me/post/hugo-nuo-post-preview/&#34; target=&#34;_blank&#34;&gt;《Hugo 主题 Nuo 文章样式预览》&lt;/a&gt; ， 有部分修改。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这篇文章集中说明主题所支持的 Markdown 语法和 Hugo Shortcodes 插件，你也可以在这里预览到他们的样子。如果你不喜欢某些样式，可以去修改 less/ 文件夹进行调整。&lt;/p&gt;</description></item><item><title>在CentOS 7 上打造Linux开发环境</title><link>/2017/linux-environment-under-centos/</link><pubDate>Fri, 08 Dec 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/linux-environment-under-centos/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;前段时间,组里的一台GPU服务器宕机了,在我的强烈要求下,管理老师让机器售后服务方安装了CentOS 7系统;然后就直接甩锅给我,让我自己去安装
+相应的软件&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>Linux系统命令 II</title><link>/2017/linux-command-2/</link><pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/linux-command-2/</guid><description>&lt;p&gt;tar命令可以为linux的文件和目录创建文档。利用tar,可以为某一特定文件创建档案(备份),也可以
+在其中改变文件,或者向其中加入新的文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;利用 tar命令,我们可以将文件/目录进行打包和压缩,以减少文件大小和便于管理。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;打包:将一大堆文件或者目录变成一个总的文件；&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;压缩:将一个大的文件通过一些压缩算法变成小的文件&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</description></item><item><title>Linux系统命令 I</title><link>/2017/linux-command-1/</link><pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/linux-command-1/</guid><description>ls ls命令是Linux下用于显示目录相关信息的命令. 1. 用法 1 2 ls [选项] [文件(夹)] ls [OPTION]... [FILE]... 2. 功能 列出 [FILE] 的相关信息 3. 常用参数 1 2 3 4 5 6 7 8</description></item><item><title>Google Python 风格指南 I</title><link>/2017/python-language-rules/</link><pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/python-language-rules/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;背景:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python 是 Google主要的脚本语言。这本风格指南主要包含的是针对python的编程准则。&lt;/li&gt;
+&lt;li&gt;为帮助读者能够将代码准确格式化,我们提供了针对 &lt;a href=&#34;//github.com/google/styleguide/blob/gh-pages/google_python_style.vim&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Vim的配置文件&lt;/code&gt;&lt;/a&gt;。对于Emacs用户,保持默认设置即可。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure class=&#34;center lazyload&#34; itemprop=&#34;associatedMedia&#34;
+itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+&lt;div class=&#34;img&#34;&gt;
+&lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/post-content/style/python-logo.jpg&#34; /&gt;
+&lt;/div&gt;
+&lt;a href=&#34;/img/post-content/style/python-logo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;</description></item><item><title>Google Python 风格指南 II</title><link>/2017/python-style-rules/</link><pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/python-style-rules/</guid><description>&lt;div class=&#34;box&#34;&gt;
+&lt;figure class=&#34;center lazyload&#34; itemprop=&#34;associatedMedia&#34;
+itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+&lt;div class=&#34;img&#34;&gt;
+&lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/post-content/style/google-style-guide.jpg&#34; /&gt;
+&lt;/div&gt;
+&lt;a href=&#34;/img/post-content/style/google-style-guide.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;</description></item><item><title>git 常用命令</title><link>/2017/git-cheet-sheet/</link><pubDate>Thu, 19 Oct 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/git-cheet-sheet/</guid><description>&lt;p&gt;git是现在最流行的版本控制工具。与CVS、Subversion一类的集中式版本控制工具不同,它采用了分布式版本库的作法,不需要服务器端软件,就可以运作版本控制,使得源代码的发布和交流极其方便。git的速度很快,git最为出色的是它的合并追踪(merge
+tracing)能力。&lt;/p&gt;</description></item><item><title>这是一份你们需要的Windows版深度学习软件安装指南</title><link>/2017/deeplearning-on-windows/</link><pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/deeplearning-on-windows/</guid><description>本文经机器之心(微信公众号:almosthuman2014)授权转载,禁止二次转载.本文由机器之心编译,蒋思源、刘晓坤参与. 本文从最基本的依</description></item><item><title>免费的编程书籍列表-中文版</title><link>/2017/free-programming-book/</link><pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/free-programming-book/</guid><description>免费的编程书籍列表-中文版【转自Github】 原文Github地址 目录 一、语言无关 二、语言相关 一、语言无关 1、IDE IntelliJ IDEA 简体中文专题教程 2、</description></item></channel></rss>

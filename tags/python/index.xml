@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on 已停更的小博客</title><link>/tags/python/</link><description>Recent content in Python on 已停更的小博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>i@imtqy.com (Quanyin)</managingEditor><webMaster>i@imtqy.com (Quanyin)</webMaster><copyright> Quanyin</copyright><lastBuildDate>Sat, 21 Oct 2017 00:00:00 +0000</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Google Python 风格指南 I</title><link>/2017/python-language-rules/</link><pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/python-language-rules/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;背景:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python 是 Google主要的脚本语言。这本风格指南主要包含的是针对python的编程准则。&lt;/li&gt;
+&lt;li&gt;为帮助读者能够将代码准确格式化,我们提供了针对 &lt;a href=&#34;//github.com/google/styleguide/blob/gh-pages/google_python_style.vim&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;Vim的配置文件&lt;/code&gt;&lt;/a&gt;。对于Emacs用户,保持默认设置即可。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure class=&#34;center lazyload&#34; itemprop=&#34;associatedMedia&#34;
+itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+&lt;div class=&#34;img&#34;&gt;
+&lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/post-content/style/python-logo.jpg&#34; /&gt;
+&lt;/div&gt;
+&lt;a href=&#34;/img/post-content/style/python-logo.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;</description></item><item><title>Google Python 风格指南 II</title><link>/2017/python-style-rules/</link><pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/python-style-rules/</guid><description>&lt;div class=&#34;box&#34;&gt;
+&lt;figure class=&#34;center lazyload&#34; itemprop=&#34;associatedMedia&#34;
+itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+&lt;div class=&#34;img&#34;&gt;
+&lt;img itemprop=&#34;thumbnail&#34; src=&#34;/img/post-content/style/google-style-guide.jpg&#34; /&gt;
+&lt;/div&gt;
+&lt;a href=&#34;/img/post-content/style/google-style-guide.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;/div&gt;</description></item><item><title>这是一份你们需要的Windows版深度学习软件安装指南</title><link>/2017/deeplearning-on-windows/</link><pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2017/deeplearning-on-windows/</guid><description>本文经机器之心(微信公众号:almosthuman2014)授权转载,禁止二次转载.本文由机器之心编译,蒋思源、刘晓坤参与. 本文从最基本的依</description></item></channel></rss>
