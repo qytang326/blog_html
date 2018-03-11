@@ -4,7 +4,7 @@ title:          "2017年总结与回顾"
 subtitle:       "暨2018年展望与规划"
 description:    ""
 date:           2018-01-05 12:30
-lastmod:        2018-01-20 14:30
+lastmod:        2018-02-27 14:30
 author:         "Quanyin Tang"
 author_homepage: https://quanyin.eu.org
 header-img:     "/Source/images/background/post-bg-2017-2018.jpg"
@@ -52,6 +52,7 @@ tags:           []
 - Python科学计算(numpy，Pandas,Matplotlib库)，Python是我大二时学的一个程序(原因是大一学的C语言太难，被打击了)，没想到现在会这么火，然而我的水平依然停留在小学生水平，
 只会抄抄代码而已，是时候下定决心深入学习下这个热门的语言了。至于为什么学科学计算，那是因为我就是做理论计算的，兴许会有点用吧
 - 学习下机器学习。在这个当口，不学习点机器学习感觉都有点说不过去。目标：学习吴恩达的Coursera视频课程、看看周志华的机器学习以及李航的统计学习方法，有时间的话学习下CS229。当然，少不了来点实践，用scikit-learn、TensorFlow写点小的code
+- [2018.02.27] 漏了一件重要的事情:小胖子该减肥了。。。。
 
 唔，上面的任务有点重，尽力而为吧，梦想总是要有的，万一实现了呢？
 
