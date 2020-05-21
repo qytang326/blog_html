@@ -1,0 +1,442 @@
+<!doctype html><html lang=zh-cn itemscope itemtype=http://schema.org/WebPage><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>为 hugo 站点插入豆瓣条目的 shortcode - 已停更的小博客</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=MobileOptimized content=width><meta name=HandheldFriendly content=true><meta name=applicable-device content=pc,mobile><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=mobile-web-app-capable content=yes><meta name=author content=Quanyin><meta name=description content="最终效果：     代码来源： Bitcron 文章内插入豆瓣条目 - 林小沐"><meta name=keywords content=技术博客><link rel=canonical href=/2020/hugo-shortcode-douban-item/><link rel=icon href=/favicon.ico><link rel=stylesheet href=/sass/jane.min.css media=screen crossorigin=anonymous><meta property=og:title content="为 hugo 站点插入豆瓣条目的 shortcode"><meta property=og:description content="最终效果：
+
+  
+
+
+
+
+  
+
+
+
+代码来源： Bitcron 文章内插入豆瓣条目 - 林小沐"><meta property=og:type content=article><meta property=og:url content=/2020/hugo-shortcode-douban-item/><meta property=article:published_time content=2020-04-25T15:20:00&#43;08:00><meta property=article:modified_time content=2020-05-22T17:27:54&#43;08:00><meta itemprop=name content="为 hugo 站点插入豆瓣条目的 shortcode"><meta itemprop=description content="最终效果：
+
+  
+
+
+
+
+  
+
+
+
+代码来源： Bitcron 文章内插入豆瓣条目 - 林小沐"><meta itemprop=datePublished content=2020-04-25T15:20:00&#43;08:00><meta itemprop=dateModified content=2020-05-22T17:27:54&#43;08:00><meta itemprop=wordCount content=1040><meta itemprop=keywords content=hugo,豆瓣,><meta name=twitter:card content=summary><meta name=twitter:title content="为 hugo 站点插入豆瓣条目的 shortcode"><meta name=twitter:description content="最终效果：
+
+  
+
+
+
+
+  
+
+
+
+代码来源： Bitcron 文章内插入豆瓣条目 - 林小沐"><script>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-126038371-2','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4469282388984999",enable_page_level_ads:true});</script><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Blog</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><li class=mobile-menu-item><a class=menu-item-link href=/>主页</a><li class=mobile-menu-item><a class=menu-item-link href=/notice/>通知</a><li class=mobile-menu-item><a class=menu-item-link href=/post/>时光机</a><li class=mobile-menu-item><div class=mobile-menu-parent><span class=mobile-submenu-open></span><a href=/categories/>分类</a></div><ul class=mobile-submenu-list><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=mobile-menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav><link rel=stylesheet href=/lib/photoswipe/photoswipe.min.css><link rel=stylesheet href=/lib/photoswipe/default-skin/default-skin.min.css><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header id=header class="header container"><div class=logo-wrapper><a href=/ class=logo>Blog</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>主页</a><li class=menu-item><a class=menu-item-link href=/notice/>通知</a><li class=menu-item><a class=menu-item-link href=/post/>时光机</a><li class=menu-item><a class="menu-item-link menu-parent" href=/categories/>分类</a><ul class=submenu><li><a href=/categories/%E7%AC%94%E8%AE%B0>笔记</a><li><a href=/categories/%E7%BC%96%E7%A8%8B>编程</a><li><a href=/categories/%E7%A7%91%E7%A0%94>科研</a><li><a href=/categories/%E5%AD%A6%E4%B9%A0>学习</a><li><a href=/categories/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86>错误处理</a></ul><li class=menu-item><a class=menu-item-link href=/about/>关于我</a></ul></nav></header><div id=mobile-panel><main id=main class="main bg-llight"><div class=content-wrapper><div id=content class="content container"><article class="post bg-white"><header class=post-header><h1 class=post-title>为 hugo 站点插入豆瓣条目的 shortcode</h1><div class=post-meta><time datetime=2020-04-25 class=post-time>2020-04-25</time><div class=post-category><a href=/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/>计算机</a></div><span class=more-meta>约 1040 字</span>
+<span class=more-meta>预计阅读 3 分钟</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class=post-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#添加-douban-shortcode>添加 douban shortcode</a><li><a href=#添加-js>添加 js</a><li><a href=#添加-css>添加 css</a><li><a href=#使用方法>使用方法</a><li><a href=#补充说明>补充说明</a></ul></ul></nav></div></div><div class=post-content><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=4019390506 data-ad-format=link data-full-width-responsive=true></ins><p><strong>最终效果：</strong><div class=douban_show><div id=db9787532132263 date-dbid=9787532132263 class="douban_item post-preview"></div></div><div class=douban_show><div id=db1307690 date-dbid=1307690 class="douban_item post-preview"></div></div><p>代码来源： <a href=https://immmmm.com/bitcron-show-douban-item target=_blank>Bitcron 文章内插入豆瓣条目 - 林小沐</a><h2 id=添加-douban-shortcode>添加 douban shortcode</h2><p>创建文件 <code>/layouts/shortcodes/douban.html</code> ，代码如下：<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;douban_show&#34;</span><span class=p>&gt;</span>
+  <span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;db{{ .Get 0 }}&#34;</span> <span class=na>date-dbid</span><span class=o>=</span><span class=s>&#34;{{ .Get 0 }}&#34;</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;douban_item post-preview&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span></code></pre></table></div></div><h2 id=添加-js>添加 js</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-js data-lang=js><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-js data-lang=js><span class=nx>$</span><span class=p>(</span><span class=nb>document</span><span class=p>).</span><span class=nx>ready</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.douban_item&#39;</span><span class=p>).</span><span class=nx>each</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+        <span class=kd>var</span> <span class=nx>id</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=k>this</span><span class=p>).</span><span class=nx>attr</span><span class=p>(</span><span class=s1>&#39;date-dbid&#39;</span><span class=p>).</span><span class=nx>toString</span><span class=p>();</span>
+        <span class=k>if</span> <span class=p>(</span><span class=nx>id</span><span class=p>.</span><span class=nx>length</span> <span class=o>&lt;</span> <span class=mi>9</span><span class=p>)</span> <span class=p>{</span>
+            <span class=kd>var</span> <span class=nx>url</span> <span class=o>=</span> <span class=s2>&#34;https://api.douban.com/v2/movie/subject/&#34;</span> <span class=o>+</span> <span class=nx>id</span> <span class=o>+</span> <span class=s2>&#34;?apikey=0dad551ec0f84ed02907ff5c42e8ec70&#34;</span><span class=p>;</span>
+            <span class=nx>$</span><span class=p>.</span><span class=nx>ajax</span><span class=p>({</span>
+                <span class=nx>url</span><span class=o>:</span> <span class=nx>url</span><span class=p>,</span>
+                <span class=nx>type</span><span class=o>:</span> <span class=s1>&#39;GET&#39;</span><span class=p>,</span>
+                <span class=nx>dataType</span><span class=o>:</span> <span class=s2>&#34;jsonp&#34;</span><span class=p>,</span>
+                <span class=nx>success</span><span class=o>:</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>data</span><span class=p>)</span> <span class=p>{</span>
+                    <span class=kd>var</span> <span class=nx>db_casts</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span><span class=p>,</span>
+                        <span class=nx>db_genres</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span><span class=p>;</span>
+                    <span class=k>for</span> <span class=p>(</span><span class=kd>var</span> <span class=nx>i</span> <span class=k>in</span> <span class=nx>data</span><span class=p>.</span><span class=nx>casts</span><span class=p>)</span> <span class=p>{</span>
+                        <span class=nx>db_casts</span> <span class=o>+=</span> <span class=nx>data</span><span class=p>.</span><span class=nx>casts</span><span class=p>[</span><span class=nx>i</span><span class=p>].</span><span class=nx>name</span> <span class=o>+</span> <span class=s2>&#34; &#34;</span><span class=p>;</span>
+                    <span class=p>}</span>
+                    <span class=k>for</span> <span class=p>(</span><span class=kd>var</span> <span class=nx>i</span> <span class=k>in</span> <span class=nx>data</span><span class=p>.</span><span class=nx>genres</span><span class=p>)</span> <span class=p>{</span>
+                        <span class=nx>db_genres</span> <span class=o>+=</span> <span class=nx>data</span><span class=p>.</span><span class=nx>genres</span><span class=p>[</span><span class=nx>i</span><span class=p>]</span> <span class=o>+</span> <span class=s2>&#34; &#34;</span><span class=p>;</span>
+                    <span class=p>}</span>
+                    <span class=kd>var</span> <span class=nx>db_star</span> <span class=o>=</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>ceil</span><span class=p>(</span><span class=nx>data</span><span class=p>.</span><span class=nx>rating</span><span class=p>.</span><span class=nx>average</span><span class=p>)</span>
+                    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#db&#39;</span> <span class=o>+</span> <span class=nx>id</span><span class=p>).</span><span class=nx>html</span><span class=p>(</span>
+                        <span class=s2>&#34;&lt;div class=&#39;post-preview--meta&#39;&gt;&lt;div class=&#39;post-preview--middle&#39;&gt;&lt;h4 class=&#39;post-preview--title&#39;&gt;&lt;a target=&#39;_blank&#39; href=&#39;&#34;</span> <span class=o>+</span>
+                        <span class=nx>data</span><span class=p>.</span><span class=nx>alt</span> <span class=o>+</span> <span class=s2>&#34;&#39;&gt;《&#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>title</span> <span class=o>+</span> <span class=s2>&#34;》&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#39;rating&#39;&gt;&lt;div class=&#39;rating-star allstar&#34;</span> <span class=o>+</span>
+                        <span class=nx>db_star</span> <span class=o>+</span> <span class=s2>&#34;&#39;&gt;&lt;/div&gt;&lt;div class=&#39;rating-average&#39;&gt;&#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>rating</span><span class=p>.</span><span class=nx>average</span> <span class=o>+</span>
+                        <span class=s2>&#34;&lt;/div&gt;&lt;/div&gt;&lt;time class=&#39;post-preview--date&#39;&gt;导演：&#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>directors</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>name</span> <span class=o>+</span> <span class=s2>&#34; / 主演：&#34;</span> <span class=o>+</span>
+                        <span class=nx>db_casts</span> <span class=o>+</span> <span class=s2>&#34; / 类型：&#34;</span> <span class=o>+</span> <span class=nx>db_genres</span> <span class=o>+</span> <span class=s2>&#34; / &#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>year</span> <span class=o>+</span>
+                        <span class=s2>&#34;&lt;/time&gt;&lt;section style=&#39;max-height:75px;overflow:hidden;&#39; class=&#39;post-preview--excerpt&#39;&gt;&#34;</span> <span class=o>+</span>
+                        <span class=nx>data</span><span class=p>.</span><span class=nx>summary</span> <span class=o>+</span>
+                        <span class=s2>&#34;&lt;/section&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#39;post-preview--image&#39; style=&#39;background-image:url(&#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>images</span>
+                        <span class=p>.</span><span class=nx>large</span> <span class=o>+</span> <span class=s2>&#34;);&#39;&gt;&lt;/div&gt;&#34;</span><span class=p>);</span>
+                <span class=p>}</span>
+            <span class=p>});</span>
+        <span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=nx>id</span><span class=p>.</span><span class=nx>length</span> <span class=o>&gt;</span> <span class=mi>9</span><span class=p>)</span> <span class=p>{</span>
+            <span class=kd>var</span> <span class=nx>url</span> <span class=o>=</span> <span class=s2>&#34;https://api.douban.com/v2/book/isbn/&#34;</span> <span class=o>+</span> <span class=nx>id</span> <span class=o>+</span>
+                <span class=s2>&#34;?fields=alt,title,subtitle,rating,author,publisher,pubdate,summary,images&amp;apikey=0dad551ec0f84ed02907ff5c42e8ec70&#34;</span><span class=p>;</span>
+            <span class=nx>$</span><span class=p>.</span><span class=nx>ajax</span><span class=p>({</span>
+                <span class=nx>url</span><span class=o>:</span> <span class=nx>url</span><span class=p>,</span>
+                <span class=nx>type</span><span class=o>:</span> <span class=s1>&#39;GET&#39;</span><span class=p>,</span>
+                <span class=nx>dataType</span><span class=o>:</span> <span class=s1>&#39;JSONP&#39;</span><span class=p>,</span>
+                <span class=nx>success</span><span class=o>:</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>data</span><span class=p>)</span> <span class=p>{</span>
+                    <span class=kd>var</span> <span class=nx>db_star</span> <span class=o>=</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>ceil</span><span class=p>(</span><span class=nx>data</span><span class=p>.</span><span class=nx>rating</span><span class=p>.</span><span class=nx>average</span><span class=p>)</span>
+                    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#db&#39;</span> <span class=o>+</span> <span class=nx>id</span><span class=p>).</span><span class=nx>html</span><span class=p>(</span>
+                        <span class=s2>&#34;&lt;div class=&#39;post-preview--meta&#39;&gt;&lt;div class=&#39;post-preview--middle&#39;&gt;&lt;h4 class=&#39;post-preview--title&#39;&gt;&lt;a target=&#39;_blank&#39; href=&#39;&#34;</span> <span class=o>+</span>
+                        <span class=nx>data</span><span class=p>.</span><span class=nx>alt</span> <span class=o>+</span> <span class=s2>&#34;&#39;&gt;《&#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>title</span> <span class=o>+</span> <span class=s2>&#34;》&#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>subtitle</span> <span class=o>+</span>
+                        <span class=s2>&#34;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#39;rating&#39;&gt;&lt;div class=&#39;rating-star allstar&#34;</span> <span class=o>+</span> <span class=nx>db_star</span> <span class=o>+</span>
+                        <span class=s2>&#34;&#39;&gt;&lt;/div&gt;&lt;div class=&#39;rating-average&#39;&gt;&#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>rating</span><span class=p>.</span><span class=nx>average</span> <span class=o>+</span>
+                        <span class=s2>&#34;&lt;/div&gt;&lt;/div&gt;&lt;time class=&#39;post-preview--date&#39;&gt;&#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>author</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>+</span> <span class=s2>&#34; / &#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>publisher</span> <span class=o>+</span>
+                        <span class=s2>&#34; / &#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>pubdate</span> <span class=o>+</span>
+                        <span class=s2>&#34;&lt;/time&gt;&lt;section style=&#39;max-height:75px;overflow:hidden;&#39; class=&#39;post-preview--excerpt&#39;&gt;&#34;</span> <span class=o>+</span>
+                        <span class=nx>data</span><span class=p>.</span><span class=nx>summary</span> <span class=o>+</span>
+                        <span class=s2>&#34;&lt;/section&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#39;post-preview--image&#39; style=&#39;background-image:url(&#34;</span> <span class=o>+</span> <span class=nx>data</span><span class=p>.</span><span class=nx>images</span>
+                        <span class=p>.</span><span class=nx>large</span> <span class=o>+</span> <span class=s2>&#34;);&#39;&gt;&lt;/div&gt;&#34;</span><span class=p>);</span>
+                <span class=p>}</span>
+            <span class=p>});</span>
+        <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;出错&#34;</span> <span class=o>+</span> <span class=nx>id</span><span class=p>)</span>
+        <span class=p>}</span>
+    <span class=p>});</span>
+<span class=p>});</span>
+</code></pre></table></div></div><h2 id=添加-css>添加 css</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-css data-lang=css><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-css data-lang=css><span class=c>/* douban item post-preview --------*/</span>
+
+<span class=p>.</span><span class=nc>post-preview</span> <span class=p>{</span>
+  <span class=k>max-width</span><span class=p>:</span> <span class=mi>780</span><span class=kt>px</span><span class=p>;</span>
+  <span class=k>margin</span><span class=p>:</span> <span class=mi>1</span><span class=kt>em</span> <span class=kc>auto</span><span class=p>;</span>
+  <span class=k>position</span><span class=p>:</span> <span class=kc>relative</span><span class=p>;</span>
+  <span class=k>display</span><span class=p>:</span> <span class=kc>flex</span><span class=p>;</span>
+  <span class=k>background</span><span class=p>:</span> <span class=mh>#fff</span><span class=p>;</span>
+  <span class=k>border-radius</span><span class=p>:</span> <span class=mi>4</span><span class=kt>px</span><span class=p>;</span>
+  <span class=k>box-shadow</span><span class=p>:</span> <span class=mi>0</span> <span class=mi>1</span><span class=kt>px</span> <span class=mi>2</span><span class=kt>px</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mf>.25</span><span class=p>),</span> <span class=mi>0</span> <span class=mi>0</span> <span class=mi>1</span><span class=kt>px</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mf>.25</span><span class=p>);</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>post-preview--meta</span> <span class=p>{</span>
+  <span class=k>width</span><span class=p>:</span> <span class=mi>75</span><span class=kt>%</span><span class=p>;</span>
+  <span class=k>padding</span><span class=p>:</span> <span class=mi>25</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>post-preview--middle</span> <span class=p>{</span>
+  <span class=k>line-height</span><span class=p>:</span> <span class=mi>28</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>post-preview--title</span> <span class=p>{</span>
+  <span class=k>font-size</span><span class=p>:</span> <span class=mi>18</span><span class=kt>px</span><span class=p>;</span>
+  <span class=k>margin</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>post-preview--title</span> <span class=nt>a</span> <span class=p>{</span>
+  <span class=k>text-decoration</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>post-preview--date</span> <span class=p>{</span>
+  <span class=k>font-size</span><span class=p>:</span> <span class=mi>14</span><span class=kt>px</span><span class=p>;</span>
+  <span class=k>color</span><span class=p>:</span> <span class=mh>#999</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>post-preview--excerpt</span> <span class=p>{</span>
+  <span class=k>font-size</span><span class=p>:</span> <span class=mi>14</span><span class=kt>px</span><span class=p>;</span>
+  <span class=k>line-height</span><span class=p>:</span> <span class=mf>1.825</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>post-preview--excerpt</span> <span class=nt>p</span> <span class=p>{</span>
+  <span class=k>margin-bottom</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>post-preview--image</span> <span class=p>{</span>
+  <span class=k>width</span><span class=p>:</span> <span class=mi>25</span><span class=kt>%</span><span class=p>;</span>
+  <span class=k>float</span><span class=p>:</span> <span class=kc>right</span><span class=p>;</span>
+  <span class=k>background-size</span><span class=p>:</span> <span class=kc>cover</span><span class=p>;</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=kc>center</span> <span class=kc>center</span><span class=p>;</span>
+  <span class=k>border-top-right-radius</span><span class=p>:</span> <span class=mi>2</span><span class=kt>px</span><span class=p>;</span>
+  <span class=k>border-bottom-right-radius</span><span class=p>:</span> <span class=mi>2</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>@</span><span class=k>media</span> <span class=o>(</span><span class=nt>max-width</span><span class=p>:</span><span class=nd>550px</span><span class=o>)</span> <span class=p>{</span>
+  <span class=p>.</span><span class=nc>post-preview</span> <span class=p>{</span>
+    <span class=k>width</span><span class=p>:</span> <span class=mi>95</span><span class=kt>%</span><span class=p>;</span>
+  <span class=p>}</span>
+  <span class=p>.</span><span class=nc>post-preview--image</span> <span class=p>{</span>
+    <span class=k>width</span><span class=p>:</span> <span class=mi>40</span><span class=kt>%</span><span class=p>;</span>
+  <span class=p>}</span>
+  <span class=p>.</span><span class=nc>post-preview--meta</span> <span class=p>{</span>
+    <span class=k>width</span><span class=p>:</span> <span class=mi>60</span><span class=kt>%</span><span class=p>;</span>
+  <span class=p>}</span>
+  <span class=p>.</span><span class=nc>post-preview--excerpt</span> <span class=p>{</span>
+    <span class=k>display</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>rating</span> <span class=p>{</span>
+  <span class=k>display</span><span class=p>:</span> <span class=kc>block</span><span class=p>;</span>
+  <span class=k>line-height</span><span class=p>:</span> <span class=mi>15</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>rating-star</span> <span class=p>{</span>
+  <span class=k>display</span><span class=p>:</span> <span class=kc>inline</span><span class=o>-</span><span class=kc>block</span><span class=p>;</span>
+  <span class=k>width</span><span class=p>:</span> <span class=mi>75</span><span class=kt>px</span><span class=p>;</span>
+  <span class=k>height</span><span class=p>:</span> <span class=mi>15</span><span class=kt>px</span><span class=p>;</span>
+  <span class=k>background-repeat</span><span class=p>:</span> <span class=kc>no-repeat</span><span class=p>;</span>
+  <span class=k>background-image</span><span class=p>:</span> <span class=nb>url</span><span class=p>(</span><span class=sx>/image/douban_star.png</span><span class=p>);</span>
+  <span class=k>overflow</span><span class=p>:</span> <span class=kc>hidden</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>allstar10</span> <span class=p>{</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span> <span class=mi>0</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>allstar9</span> <span class=p>{</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span> <span class=mi>-15</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>allstar8</span> <span class=p>{</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span> <span class=mi>-30</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>allstar7</span> <span class=p>{</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span> <span class=mi>-45</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>allstar6</span> <span class=p>{</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span> <span class=mi>-60</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>allstar5</span> <span class=p>{</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span> <span class=mi>-75</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>allstar4</span> <span class=p>{</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span> <span class=mi>-90</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>allstar3</span> <span class=p>{</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span> <span class=mi>-105</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>allstar2</span> <span class=p>{</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span> <span class=mi>-120</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>allstar1</span> <span class=p>{</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span> <span class=mi>-135</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>allstar0</span> <span class=p>{</span>
+  <span class=k>background-position</span><span class=p>:</span> <span class=mi>0</span><span class=kt>px</span> <span class=mi>-150</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=p>.</span><span class=nc>rating-average</span> <span class=p>{</span>
+  <span class=k>color</span><span class=p>:</span> <span class=mh>#777</span><span class=p>;</span>
+  <span class=k>display</span><span class=p>:</span> <span class=kc>inline</span><span class=o>-</span><span class=kc>block</span><span class=p>;</span>
+  <span class=k>font-size</span><span class=p>:</span> <span class=mi>13</span><span class=kt>px</span><span class=p>;</span>
+  <span class=k>margin-left</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span><span class=p>;</span>
+<span class=p>}</span></code></pre></table></div></div><p><strong>注意：</strong> 豆瓣评分五角星图片需要另外载入。<p>保存图片为 <code>/static/image/douban_star.png</code></p><link rel=stylesheet href=/css/hugo-easy-gallery.css><div class=box><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><div class=img><img itemprop=thumbnail src=/image/douban_star.png></div><a href=/image/douban_star.png itemprop=contentUrl></a></figure></div><h2 id=使用方法>使用方法</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-code data-lang=code><span class=lnt>1
+</span></code></pre><td class=lntd><pre class=chroma><code class=language-code data-lang=code>{{&lt; douban id &gt;}}</code></pre></table></div></div><ul><li>电影条目如 <a href=https://movie.douban.com/subject/26862829/ target=_blank>https://movie.douban.com/subject/26862829/</a> 取后面 26862829 为 id。<li>图书条目，取它的 ISBN 为 id。</ul><h2 id=补充说明>补充说明</h2><p>关于添加 js, css 代码，一般 hugo 主题都有 <code>customJS</code> 或 <code>customCSS</code> 选项（比如我的主题），我们可以添加到其中。<p>我不确定有几个人需要这个 <code>douban shortcode</code> ，因此，暂时没有整合到 <code>hugo-theme-jane</code> 中，如果有人需要，欢迎在此文章下留言。<p>最后，感谢原创作者林小沐！</p><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-4469282388984999 data-ad-slot=5357438236></ins><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-4469282388984999 data-ad-slot=5625031544 data-ad-format=auto data-full-width-responsive=true></ins></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>Quanyin</span><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2020-05-22</span><p class=copyright-item><span class=item-title>许可协议</span>
+<span class=item-content>本博客所有文章除特别声明外，均采用 <a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-sa/4.0/ target=_blank>(CC) BY-NC-SA 4.0 </a>许可协议。转载请注明作者和出处并告知</span></div><div class=post-reward><input type=checkbox name=reward id=reward hidden>
+<label class=reward-button for=reward>赞赏支持</label><div class=qr-code><label class=qr-code-image for=reward><img class=image src=/img/reward/WechatPay.png>
+<span>微信打赏</span></label>
+<label class=qr-code-image for=reward><img class=image src=/img/reward/AliPay.png>
+<span>支付宝打赏</span></label></div></div><footer class=post-footer><div class=post-tags><a href=/tags/hugo/>hugo</a>
+<a href=/tags/%E8%B1%86%E7%93%A3/>豆瓣</a></div><nav class=post-nav><a class=prev href=/2020/linux-fcitx-punc/><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417l277.93508-310.326815c11.338233-12.190647 11.035334-32.285311-.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"/></svg></i><span class="prev-text nav-default">linux 下，fcitx 输入法的直角引号设置</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/2020/git-submodule/><span class="next-text nav-default">浅谈「用 git submodule 还是 git subtree」？</span>
+<span class="prev-text nav-mobile">下一篇</span>
+<i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"/></svg></i></a></nav></footer></article><div class="post bg-white"><div id=comments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=//unpkg.com/valine/dist/Valine.min.js></script><script>if(window.location.hash){var checkExist=setInterval(function(){if($(window.location.hash).length){$('html, body').animate({scrollTop:$(window.location.hash).offset().top-90},700);clearInterval(checkExist);}},10);}</script><script>new Valine({el:'#comments',appId:'aTnk2nRIOVuFeXVYCRqOhEQ1-MdYXbMMI',appKey:'fPBawjKkMiA8biHbwoDim1mJ',notify:false,verify:false,avatar:'mm',placeholder:'说点什么吧',visitor:false});</script></div></div></div></main><footer id=footer class=footer><div class=icon-links><a href=/index.xml rel="noopener alternate" type=application/rss&#43;xml class=iconfont title=rss target=_blank><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><path d="M819.157333 1024C819.157333 574.592 449.408 204.8.0 204.8V0c561.706667.0 1024 462.293333 1024 1024H819.157333zM140.416 743.04a140.8 140.8.0 0 1 140.501333 140.586667A140.928 140.928.0 0 1 140.074667 1024C62.72 1024 0 961.109333.0 883.626667S62.933333 743.082667 140.416 743.04zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352.0 678.784 306.517333 678.784 678.826667z"/></svg></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
+<span class=division>|</span>
+<span class=theme-info>Theme - <a class=theme-link href=https://github.com/xianmin/hugo-theme-jane>Jane</a></span>
+<span class=copyright-year>&copy;
+2017 -
+2020
+<span class=heart><i class=iconfont><svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14"><path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7.0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1.0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2.0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3.1-42.5-8-83.6-24-122.2z" fill="#8a8a8a"/></svg></i></span><span class=author>Quanyin</span></span></div></footer><div class=back-to-top id=back-to-top><i class=iconfont><svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35"><path d="M510.866688 227.694839 95.449397 629.218702h235.761562L329.15309 958.01517h362.40389L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777h894.052392v131.813095H63.840492V63.962777v0zm0 0"/></svg></i></div></div><script src=/lib/jquery/jquery-3.2.1.min.js></script><script src=/lib/slideout/slideout-1.0.1.min.js></script><script src=/js/main.js crossorigin=anonymous></script><script src=/js/load-photoswipe.js></script><script src=/lib/photoswipe/photoswipe.min.js></script><script src=/lib/photoswipe/photoswipe-ui-default.min.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>

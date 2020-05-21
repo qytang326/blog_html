@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hugo on 已停更的小博客</title><link>/tags/hugo/</link><description>Recent content in hugo on 已停更的小博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>i@imtqy.com (Quanyin)</managingEditor><webMaster>i@imtqy.com (Quanyin)</webMaster><copyright> Quanyin</copyright><lastBuildDate>Sat, 25 Apr 2020 15:20:00 +0800</lastBuildDate><atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>为 hugo 站点插入豆瓣条目的 shortcode</title><link>/2020/hugo-shortcode-douban-item/</link><pubDate>Sat, 25 Apr 2020 15:20:00 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2020/hugo-shortcode-douban-item/</guid><description>&lt;p&gt;&lt;strong&gt;最终效果：&lt;/strong&gt;
+&lt;div class=&#34;douban_show&#34;&gt;
+&lt;div id=&#34;db9787532132263&#34; date-dbid=&#34;9787532132263&#34; class=&#34;douban_item post-preview&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;div class=&#34;douban_show&#34;&gt;
+&lt;div id=&#34;db1307690&#34; date-dbid=&#34;1307690&#34; class=&#34;douban_item post-preview&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;代码来源： &lt;a href=&#34;https://immmmm.com/bitcron-show-douban-item&#34; target=&#34;_blank&#34;&gt;Bitcron 文章内插入豆瓣条目 - 林小沐&lt;/a&gt;&lt;/p&gt;</description></item><item><title>博客写作流程之工具篇： emacs, orgmode, hugo &amp; ox-hugo</title><link>/2020/ox-hugo/</link><pubDate>Tue, 31 Mar 2020 00:00:00 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2020/ox-hugo/</guid><description>&lt;p&gt;本文将对我个人的博文写作流程 &lt;strong&gt;所用到的工具&lt;/strong&gt; 做一个总结与分享。从标题就可以看出来，主要有这几个工具： &lt;code&gt;emacs&lt;/code&gt;, &lt;code&gt;orgmode&lt;/code&gt; &amp;amp; &lt;code&gt;hugo&lt;/code&gt; ，另外还有两个配合 &lt;code&gt;hugo&lt;/code&gt; 的辅助包 &lt;code&gt;easy-hugo&lt;/code&gt; （可选） &amp;amp; &lt;code&gt;ox-hugo&lt;/code&gt; 。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;hugo&lt;/code&gt; : &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34;&gt;https://gohugo.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;orgmode&lt;/code&gt; : &lt;a href=&#34;https://orgmode.org/&#34; target=&#34;_blank&#34;&gt;https://orgmode.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ox-hugo&lt;/code&gt; : &lt;a href=&#34;https://ox-hugo.scripter.co/&#34; target=&#34;_blank&#34;&gt;https://ox-hugo.scripter.co/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;easy-hygo&lt;/code&gt; : &lt;a href=&#34;https://github.com/masasam/emacs-easy-hugo&#34; target=&#34;_blank&#34;&gt;https://github.com/masasam/emacs-easy-hugo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>更好的基于 github issues 的评论系统——utterances</title><link>/2019/utterances-comment-system/</link><pubDate>Wed, 10 Jul 2019 14:34:00 +0800</pubDate><author>i@imtqy.com (Quanyin)</author><guid>/2019/utterances-comment-system/</guid><description>背景介绍 基于 github issues 的评论系统，比较流行的有 gitment 和 gitalk 。这两个项目我很早就注意到了，它们明显的缺陷是，当用户如果尝试登录评论，所要求的权限是很多的，</description></item></channel></rss>
